@@ -1,4 +1,4 @@
-# Requisitos del Proyecto Exam Generator
+# Requisitos del Proyecto ElectroCore
 # 
 # Dependencias principales:
 # - Python 3.9+
