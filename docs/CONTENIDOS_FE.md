@@ -131,51 +131,54 @@
 ### 6.1 Sistemas de Representación de la Información
 (Anteriormente Sección 2.1)
 
-#### 6.1.1 Sistemas de Numeración
+#### 6.1.1 Alfabetos, Lenguajes y Semántica
+- **6.1.1.1** Teoría de Códigos: Alfabeto, Lenguaje y Semántica.
+- **6.1.1.2** Propiedades de Códigos: Adyacente, Cíclico, Saturado.
+- **6.1.1.3** Distancia de Hamming y Análisis de Lenguajes.
+
+#### 6.1.2 Sistemas de Numeración
 (Anteriormente Sección 2.1.1)
 
-##### 6.1.1.1 Sistemas Posicionales y No Posicionales
-- **6.1.1.1.1** Definiciones y Ejemplos (Romano, Base 5, Temporal).
-- **6.1.1.1.2** Unicidad de la Representación.
+##### 6.1.2.1 Sistemas Posicionales y No Posicionales
+- **6.1.2.1.1** Definiciones y Ejemplos (Romano, Base 5, Temporal).
+- **6.1.2.1.2** Unicidad de la Representación.
 
-##### 6.1.1.2 Conversión entre Sistemas de Numeración
-- **6.1.1.2.1** Conversión de Base 10 a Base B (Divisiones Sucesivas).
-- **6.1.1.2.2** Conversión de Base B a Base 10 (Polinomio, Horner).
-- **6.1.1.2.3** Conversión entre Bases Relacionadas ($B_1=b^m$, $B_2=b^n$).
+##### 6.1.2.2 Conversión entre Sistemas de Numeración (Números Naturales)
+- **6.1.2.2.1** Conversión de Base 10 a Base B (Divisiones Sucesivas).
+- **6.1.2.2.2** Conversión de Base B a Base 10 (Polinomio, Horner).
+- **6.1.2.2.3** Conversión entre Bases Relacionadas ($B_1=b^m$, $B_2=b^n$).
 
-##### 6.1.1.3 Sistemas Binarios, Octales y Hexadecimales
-- **6.1.1.3.1** Conversión entre binario y decimal.
-- **6.1.1.3.2** Conversión entre octal/hexadecimal y decimal.
-- **6.1.1.3.3** Conversión directa entre binario, octal y hexadecimal.
+##### 6.1.2.3 Sistemas Binarios, Octales y Hexadecimales
+- **6.1.2.3.1** Conversión entre binario y decimal.
+- **6.1.2.3.2** Conversión entre octal/hexadecimal y decimal.
+- **6.1.2.3.3** Conversión directa entre binario, octal y hexadecimal.
 
-##### 6.1.1.4 Representación en Longitud Fija
-- **6.1.1.4.1** Capacidad y Rango de Representación.
-- **6.1.1.4.2** Eficacia de Empaquetado (BCD vs DPD).
-- **6.1.1.4.3** Teoría de Códigos: Alfabeto, Lenguaje y Semántica.
-- **6.1.1.4.4** Propiedades de Códigos: Adyacente, Cíclico, Saturado.
-- **6.1.1.4.5** Códigos Especializados (Gray, Johnson, Biquinario).
-- **6.1.1.4.6** Distancia de Hamming y Análisis de Lenguajes.
+##### 6.1.2.4 Representación en Longitud Fija
+- **6.1.2.4.1** Capacidad y Rango de Representación.
+- **6.1.2.4.2** Eficacia de Empaquetado (BCD vs DPD).
+- **6.1.2.4.3** Códigos Especializados (Gray, Johnson, Biquinario).
 
-##### 6.1.1.5 Números Enteros con Signo
-- **6.1.1.5.1** Magnitud y signo.
-- **6.1.1.5.2** Complemento a la base (C2, C10).
-- **6.1.1.5.3** Exceso a K.
-- **6.1.1.5.4** Códigos BCD con signo (Exceso 3, Aiken).
 
-##### 6.1.1.6 Operaciones Aritméticas con Enteros
-- **6.1.1.6.1** Comparación, Suma y Resta en varios sistemas.
-- **6.1.1.6.2** Multiplicación y División en binario.
+##### 6.1.2.5 Números Enteros con Signo (Números Enteros)
+- **6.1.2.5.1** Magnitud y signo.
+- **6.1.2.5.2** Complemento a la base (C2, C10).
+- **6.1.2.5.3** Exceso a K.
+- **6.1.2.5.4** Códigos BCD con signo (Exceso 3, Aiken).
 
-##### 6.1.1.7 Representación de Números con Parte Fraccionaria
-- **6.1.1.7.1** Punto Fijo (Fixed-point): concepto, conversiones, rango, precisión.
-- **6.1.1.7.2** Punto Flotante (Floating-point): norma IEEE 754, rango, precisión, normalización.
-- **6.1.1.7.3** Operaciones en Punto Fijo y Flotante.
+##### 6.1.2.6 Operaciones Aritméticas con Enteros
+- **6.1.2.6.1** Comparación, Suma y Resta en varios sistemas.
+- **6.1.2.6.2** Multiplicación y División en binario.
 
-#### 6.1.2 Sistemas de Representación Alfanumérica
+##### 6.1.2.7 Representación de Números con Parte Fraccionaria
+- **6.1.2.7.1** Punto Fijo (Fixed-point): concepto, conversiones, rango, precisión.
+- **6.1.2.7.2** Punto Flotante (Floating-point): norma IEEE 754, rango, precisión, normalización.
+- **6.1.2.7.3** Operaciones en Punto Fijo y Flotante.
+
+#### 6.1.3 Sistemas de Representación Alfanumérica
 (Anteriormente Sección 2.1.2)
-- **6.1.2.1** Codificación de Datos: ASCII, Unicode (UTF-8, UTF-16, UTF-32).
-- **6.1.2.2** Sistemas de Detección de Errores (Distancia Hamming, CRC).
-- **6.1.2.3** Sistemas de Corrección de Errores (Códigos de Hamming).
+- **6.1.3.1** Codificación de Datos: ASCII, Unicode (UTF-8, UTF-16, UTF-32).
+- **6.1.3.2** Sistemas de Detección de Errores (Distancia Hamming, CRC).
+- **6.1.3.3** Sistemas de Corrección de Errores (Códigos de Hamming).
 
 ### 6.2 Álgebras de Boole
 (Anteriormente Sección 2.2)
@@ -191,6 +194,7 @@
 - **6.3.2** Circuitos Aritméticos: Sumadores, Restadores, Comparadores.
 - **6.3.3** Unidades Aritmético Lógicas (ALU).
 - **6.3.4** Riesgos en Circuitos Combinacionales (Glitches, Carreras).
+- **6.3.5** Problemas eléctricos: fan-in y fan-out.
 
 ### 6.4 Sistemas Secuenciales
 (Anteriormente Sección 2.3)
@@ -208,7 +212,7 @@
 - **7.1.2** Medidas de tensión, corriente y potencia.
 
 ### 7.2 Simulación de Circuitos Electrónicos
-- **7.2.1** Introducción a herramientas de simulación (ej. SPICE, Proteus, Multisim).
+- **7.2.1** Introducción a herramientas de simulación (ej. SPICE (NGSPICE), Proteus, Multisim).
 - **7.2.2** Diseño y análisis de circuitos mediante simulación.
 
 ---
