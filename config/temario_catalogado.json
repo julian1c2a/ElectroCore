@@ -1,439 +1,127 @@
 {
   "temario_fe": {
     "titulo": "Fundamentos de Electrónica - Catálogo de Temas",
-    "version": "2.0",
-    "fecha_actualización": "2026-01-15",
-    "categorías": {
-      "contenido": [
-        "para_mas_adelante",
-        "solo_problemas_y_resolutores",
-        "solo_teoría",
-        "tanto_problemas_como_teoría"
-      ],
-      "dependencias": [
-        "autosuficiente",
-        "necesita_programa_extra"
-      ]
+    "version": "3.0",
+    "fecha_actualización": "2026-01-21",
+    "estadísticas": {
+      "total_items": 75
     },
     "items": [
-      {
-        "id": "1",
-        "titulo": "Introducción a la Electrónica",
-        "nivel": 1,
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.1",
-        "titulo": "Conceptos Básicos",
-        "nivel": 2,
-        "parent_id": "1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.1.1",
-        "titulo": "Magnitudes fundamentales",
-        "nivel": 3,
-        "parent_id": "1.1",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.1.2",
-        "titulo": "Ley de Ohm",
-        "nivel": 3,
-        "parent_id": "1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.1.3",
-        "titulo": "Potencia eléctrica",
-        "nivel": 3,
-        "parent_id": "1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.2",
-        "titulo": "Componentes Electrónicos",
-        "nivel": 2,
-        "parent_id": "1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "1.2.1",
-        "titulo": "Resistencias",
-        "nivel": 3,
-        "parent_id": "1.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.2.2",
-        "titulo": "Condensadores",
-        "nivel": 3,
-        "parent_id": "1.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.2.3",
-        "titulo": "Bobinas",
-        "nivel": 3,
-        "parent_id": "1.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "1.2.4",
-        "titulo": "Semiconductores",
-        "nivel": 3,
-        "parent_id": "1.2",
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2",
-        "titulo": "Electrónica Digital",
-        "nivel": 1,
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1",
-        "titulo": "Sistemas de Representación de la Información",
-        "nivel": 2,
-        "parent_id": "2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1",
-        "titulo": "Sistemas de Numeración",
-        "nivel": 3,
-        "parent_id": "2.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.1",
-        "titulo": "Bases Teóricas",
-        "nivel": 4,
-        "parent_id": "2.1.1",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.1.1",
-        "titulo": "Sistemas de numeración posicionales y no posicionales",
-        "nivel": 5,
-        "parent_id": "2.1.1.1",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.1.2",
-        "titulo": "Sistemas de numeración posicionales: por potencias de la base B",
-        "nivel": 5,
-        "parent_id": "2.1.1.1",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.1.3",
-        "titulo": "Conversión entre sistemas de numeración con pesos potencias de una base B",
-        "nivel": 5,
-        "parent_id": "2.1.1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1.1.1.4",
-        "titulo": "Sistemas de numeración no posicionales: números romanos",
-        "nivel": 5,
-        "parent_id": "2.1.1.1",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.2",
-        "titulo": "Sistemas Binarios, Octales y Hexadecimales",
-        "nivel": 4,
-        "parent_id": "2.1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1.1.3",
-        "titulo": "Representación en Longitud Fija",
-        "nivel": 4,
-        "parent_id": "2.1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.4",
-        "titulo": "Números Enteros con Signo",
-        "nivel": 4,
-        "parent_id": "2.1.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.1.5",
-        "titulo": "Operaciones Aritméticas",
-        "nivel": 4,
-        "parent_id": "2.1.1",
-        "contenido": "solo_problemas_y_resolutores",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1.1.5.1",
-        "titulo": "Operaciones Básicas (suma, resta, multiplicación, división)",
-        "nivel": 5,
-        "parent_id": "2.1.1.5",
-        "contenido": "solo_problemas_y_resolutores",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1.1.5.2",
-        "titulo": "Números con Parte Fraccionaria - Punto Fijo",
-        "nivel": 5,
-        "parent_id": "2.1.1.5",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra",
-        "detalles": [
-          "Representación fija (fixed-point)",
-          "Paso entre bases en punto fijo",
-          "Paso entre bases 2, 4, 8, 16",
-          "Paso entre bases 3, 9 y 27",
-          "Rangos de valores representables",
-          "Cálculo del épsilon"
-        ]
-      },
-      {
-        "id": "2.1.1.5.3",
-        "titulo": "Números en Punto Flotante - IEEE 754",
-        "nivel": 5,
-        "parent_id": "2.1.1.5",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra",
-        "detalles": [
-          "Representación en punto flotante según norma IEEE 754",
-          "Épsilon de la representación",
-          "Rangos de valores representables",
-          "Formas normalizadas y denormalizadas",
-          "Operaciones de redondeo y truncamiento",
-          "Función 'normalizar' en punto flotante",
-          "Conversión entre punto fijo y punto flotante",
-          "Operaciones aritméticas en punto flotante"
-        ]
-      },
-      {
-        "id": "2.1.2",
-        "titulo": "Sistemas de Representación Alfanumérica",
-        "nivel": 3,
-        "parent_id": "2.1",
-        "contenido": "para_mas_adelante",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.2.1",
-        "titulo": "Codificación de Datos",
-        "nivel": 4,
-        "parent_id": "2.1.2",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.1.2.2",
-        "titulo": "Sistemas de Detección de Errores",
-        "nivel": 4,
-        "parent_id": "2.1.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.1.2.3",
-        "titulo": "Sistemas de Detección/Corrección de Errores",
-        "nivel": 4,
-        "parent_id": "2.1.2",
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.2",
-        "titulo": "Álgebras de Boole",
-        "nivel": 2,
-        "parent_id": "2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.2.1",
-        "titulo": "Los Postulados de Huntington de 1904",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.2.2",
-        "titulo": "Propiedades y Teoremas del Álgebra de Boole",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "solo_problemas_y_resolutores",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.2.3",
-        "titulo": "El Álgebra de Conmutación de Shannon",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.2.4",
-        "titulo": "Las Puertas Lógicas Básicas",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.2.5",
-        "titulo": "Funciones Lógicas",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "solo_problemas_y_resolutores",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.2.6",
-        "titulo": "Sistemas Combinacionales Básicos",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.2.7",
-        "titulo": "Sistemas Combinacionales Avanzados",
-        "nivel": 3,
-        "parent_id": "2.2",
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.3",
-        "titulo": "Sistemas Secuenciales",
-        "nivel": 2,
-        "parent_id": "2",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.3.1",
-        "titulo": "Introducción",
-        "nivel": 3,
-        "parent_id": "2.3",
-        "contenido": "solo_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "2.3.2",
-        "titulo": "Elementos Básicos",
-        "nivel": 3,
-        "parent_id": "2.3",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.3.3",
-        "titulo": "Sistemas Secuenciales Principales",
-        "nivel": 3,
-        "parent_id": "2.3",
-        "contenido": "solo_problemas_y_resolutores",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.3.4",
-        "titulo": "Máquinas de Estados Finitos (FSM)",
-        "nivel": 3,
-        "parent_id": "2.3",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "2.3.5",
-        "titulo": "Memorias Digitales",
-        "nivel": 3,
-        "parent_id": "2.3",
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "3",
-        "titulo": "Electrónica Analógica",
-        "nivel": 1,
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "3.1",
-        "titulo": "Dispositivos Lineales Pasivos",
-        "nivel": 2,
-        "parent_id": "3",
-        "contenido": "para_mas_adelante",
-        "dependencia": "necesita_programa_extra"
-      },
-      {
-        "id": "3.1.1",
-        "titulo": "Leyes Fundamentales de la Electricidad",
-        "nivel": 3,
-        "parent_id": "3.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "autosuficiente"
-      },
-      {
-        "id": "3.1.2",
-        "titulo": "Componentes Pasivos",
-        "nivel": 3,
-        "parent_id": "3.1",
-        "contenido": "tanto_problemas_como_teoría",
-        "dependencia": "necesita_programa_extra"
-      }
-    ],
-    "estadísticas": {
-      "total_items": 46,
-      "resumen_contenido": {
-        "solo_teoría": 5,
-        "solo_problemas_y_resolutores": 4,
-        "tanto_problemas_como_teoría": 26,
-        "para_mas_adelante": 11
-      },
-      "resumen_dependencias": {
-        "autosuficiente": 22,
-        "necesita_programa_extra": 24
-      },
-      "items_por_nivel": {
-        "nivel_1": 3,
-        "nivel_2": 8,
-        "nivel_3": 20,
-        "nivel_4": 11,
-        "nivel_5": 4
-      }
-    },
-    "notas": "Estructura plana para facilitar consultas, actualizaciones y filtrados. Usa 'parent_id' para relaciones jerárquicas sin anidamiento.",
-    "próximos_pasos": [
-      "Crear generadores de problemas para temas 'solo_problemas_y_resolutores'",
-      "Crear simuladores para temas que necesitan 'programa_extra'",
-      "Desarrollar contenido teorico para 'solo_teoría'",
-      "Implementar primero: 2.1.1.1.3 (Conversión entre bases)"
+      { "id": "1", "titulo": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales", "nivel": 1, "parent_id": null },
+      { "id": "1.1", "titulo": "Introducción a la Electrónica", "nivel": 2, "parent_id": "1" },
+      { "id": "1.1.1", "titulo": "Definición y campo de aplicación", "nivel": 3, "parent_id": "1.1" },
+      { "id": "1.1.2", "titulo": "Conceptos de señal, sistema y dispositivo", "nivel": 3, "parent_id": "1.1" },
+      { "id": "1.1.3", "titulo": "Clasificación de sistemas electrónicos", "nivel": 3, "parent_id": "1.1" },
+      { "id": "1.2", "titulo": "Componentes Pasivos y Fuentes", "nivel": 2, "parent_id": "1" },
+      { "id": "1.2.1", "titulo": "Resistores, condensadores e inductores", "nivel": 3, "parent_id": "1.2" },
+      { "id": "1.2.2", "titulo": "Fuentes de tensión y corriente", "nivel": 3, "parent_id": "1.2" },
+      { "id": "1.3", "titulo": "Análisis Básico de Circuitos Eléctricos", "nivel": 2, "parent_id": "1" },
+      { "id": "1.3.1", "titulo": "Leyes de Kirchhoff (LKT y LKC)", "nivel": 3, "parent_id": "1.3" },
+      { "id": "1.3.2", "titulo": "Teoremas de circuitos lineales: Thevenin y Norton", "nivel": 3, "parent_id": "1.3" },
+      { "id": "1.3.3", "titulo": "Análisis de circuitos en DC", "nivel": 3, "parent_id": "1.3" },
+      { "id": "1.3.4", "titulo": "Análisis de circuitos en AC", "nivel": 3, "parent_id": "1.3" },
+
+      { "id": "1.4", "titulo": "Circuitos RC y RL: Respuesta Temporal", "nivel": 2, "parent_id": "1", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.4.1", "titulo": "Carga y descarga de un condensador en un circuito RC", "nivel": 3, "parent_id": "1.4", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.4.2", "titulo": "Respuesta de un circuito RL a un escalón de tensión", "nivel": 3, "parent_id": "1.4", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.4.3", "titulo": "Constante de tiempo (τ)", "nivel": 3, "parent_id": "1.4", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.5", "titulo": "Filtros Pasivos", "nivel": 2, "parent_id": "1", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.5.1", "titulo": "Concepto de filtro y respuesta en frecuencia", "nivel": 3, "parent_id": "1.5", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.5.2", "titulo": "Diagramas de Bode", "nivel": 3, "parent_id": "1.5", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.5.3", "titulo": "Filtros paso bajo y paso alto RC y RL", "nivel": 3, "parent_id": "1.5", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+      { "id": "1.5.4", "titulo": "Filtros paso banda y rechazo de banda RLC", "nivel": 3, "parent_id": "1.5", "contenido": "para_mas_adelante", "dependencia": "autosuficiente" },
+
+      { "id": "2", "titulo": "Módulo 2: Dispositivos Semiconductores y Diodos", "nivel": 1, "parent_id": null },
+      { "id": "2.1", "titulo": "Física de Semiconductores", "nivel": 2, "parent_id": "2" },
+      { "id": "2.1.1", "titulo": "Materiales semiconductores", "nivel": 3, "parent_id": "2.1" },
+      { "id": "2.1.2", "titulo": "Portadores de carga", "nivel": 3, "parent_id": "2.1" },
+      { "id": "2.1.3", "titulo": "Unión PN", "nivel": 3, "parent_id": "2.1" },
+      { "id": "2.2", "titulo": "El Diodo Semiconductor", "nivel": 2, "parent_id": "2" },
+      { "id": "2.2.1", "titulo": "Características V-I del diodo", "nivel": 3, "parent_id": "2.2" },
+      { "id": "2.2.2", "titulo": "Modelos de diodo", "nivel": 3, "parent_id": "2.2" },
+      { "id": "2.2.3", "titulo": "Circuitos con diodos", "nivel": 3, "parent_id": "2.2" },
+      { "id": "2.3", "titulo": "Aplicaciones del Diodo", "nivel": 2, "parent_id": "2" },
+      { "id": "2.3.1", "titulo": "Rectificadores", "nivel": 3, "parent_id": "2.3" },
+      { "id": "2.3.2", "titulo": "Filtros capacitivos", "nivel": 3, "parent_id": "2.3" },
+      { "id": "2.3.3", "titulo": "Reguladores de tensión Zener", "nivel": 3, "parent_id": "2.3" },
+      { "id": "2.3.4", "titulo": "Recortadores y enclavadores", "nivel": 3, "parent_id": "2.3" },
+      { "id": "2.3.5", "titulo": "Otros diodos especiales", "nivel": 3, "parent_id": "2.3" },
+
+      { "id": "3", "titulo": "Módulo 3: Transistores Bipolares de Unión (BJT)", "nivel": 1, "parent_id": null },
+      { "id": "3.1", "titulo": "Estructura y Funcionamiento del BJT", "nivel": 2, "parent_id": "3" },
+      { "id": "3.1.1", "titulo": "Tipos NPN y PNP", "nivel": 3, "parent_id": "3.1" },
+      { "id": "3.1.2", "titulo": "Modos de operación", "nivel": 3, "parent_id": "3.1" },
+      { "id": "3.1.3", "titulo": "Curvas características", "nivel": 3, "parent_id": "3.1" },
+      { "id": "3.1.4", "titulo": "Relaciones de corrientes y tensiones", "nivel": 3, "parent_id": "3.1" },
+      { "id": "3.2", "titulo": "Polarización del BJT", "nivel": 2, "parent_id": "3" },
+      { "id": "3.2.1", "titulo": "Punto de operación (Q)", "nivel": 3, "parent_id": "3.2" },
+      { "id": "3.2.2", "titulo": "Circuitos de polarización", "nivel": 3, "parent_id": "3.2" },
+      { "id": "3.2.3", "titulo": "Estabilidad del punto Q", "nivel": 3, "parent_id": "3.2" },
+      { "id": "3.3", "titulo": "Análisis en Pequeña Señal del BJT", "nivel": 2, "parent_id": "3" },
+      { "id": "3.3.1", "titulo": "Modelos de pequeña señal", "nivel": 3, "parent_id": "3.3" },
+      { "id": "3.3.2", "titulo": "Análisis de amplificadores", "nivel": 3, "parent_id": "3.3" },
+      { "id": "3.3.3", "titulo": "Ganancias e impedancias", "nivel": 3, "parent_id": "3.3" },
+
+      { "id": "4", "titulo": "Módulo 4: Transistores de Efecto de Campo (FET)", "nivel": 1, "parent_id": null },
+      { "id": "4.1", "titulo": "Introducción a los FETs", "nivel": 2, "parent_id": "4" },
+      { "id": "4.1.1", "titulo": "Tipos: JFET y MOSFET", "nivel": 3, "parent_id": "4.1" },
+      { "id": "4.1.2", "titulo": "Estructura y funcionamiento", "nivel": 3, "parent_id": "4.1" },
+      { "id": "4.1.3", "titulo": "Curvas características", "nivel": 3, "parent_id": "4.1" },
+      { "id": "4.2", "titulo": "Polarización y Análisis en Pequeña Señal del FET", "nivel": 2, "parent_id": "4" },
+      { "id": "4.2.1", "titulo": "Circuitos de polarización", "nivel": 3, "parent_id": "4.2" },
+      { "id": "4.2.2", "titulo": "Modelos de pequeña señal", "nivel": 3, "parent_id": "4.2" },
+      { "id": "4.2.3", "titulo": "Análisis de amplificadores con FETs", "nivel": 3, "parent_id": "4.2" },
+
+      { "id": "5", "titulo": "Módulo 5: Amplificadores Operacionales (Op-Amps)", "nivel": 1, "parent_id": null },
+      { "id": "5.1", "titulo": "Concepto y Características del Op-Amp Ideal", "nivel": 2, "parent_id": "5" },
+      { "id": "5.1.1", "titulo": "Terminales y realimentación negativa", "nivel": 3, "parent_id": "5.1" },
+      { "id": "5.1.2", "titulo": "Modelo ideal y propiedades", "nivel": 3, "parent_id": "5.1" },
+      { "id": "5.2", "titulo": "Circuitos Básicos con Op-Amps", "nivel": 2, "parent_id": "5" },
+      { "id": "5.2.1", "titulo": "Amplificador inversor y no inversor", "nivel": 3, "parent_id": "5.2" },
+      { "id": "5.2.2", "titulo": "Seguidor de tensión", "nivel": 3, "parent_id": "5.2" },
+      { "id": "5.2.3", "titulo": "Sumador, restador, integrador y derivador", "nivel": 3, "parent_id": "5.2" },
+      { "id": "5.2.4", "titulo": "Comparadores", "nivel": 3, "parent_id": "5.2" },
+      { "id": "5.3", "titulo": "Limitaciones del Op-Amp Real", "nivel": 2, "parent_id": "5" },
+      { "id": "5.3.1", "titulo": "Offset, corriente de polarización, slew rate, ancho de banda", "nivel": 3, "parent_id": "5.3" },
+
+      { "id": "6", "titulo": "Módulo 6: Fundamentos de Electrónica Digital", "nivel": 1, "parent_id": null, "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1", "titulo": "Sistemas de Representación de la Información", "nivel": 2, "parent_id": "6", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1", "titulo": "Sistemas de Numeración", "nivel": 3, "parent_id": "6.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1.1", "titulo": "Sistemas Posicionales y No Posicionales", "nivel": 4, "parent_id": "6.1.1", "contenido": "solo_teoría" },
+      { "id": "6.1.1.2", "titulo": "Conversión entre Sistemas de Numeración", "nivel": 4, "parent_id": "6.1.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1.3", "titulo": "Sistemas Binarios, Octales y Hexadecimales", "nivel": 4, "parent_id": "6.1.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1.4", "titulo": "Representación en Longitud Fija", "nivel": 4, "parent_id": "6.1.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1.5", "titulo": "Números Enteros con Signo", "nivel": 4, "parent_id": "6.1.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.1.6", "titulo": "Operaciones Aritméticas con Enteros", "nivel": 4, "parent_id": "6.1.1", "contenido": "solo_problemas_y_resolutores" },
+      { "id": "6.1.1.7", "titulo": "Representación de Números con Parte Fraccionaria", "nivel": 4, "parent_id": "6.1.1", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.1.2", "titulo": "Sistemas de Representación Alfanumérica", "nivel": 3, "parent_id": "6.1", "contenido": "para_mas_adelante" },
+      
+      { "id": "6.2", "titulo": "Álgebras de Boole", "nivel": 2, "parent_id": "6", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.2.1", "titulo": "Postulados de Huntington", "nivel": 3, "parent_id": "6.2", "contenido": "solo_teoría" },
+      { "id": "6.2.2", "titulo": "Propiedades y Teoremas", "nivel": 3, "parent_id": "6.2", "contenido": "solo_problemas_y_resolutores" },
+      { "id": "6.2.3", "titulo": "Álgebra de Conmutación de Shannon", "nivel": 3, "parent_id": "6.2", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.2.4", "titulo": "Puertas Lógicas y Sistemas Completos", "nivel": 3, "parent_id": "6.2", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.2.5", "titulo": "Funciones Lógicas y Minimización", "nivel": 3, "parent_id": "6.2", "contenido": "solo_problemas_y_resolutores" },
+
+      { "id": "6.3", "titulo": "Sistemas Combinacionales", "nivel": 2, "parent_id": "6", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.3.1", "titulo": "Componentes Básicos (Codificadores, Mux, etc.)", "nivel": 3, "parent_id": "6.3" },
+      { "id": "6.3.2", "titulo": "Circuitos Aritméticos", "nivel": 3, "parent_id": "6.3" },
+      { "id": "6.3.3", "titulo": "Unidades Aritmético Lógicas (ALU)", "nivel": 3, "parent_id": "6.3" },
+      { "id": "6.3.4", "titulo": "Riesgos en Circuitos Combinacionales", "nivel": 3, "parent_id": "6.3" },
+
+      { "id": "6.4", "titulo": "Sistemas Secuenciales", "nivel": 2, "parent_id": "6", "contenido": "tanto_problemas_como_teoría" },
+      { "id": "6.4.1", "titulo": "Elementos de Memoria Básicos (Latches, Flip-Flops)", "nivel": 3, "parent_id": "6.4" },
+      { "id": "6.4.2", "titulo": "Circuitos Secuenciales (Registros, Contadores)", "nivel": 3, "parent_id": "6.4" },
+      { "id": "6.4.3", "titulo": "Máquinas de Estados Finitos (FSM)", "nivel": 3, "parent_id": "6.4" },
+      { "id": "6.4.4", "titulo": "Memorias Digitales", "nivel": 3, "parent_id": "6.4" },
+
+      { "id": "7", "titulo": "Módulo 7: Laboratorio y Herramientas de Simulación", "nivel": 1, "parent_id": null },
+      { "id": "7.1", "titulo": "Instrumentación Básica de Laboratorio", "nivel": 2, "parent_id": "7" },
+      { "id": "7.1.1", "titulo": "Uso de instrumental", "nivel": 3, "parent_id": "7.1" },
+      { "id": "7.1.2", "titulo": "Medidas de magnitudes eléctricas", "nivel": 3, "parent_id": "7.1" },
+      { "id": "7.2", "titulo": "Simulación de Circuitos Electrónicos", "nivel": 2, "parent_id": "7" },
+      { "id": "7.2.1", "titulo": "Introducción a herramientas de simulación", "nivel": 3, "parent_id": "7.2" },
+      { "id": "7.2.2", "titulo": "Diseño y análisis mediante simulación", "nivel": 3, "parent_id": "7.2" }
     ]
   }
 }
