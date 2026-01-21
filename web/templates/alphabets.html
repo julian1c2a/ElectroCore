@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Alfabetos - Lenguajes Formales</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-back a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            box-sizing: border-box;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .alphabets-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .alphabet-item {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .alphabet-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+        }
+        
+        .alphabet-info p {
+            margin: 0.25rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .alphabet-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .symbol-display {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .badge-preset {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge-custom {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .stats {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .stats h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="/">← Volver al Menú Principal</a>
+        </div>
+        
+        <header>
+            <h1>Gestor de Alfabetos</h1>
+            <p>Crea y gestiona alfabetos para lenguajes formales (2-36 símbolos)</p>
+        </header>
+        
+        <div class="grid-2">
+            <!-- Panel de Creación -->
+            <div class="panel">
+                <h2>Crear Nuevo Alfabeto</h2>
+                
+                <div class="input-group">
+                    <label for="alphabetName">Nombre del Alfabeto</label>
+                    <input type="text" id="alphabetName" placeholder="ej: Base-5, Binario, etc.">
+                </div>
+                
+                <div class="input-group">
+                    <label for="symbolsInput">Símbolos (separados por comas)</label>
+                    <input type="text" id="symbolsInput" placeholder="ej: 0,1,2,3,4">
+                </div>
+                
+                <div class="input-group">
+                    <label for="initialSymbol">Símbolo Inicial (opcional)</label>
+                    <input type="text" id="initialSymbol" placeholder="ej: 0">
+                </div>
+                
+                <button class="btn-primary" onclick="createAlphabet()">Crear Alfabeto</button>
+                
+                <div id="alertBox" style="margin-top: 1rem;"></div>
+            </div>
+            
+            <!-- Panel de Presets -->
+            <div class="panel">
+                <h2>Alfabetos Preestablecidos</h2>
+                <p style="color: #666; margin-bottom: 1rem;">Haz clic para usar un alfabeto predefinido</p>
+                
+                <div id="presetsContainer" style="display: grid; gap: 0.75rem;">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel de Listado -->
+        <div class="panel">
+            <h2>Alfabetos Disponibles</h2>
+            
+            <div id="alphabetsList" class="alphabets-list">
+                <p style="text-align: center; color: #999;">Cargando alfabetos...</p>
+            </div>
+            
+            <div class="stats">
+                <h3>Estadísticas</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="value" id="totalAlphabets">0</div>
+                        <div class="label">Total</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="presetCount">0</div>
+                        <div class="label">Preestablecidos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="customCount">0</div>
+                        <div class="label">Personalizados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="avgCardinality">0</div>
+                        <div class="label">Card. Promedio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:5000';
+        
+        // Cargar alfabetos al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAlphabets();
+            loadPresets();
+        });
+        
+        async function loadAlphabets() {
+            try {
+                const response = await fetch(`${API_BASE}/api/alphabets`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayAlphabets(data.alphabets);
+                    updateStats(data.alphabets);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        async function loadPresets() {
+            try {
+                const response = await fetch(`${API_BASE}/api/alphabets/presets/list`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayPresets(Object.values(data.presets));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        function displayPresets(presets) {
+            const container = document.getElementById('presetsContainer');
+            container.innerHTML = presets.map(p => `
+                <button class="btn-secondary" onclick="usePreset('${p.id}', '${p.name}')">
+                    <strong>${p.name}</strong><br>
+                    ${p.cardinality} símbolos
+                </button>
+            `).join('');
+        }
+        
+        function usePreset(presetId, presetName) {
+            // Copiar símbols del preset
+            fetch(`${API_BASE}/api/alphabets/${presetId}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('alphabetName').value = `${presetName} (copia)`;
+                        document.getElementById('symbolsInput').value = data.alphabet.symbols.join(',');
+                        document.getElementById('initialSymbol').value = data.alphabet.initial_symbol;
+                    }
+                });
+        }
+        
+        async function createAlphabet() {
+            const name = document.getElementById('alphabetName').value.trim();
+            const symbolsStr = document.getElementById('symbolsInput').value.trim();
+            const initialSymbol = document.getElementById('initialSymbol').value.trim();
+            
+            if (!name || !symbolsStr) {
+                showAlert('Por favor completa todos los campos', 'error');
+                return;
+            }
+            
+            const symbols = symbolsStr.split(',').map(s => s.trim());
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/alphabets`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        symbols,
+                        initial_symbol: initialSymbol
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert(`Alfabeto "${name}" creado exitosamente`, 'success');
+                    document.getElementById('alphabetName').value = '';
+                    document.getElementById('symbolsInput').value = '';
+                    document.getElementById('initialSymbol').value = '';
+                    loadAlphabets();
+                } else {
+                    showAlert(data.message || 'Error al crear el alfabeto', 'error');
+                }
+            } catch (error) {
+                showAlert('Error: ' + error.message, 'error');
+            }
+        }
+        
+        function displayAlphabets(alphabets) {
+            const container = document.getElementById('alphabetsList');
+            
+            if (alphabets.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999;">No hay alfabetos. Crea uno nuevo.</p>';
+                return;
+            }
+            
+            container.innerHTML = alphabets.map(a => `
+                <div class="alphabet-item">
+                    <div class="alphabet-info">
+                        <h3>${a.name}</h3>
+                        <p>Cardinalidad: <strong>${a.cardinality}</strong> símbolos</p>
+                        <p>Símbolo inicial: <strong>${a.initial_symbol || 'No definido'}</strong></p>
+                        <div class="symbol-display">${a.symbols.join(' ')}</div>
+                    </div>
+                    <div class="alphabet-actions">
+                        ${a.is_preset ? '<span class="badge badge-preset">Preestablecido</span>' : 
+                          `<button class="btn-danger" onclick="deleteAlphabet('${a.id}')">Eliminar</button>`}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        async function deleteAlphabet(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar este alfabeto?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/api/alphabets/${id}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        showAlert('Alfabeto eliminado', 'success');
+                        loadAlphabets();
+                    } else {
+                        showAlert(data.message, 'error');
+                    }
+                } catch (error) {
+                    showAlert('Error: ' + error.message, 'error');
+                }
+            }
+        }
+        
+        function updateStats(alphabets) {
+            const total = alphabets.length;
+            const presets = alphabets.filter(a => a.is_preset).length;
+            const custom = total - presets;
+            const avgCard = total > 0 ? (alphabets.reduce((s, a) => s + a.cardinality, 0) / total).toFixed(1) : 0;
+            
+            document.getElementById('totalAlphabets').textContent = total;
+            document.getElementById('presetCount').textContent = presets;
+            document.getElementById('customCount').textContent = custom;
+            document.getElementById('avgCardinality').textContent = avgCard;
+        }
+        
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => { alertBox.innerHTML = ''; }, 4000);
+        }
+    </script>
+</body>
+</html>

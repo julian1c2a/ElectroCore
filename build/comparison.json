@@ -1,0 +1,56 @@
+{
+  "comparison": [
+    {
+      "id": 1,
+      "configuration": {
+        "E": 4,
+        "F": 4,
+        "base": 2
+      },
+      "type": "unsigned",
+      "range": {
+        "min": 0,
+        "max": 15.9375,
+        "span": 15.9375
+      },
+      "epsilon": 0.0625,
+      "total_bits": 8
+    },
+    {
+      "id": 2,
+      "configuration": {
+        "E": 4,
+        "F": 4,
+        "base": 2
+      },
+      "type": "ms",
+      "range": {
+        "min": -15.9375,
+        "max": 15.9375,
+        "span": 31.875
+      },
+      "epsilon": 0.0625,
+      "total_bits": 9
+    },
+    {
+      "id": 3,
+      "configuration": {
+        "E": 4,
+        "F": 4,
+        "base": 2
+      },
+      "type": "complement",
+      "range": {
+        "min": -16,
+        "max": 15.9375,
+        "span": 31.9375
+      },
+      "epsilon": 0.0625,
+      "total_bits": 9
+    }
+  ],
+  "metadata": {
+    "count": 3,
+    "timestamp": null
+  }
+}

@@ -1,0 +1,37 @@
+# Requisitos del Proyecto Exam Generator
+# 
+# Dependencias principales:
+# - Python 3.9+
+
+# Para CLI (Fase D):
+# (Sin dependencias - usa librerías estándar)
+
+# Para Web Interface (Fase E):
+fastapi>=0.95.0
+uvicorn[standard]>=0.21.0
+python-multipart>=0.0.5
+httpx>=0.23.0
+
+# Librerías estándar incluidas en Python:
+# - argparse (CLI)
+# - json (serialización)
+# - sqlite3 (base de datos)
+# - pathlib (gestión de rutas)
+# - shutil (operaciones de archivos)
+# - datetime (timestamps)
+# - logging (logs)
+# - collections (utilidades)
+# - enum (enums)
+# - dataclasses (dataclasses)
+# - typing (type hints)
+
+# Instalación:
+# 1. CLI solo: No requiere instalación adicional
+#    python -m cli --help
+#
+# 2. CLI + Web:
+#    pip install -r requirements.txt
+#    python -m uvicorn web.app:app --reload
+#
+# 3. Con Docker:
+#    docker-compose up -d

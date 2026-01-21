@@ -1,0 +1,21 @@
+{
+  "exam_title": "Examen con Reporte",
+  "persistence_stats": {
+    "has_repository": true,
+    "saved_count": 0,
+    "loaded_count": 0,
+    "generated_count": 0,
+    "reuse_ratio": 0.0,
+    "total": 0,
+    "repository_info": {
+      "backend": "file",
+      "location": "C:\\Users\\julia\\PycharmProjects\\PythonProject\\GeneratorFEExercises\\test_exam_reports",
+      "total": 0,
+      "by_type": {},
+      "by_difficulty": {},
+      "size_mb": 0.0
+    }
+  },
+  "saved_problem_ids": [],
+  "loaded_problem_ids": []
+}

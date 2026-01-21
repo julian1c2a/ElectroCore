@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Lenguajes - Lenguajes Formales</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-back a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease-out;
+            margin-bottom: 2rem;
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+        
+        .distribution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .distribution-table th,
+        .distribution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .distribution-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .distribution-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="/">← Volver al Menú Principal</a>
+        </div>
+        
+        <header>
+            <h1>Análisis de Lenguajes</h1>
+            <p>Analiza propiedades, cobertura y distribución de símbolos</p>
+        </header>
+        
+        <div class="panel">
+            <h2>Seleccionar Lenguaje</h2>
+            
+            <div class="input-group">
+                <label for="languageSelect">Lenguaje a Analizar</label>
+                <select id="languageSelect" onchange="analyzeLanguage()">
+                    <option value="">-- Seleccionar lenguaje --</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="analysisContent" style="display: none;">
+            <!-- Estadísticas Principales -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="value" id="cardinalityValue">-</div>
+                    <div class="label">Palabras</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="coverageValue">-</div>
+                    <div class="label">Cobertura (%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="expectedValue">-</div>
+                    <div class="label">Máximo Posible</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="missingValue">-</div>
+                    <div class="label">Faltantes</div>
+                </div>
+            </div>
+            
+            <!-- Gráfica de Cobertura -->
+            <div class="panel">
+                <h2>Cobertura del Espacio</h2>
+                <div class="chart-container">
+                    <canvas id="coverageChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Distribución de Símbolos -->
+            <div class="panel">
+                <h2>Distribución de Símbolos</h2>
+                <p style="color: #666; margin-bottom: 1rem;">Frecuencia de aparición de cada símbolo</p>
+                
+                <div id="distributionContent">
+                    <table class="distribution-table">
+                        <thead>
+                            <tr>
+                                <th>Símbolo</th>
+                                <th>Frecuencia</th>
+                                <th>Porcentaje</th>
+                                <th>Visualización</th>
+                            </tr>
+                        </thead>
+                        <tbody id="distributionTable">
+                            <tr><td colspan="4" style="text-align: center; color: #999;">Calculando...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Patrones Frecuentes -->
+            <div class="panel">
+                <h2>Patrones Más Frecuentes</h2>
+                <p style="color: #666; margin-bottom: 1rem;">Secuencias de 2 caracteres que aparecen en las palabras</p>
+                
+                <table class="distribution-table">
+                    <thead>
+                        <tr>
+                            <th>Patrón</th>
+                            <th>Frecuencia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patternsTable">
+                        <tr><td colspan="2" style="text-align: center; color: #999;">Calculando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Propiedades -->
+            <div class="panel">
+                <h2>Propiedades del Lenguaje</h2>
+                
+                <div id="propertiesContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <!-- Se llena dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:5000';
+        let coverageChart = null;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLanguages();
+        });
+        
+        async function loadLanguages() {
+            try {
+                const response = await fetch(`${API_BASE}/api/languages`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const select = document.getElementById('languageSelect');
+                    select.innerHTML = '<option value="">-- Seleccionar lenguaje --</option>' +
+                        data.languages.map(l => 
+                            `<option value="${l.id}">${l.name}</option>`
+                        ).join('');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        async function analyzeLanguage() {
+            const languageId = document.getElementById('languageSelect').value;
+            
+            if (!languageId) {
+                document.getElementById('analysisContent').style.display = 'none';
+                return;
+            }
+            
+            try {
+                // Obtener datos del lenguaje
+                const langResponse = await fetch(`${API_BASE}/api/languages/${languageId}`);
+                const langData = await langResponse.json();
+                
+                if (!langData.success) {
+                    console.error('Error al cargar lenguaje');
+                    return;
+                }
+                
+                // Obtener análisis
+                const analysisResponse = await fetch(`${API_BASE}/api/analysis/languages/${languageId}/analyze`);
+                const analysisData = await analysisResponse.json();
+                
+                if (analysisData.success) {
+                    displayAnalysis(langData.language, analysisData);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        function displayAnalysis(language, analysisData) {
+            const coverage = analysisData.coverage;
+            
+            // Actualizar estadísticas
+            document.getElementById('cardinalityValue').textContent = coverage.actual.toLocaleString();
+            document.getElementById('coverageValue').textContent = coverage.coverage_percentage.toFixed(2);
+            document.getElementById('expectedValue').textContent = coverage.total_possible.toLocaleString();
+            document.getElementById('missingValue').textContent = coverage.missing.toLocaleString();
+            
+            // Mostrar contenido de análisis
+            document.getElementById('analysisContent').style.display = 'block';
+            
+            // Gráfica de cobertura
+            drawCoverageChart(coverage);
+            
+            // Distribución de símbolos
+            displayDistribution(analysisData.symbol_distribution);
+            
+            // Patrones
+            displayPatterns(analysisData.pattern_frequency);
+            
+            // Propiedades
+            displayProperties(language, coverage);
+        }
+        
+        function drawCoverageChart(coverage) {
+            const ctx = document.getElementById('coverageChart').getContext('2d');
+            
+            if (coverageChart) {
+                coverageChart.destroy();
+            }
+            
+            const usedPercentage = coverage.coverage_percentage;
+            const unusedPercentage = 100 - usedPercentage;
+            
+            coverageChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Palabras Usadas', 'Espacio No Usado'],
+                    datasets: [{
+                        data: [usedPercentage, unusedPercentage],
+                        backgroundColor: [
+                            '#667eea',
+                            '#e0e0e0'
+                        ],
+                        borderColor: ['#667eea', '#e0e0e0'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed.toFixed(2) + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function displayDistribution(distribution) {
+            const table = document.getElementById('distributionTable');
+            const dist = distribution.symbol_distribution || {};
+            
+            let maxCount = 0;
+            Object.values(dist).forEach(s => {
+                if (s.count > maxCount) maxCount = s.count;
+            });
+            
+            table.innerHTML = Object.entries(dist).map(([symbol, data]) => `
+                <tr>
+                    <td><strong>${symbol}</strong></td>
+                    <td>${data.count}</td>
+                    <td>${data.percentage.toFixed(2)}%</td>
+                    <td>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${(data.count / maxCount) * 100}%;">
+                                ${Math.round((data.count / maxCount) * 100)}%
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function displayPatterns(patternsData) {
+            const table = document.getElementById('patternsTable');
+            const patterns = patternsData.patterns || [];
+            
+            table.innerHTML = patterns.slice(0, 10).map(p => `
+                <tr>
+                    <td><code>${p.pattern}</code></td>
+                    <td>${p.frequency}</td>
+                </tr>
+            `).join('');
+        }
+        
+        function displayProperties(language, coverage) {
+            const container = document.getElementById('propertiesContent');
+            
+            const properties = [
+                { label: 'Nombre', value: language.name },
+                { label: 'Longitud', value: language.length },
+                { label: 'Cardinalidad', value: coverage.actual.toLocaleString() },
+                { label: 'Máximo Posible', value: coverage.total_possible.toLocaleString() },
+                { label: 'Cobertura', value: coverage.coverage_percentage.toFixed(2) + '%' },
+                { label: 'Vacíos', value: coverage.missing.toLocaleString() }
+            ];
+            
+            container.innerHTML = properties.map(p => `
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                    <div style="color: #666; font-size: 0.9rem;">${p.label}</div>
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #667eea;">${p.value}</div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* ============================================================================
+   Dark Mode CSS
+   Tema oscuro opcional para la aplicación
+   ============================================================================ */
+
+/* Activar tema oscuro */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background: #2a2a2a;
+}
+
+body.dark-mode .panel {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .panel:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #667eea;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #4a5a9a 0%, #5a3b7a 100%);
+}
+
+body.dark-mode .controls {
+    background: #3a3a3a;
+    border-left-color: #667eea;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+body.dark-mode .btn-secondary {
+    background: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #444;
+    border-color: #667eea;
+}
+
+body.dark-mode .stats {
+    background: #3a3a3a;
+}
+
+body.dark-mode .stat-box {
+    background: #2a2a2a;
+    border-left-color: #667eea;
+    color: #e0e0e0;
+}
+
+body.dark-mode .stat-box label {
+    color: #aaa;
+}
+
+body.dark-mode .card {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode footer {
+    background: #3a3a3a;
+    border-top-color: #444;
+    color: #aaa;
+}
+
+body.dark-mode thead {
+    background: #3a3a3a;
+    border-bottom-color: #667eea;
+}
+
+body.dark-mode th {
+    color: #e0e0e0;
+}
+
+body.dark-mode td {
+    border-bottom-color: #444;
+}
+
+body.dark-mode tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode .alert-success {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-color: rgba(76, 175, 80, 0.5);
+    color: #81c784;
+}
+
+body.dark-mode .alert-error,
+body.dark-mode .alert-danger {
+    background-color: rgba(244, 67, 54, 0.2);
+    border-color: rgba(244, 67, 54, 0.5);
+    color: #ef5350;
+}
+
+body.dark-mode .alert-warning {
+    background-color: rgba(255, 152, 0, 0.2);
+    border-color: rgba(255, 152, 0, 0.5);
+    color: #ffb74d;
+}
+
+body.dark-mode .alert-info {
+    background-color: rgba(33, 150, 243, 0.2);
+    border-color: rgba(33, 150, 243, 0.5);
+    color: #64b5f6;
+}
+
+/* Toggle oscuro */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #ffc107;
+    color: #333;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
+}
+
+@media (max-width: 480px) {
+    .dark-mode-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        bottom: 15px;
+        right: 15px;
+    }
+}

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE754 Simulador - GeneratorFEExercises</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-row .input-group {
+            margin-bottom: 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-right: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .bit-representation {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+        }
+        
+        .bit-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .bit-label {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 80px;
+        }
+        
+        .bit-value {
+            background: white;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .result {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+        
+        .result-label {
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-value {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .special-numbers {
+            background: #fff9e6;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .special-numbers h3 {
+            color: #ff9800;
+            margin-bottom: 1rem;
+        }
+        
+        .special-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #fff0d9;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+        
+        .special-item:last-child {
+            border-bottom: none;
+        }
+        
+        .special-label {
+            font-weight: bold;
+            color: #ff9800;
+            min-width: 150px;
+            display: inline-block;
+        }
+        
+        .characteristics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .characteristic-item {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .characteristic-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .characteristic-value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .error-message {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1rem;
+            border-radius: 6px;
+            color: #c62828;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .panel {
+                padding: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .bit-representation {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Volver a inicio</a>
+        
+        <header>
+            <h1>⚡ Simulador IEEE754 Interactivo</h1>
+            <p>Visualiza la representación binaria de números en punto flotante</p>
+        </header>
+        
+        <!-- Panel de entrada -->
+        <div class="panel">
+            <h2>Parámetros</h2>
+            
+            <div class="input-group">
+                <label for="value-input">Número Decimal:</label>
+                <input type="number" id="value-input" value="5.5" step="0.0625">
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="base-select">Base:</label>
+                    <select id="base-select">
+                        <option value="2">Binaria (2)</option>
+                        <option value="8">Octal (8)</option>
+                        <option value="10">Decimal (10)</option>
+                        <option value="16">Hexadecimal (16)</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="e-bits-select">E_bits:</label>
+                    <select id="e-bits-select">
+                        <option value="5">5 (half precision)</option>
+                        <option value="8" selected>8 (single precision)</option>
+                        <option value="11">11 (double precision)</option>
+                        <option value="15">15 (extended)</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="f-bits-select">F_bits:</label>
+                    <select id="f-bits-select">
+                        <option value="10">10 (half precision)</option>
+                        <option value="23" selected>23 (single precision)</option>
+                        <option value="52">52 (double precision)</option>
+                        <option value="64">64 (extended)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-primary" onclick="encodeValue()">Codificar</button>
+                <button class="btn-secondary" onclick="reset()">Reset</button>
+                <button class="btn-secondary" onclick="showSpecial()">Números Especiales</button>
+            </div>
+            
+            <div class="error-message" id="error-message"></div>
+        </div>
+        
+        <!-- Panel de representación -->
+        <div class="panel" id="representation-panel" style="display: none;">
+            <h2>Representación Binaria</h2>
+            
+            <div class="bit-group">
+                <div class="bit-label">Binario (32 bits):</div>
+                <div class="bit-value" id="binary-representation">00000000000000000000000000000000</div>
+            </div>
+            
+            <div class="bit-group">
+                <div class="bit-label">Hexadecimal:</div>
+                <div class="bit-value" id="hex-representation">0x00000000</div>
+            </div>
+            
+            <div class="bit-representation">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <strong>Descomposición de Bits:</strong>
+                </div>
+                <div class="bit-group">
+                    <div class="bit-label">Signo (1 bit):</div>
+                    <div class="bit-value" id="sign-bit">0</div>
+                </div>
+                <div class="bit-group">
+                    <div class="bit-label">Exponente:</div>
+                    <div class="bit-value" id="exponent-bits">10000010</div>
+                </div>
+                <div class="bit-group">
+                    <div class="bit-label">Mantisa:</div>
+                    <div class="bit-value" id="mantissa-bits">01100000000000000000000</div>
+                </div>
+            </div>
+            
+            <div class="result">
+                <div class="result-label">Valor Decodificado:</div>
+                <div class="result-value" id="decoded-value">5.5</div>
+            </div>
+        </div>
+        
+        <!-- Panel de características -->
+        <div class="panel" id="characteristics-panel" style="display: none;">
+            <h2>Características del Sistema</h2>
+            
+            <div class="characteristics">
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Total de Bits:</div>
+                    <div class="characteristic-value" id="char-total-bits">32</div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Rango Exponente (E):</div>
+                    <div class="characteristic-value" id="char-e-range">-126 a 127</div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Número Mínimo Positivo:</div>
+                    <div class="characteristic-value" id="char-min-positive">1.17549e-38</div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Número Máximo:</div>
+                    <div class="characteristic-value" id="char-max-positive">3.40282e+38</div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Epsilon Machine:</div>
+                    <div class="characteristic-value" id="char-epsilon">1.19209e-7</div>
+                </div>
+                
+                <div class="characteristic-item">
+                    <div class="characteristic-label">Precisión Decimal:</div>
+                    <div class="characteristic-value" id="char-precision">~7 dígitos</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel de números especiales -->
+        <div class="panel" id="special-panel" style="display: none;">
+            <h2>Números Especiales</h2>
+            
+            <div class="special-numbers">
+                <h3>Representaciones Binarias</h3>
+                
+                <div class="special-item">
+                    <span class="special-label">+0:</span>
+                    <span id="special-pos-zero">00000000000000000000000000000000</span>
+                </div>
+                
+                <div class="special-item">
+                    <span class="special-label">-0:</span>
+                    <span id="special-neg-zero">10000000000000000000000000000000</span>
+                </div>
+                
+                <div class="special-item">
+                    <span class="special-label">+∞:</span>
+                    <span id="special-pos-inf">01111111100000000000000000000000</span>
+                </div>
+                
+                <div class="special-item">
+                    <span class="special-label">-∞:</span>
+                    <span id="special-neg-inf">11111111100000000000000000000000</span>
+                </div>
+                
+                <div class="special-item">
+                    <span class="special-label">qNaN (quiet):</span>
+                    <span id="special-qnan">01111111110000000000000000000000</span>
+                </div>
+                
+                <div class="special-item">
+                    <span class="special-label">sNaN (signaling):</span>
+                    <span id="special-snan">11111111110000000000000000000001</span>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>GeneratorFEExercises v7.0 | IEEE754 Simulador Interactivo</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Funciones para el simulador IEEE754
+        
+        async function encodeValue() {
+            try {
+                const value = parseFloat(document.getElementById('value-input').value);
+                const base = parseInt(document.getElementById('base-select').value);
+                const E_bits = parseInt(document.getElementById('e-bits-select').value);
+                const F_bits = parseInt(document.getElementById('f-bits-select').value);
+                
+                if (isNaN(value)) {
+                    showError('Ingresa un número válido');
+                    return;
+                }
+                
+                // Llamar API
+                const response = await fetch('/api/ieee754/encode', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value, base, E_bits, F_bits })
+                });
+                
+                if (!response.ok) {
+                    const error = await response.json();
+                    showError(error.error || 'Error en codificación');
+                    return;
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Mostrar resultados
+                    document.getElementById('binary-representation').textContent = data.bits;
+                    document.getElementById('hex-representation').textContent = data.hex;
+                    document.getElementById('sign-bit').textContent = data.sign;
+                    document.getElementById('exponent-bits').textContent = data.exponent;
+                    document.getElementById('mantissa-bits').textContent = data.mantissa;
+                    document.getElementById('decoded-value').textContent = data.decoded;
+                    
+                    document.getElementById('representation-panel').style.display = 'block';
+                    
+                    // Obtener características
+                    getCharacteristics(base, E_bits, F_bits);
+                    
+                    hideError();
+                } else {
+                    showError(data.error || 'Error desconocido');
+                }
+            } catch (err) {
+                showError('Error de conexión: ' + err.message);
+            }
+        }
+        
+        async function getCharacteristics(base, E_bits, F_bits) {
+            try {
+                const response = await fetch('/api/ieee754/characteristics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ base, E_bits, F_bits })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('char-total-bits').textContent = data.total_bits;
+                    document.getElementById('char-e-range').textContent = `${data.E_min} a ${data.E_max}`;
+                    document.getElementById('char-min-positive').textContent = formatScientific(data.min_positive);
+                    document.getElementById('char-max-positive').textContent = formatScientific(data.max_positive);
+                    document.getElementById('char-epsilon').textContent = formatScientific(data.epsilon);
+                    
+                    document.getElementById('characteristics-panel').style.display = 'block';
+                }
+            } catch (err) {
+                console.error('Error obteniendo características:', err);
+            }
+        }
+        
+        async function showSpecial() {
+            try {
+                const base = parseInt(document.getElementById('base-select').value);
+                const E_bits = parseInt(document.getElementById('e-bits-select').value);
+                const F_bits = parseInt(document.getElementById('f-bits-select').value);
+                
+                const response = await fetch('/api/ieee754/special', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ base, E_bits, F_bits })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('special-pos-zero').textContent = data.positive_zero;
+                    document.getElementById('special-neg-zero').textContent = data.negative_zero;
+                    document.getElementById('special-pos-inf').textContent = data.positive_infinity;
+                    document.getElementById('special-neg-inf').textContent = data.negative_infinity;
+                    document.getElementById('special-qnan').textContent = data.qnan;
+                    document.getElementById('special-snan').textContent = data.snan;
+                    
+                    document.getElementById('special-panel').style.display = 'block';
+                }
+            } catch (err) {
+                showError('Error obteniendo números especiales: ' + err.message);
+            }
+        }
+        
+        function reset() {
+            document.getElementById('value-input').value = '5.5';
+            document.getElementById('base-select').value = '2';
+            document.getElementById('e-bits-select').value = '8';
+            document.getElementById('f-bits-select').value = '23';
+            document.getElementById('representation-panel').style.display = 'none';
+            document.getElementById('characteristics-panel').style.display = 'none';
+            document.getElementById('special-panel').style.display = 'none';
+            hideError();
+        }
+        
+        function showError(message) {
+            const el = document.getElementById('error-message');
+            el.textContent = 'Error: ' + message;
+            el.style.display = 'block';
+        }
+        
+        function hideError() {
+            document.getElementById('error-message').style.display = 'none';
+        }
+        
+        function formatScientific(num) {
+            return num.toExponential(5);
+        }
+        
+        // Codificar al presionar Enter
+        document.getElementById('value-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') encodeValue();
+        });
+    </script>
+    <script src="/static/js/dark-mode.js"></script>
+</body>
+</html>

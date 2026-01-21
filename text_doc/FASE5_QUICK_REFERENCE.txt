@@ -1,0 +1,414 @@
+FASE 5: TEXT - QUICK REFERENCE
+================================================================================
+
+ESTE ES UN CHEAT SHEET RÁPIDO PARA USAR FASE 5 MIENTRAS PROGRAMAS
+
+================================================================================
+IMPORTAR
+================================================================================
+
+from renderers.latex.phase5_text import Phase5Text
+
+================================================================================
+CREAR INSTANCIA
+================================================================================
+
+phase5 = Phase5Text()
+
+================================================================================
+USAR - CASO 1: GENERAR ENUNCIADO
+================================================================================
+
+# Cargar JSON
+with open('ejercicio.json', 'r') as f:
+    ejercicio = json.load(f)
+
+# Renderizar (ENUNCIADO)
+output = phase5.render(ejercicio, is_solution=False)
+
+# Resultado:
+# - output.latex_content = documento TEX (enunciado solamente)
+# - output.metadata = metadata JSON (auditoría)
+
+================================================================================
+USAR - CASO 2: GENERAR SOLUCIÓN
+================================================================================
+
+# Renderizar (SOLUCIÓN - con explicación y pasos)
+output = phase5.render(ejercicio, is_solution=True)
+
+# Resultado:
+# - output.latex_content = documento TEX COMPLETO (enunciado + solución)
+# - output.metadata = metadata JSON
+
+================================================================================
+GUARDAR ARCHIVO
+================================================================================
+
+with open('ejercicio.tex', 'w') as f:
+    f.write(output.latex_content)
+
+================================================================================
+COMPILAR A PDF
+================================================================================
+
+$ pdflatex ejercicio.tex
+
+Resultado: ejercicio.pdf
+
+================================================================================
+ACCEDER A DATOS
+================================================================================
+
+# Documento LaTeX
+latex_doc = output.latex_content
+
+# Metadata de auditoría
+metadata = output.metadata
+
+# Específicamente Fase 5
+phase5_data = output.metadata.get('phase5_text', {})
+print(phase5_data['status'])           # "completed"
+print(phase5_data['is_solution'])      # True/False
+print(phase5_data['statement_extracted'])  # True/False
+print(phase5_data['explanation_extracted']) # True/False
+
+================================================================================
+ESTRUCTURA DEL DOCUMENTO GENERADO - ENUNCIADO
+================================================================================
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+[Definiciones de color: gris, verde, etc.]
+
+\begin{document}
+
+\section*{Enunciado}
+[Statement extraído de problem['statement']]
+
+\subsection*{Instrucciones}
+[Instructions extraídas de problem['instructions']]
+
+[TABLA - Regenerada de Fase 4 con estilos]
+
+\end{document}
+
+================================================================================
+ESTRUCTURA DEL DOCUMENTO GENERADO - SOLUCIÓN
+================================================================================
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+[Definiciones de color]
+
+\begin{document}
+
+\section*{Enunciado}
+[Statement]
+
+\subsection*{Instrucciones}
+[Instructions]
+
+[TABLA - CON VALORES, estilos verdes]
+
+\section*{Solución}
+
+\subsection*{Explicación}
+[Explanation extraída de solution['explanation']]
+
+\subsection*{Pasos de Resolución}
+\begin{enumerate}
+  \item Paso 1
+  \item Paso 2
+  ...
+\end{enumerate}
+
+\end{document}
+
+================================================================================
+COLORES DISPONIBLES
+================================================================================
+
+Problema (enunciado): RGB(240, 240, 240)  - Gris claro
+Solución: RGB(200, 255, 200)  - Verde claro
+Encabezados: RGB(200, 200, 200)  - Gris medio
+
+================================================================================
+CAMPOS JSON ESPERADOS
+================================================================================
+
+OBLIGATORIOS:
+- exercise_type: str (ConversionRow, ArithmeticOp, etc.)
+- problem: dict (contiene statement, instructions, etc.)
+- is_solution: bool (False = enunciado, True = solución)
+
+OPCIONALES EN problem:
+- problem['statement'] - Enunciado explícito
+- problem['description'] - Descripción alternativa
+- problem['instructions'] - Instrucciones explícitas
+- problem['how_to_solve'] - Cómo resolver alternativa
+- problem['title'] - Título como fallback
+
+OPCIONALES EN solution (solo si is_solution=True):
+- solution['explanation'] - Explicación de cómo resolver
+- solution['steps'] - Lista de pasos [paso1, paso2, ...]
+- solution['resolution_steps'] - Pasos alternativos
+
+ESPECIAL:
+- is_solution: False = enunciado, True = solución
+
+================================================================================
+FALLBACK LOGIC
+================================================================================
+
+Si falta statement:
+  - Intenta: problem['description']
+  - Intenta: title + description combinados
+  - Fallback: "Statement not provided"
+
+Si falta instructions:
+  - Intenta: problem['instructions']
+  - Intenta: problem['how_to_solve']
+  - Fallback: Genéricas por exercise_type
+    * ConversionRow: "Convierte el número a..."
+    * ArithmeticOp: "Realiza la operación..."
+    * Otro: "Resuelve el siguiente problema..."
+
+Si falta explanation (y es solución):
+  - Intenta: solution['explanation']
+  - Intenta: solution['description']
+  - Fallback: Omite subsección (documento válido sin ella)
+
+Si faltan steps (y es solución):
+  - Intenta: solution['steps'] (lista)
+  - Intenta: solution['resolution_steps']
+  - Fallback: Lista vacía
+
+================================================================================
+TABLA REGENERADA DE FASE 4
+================================================================================
+
+Fase 5 regenera la tabla que Fase 4 creó. Esta tabla:
+- Mantiene los estilos de Fase 3 (colores, padding)
+- Mantiene los valores de Fase 4 (números, conversiones)
+- Se integra en el documento final
+
+IMPORTANTE: Si Fase 4 falló, la tabla puede no tener valores.
+
+================================================================================
+VALIDACIÓN POST-FASE 5
+================================================================================
+
+Checklist de validación automática:
+
+[✓] statement_extracted: bool
+    - True si se extrajo enunciado
+    - False si se usó fallback
+
+[✓] instructions_extracted: bool
+    - True si se extrajeron instrucciones explícitas
+    - False si se usaron genéricas
+
+[✓] explanation_extracted: bool (solo si is_solution=True)
+    - True si se extrajo explicación
+    - False si no hay
+
+[✓] steps_extracted: bool (solo si is_solution=True)
+    - True si se extrajeron pasos
+    - False si no hay
+
+[✓] document_complete: bool
+    - True si documento está completo
+    - False si falta algo crítico
+
+[✓] pipeline_complete: bool
+    - True si todas las fases completaron
+    - False si hay error
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+PROBLEMA: Documento vacío
+CAUSA: statement/explanation no encontrados
+SOLUCIÓN: Verifica que JSON tenga los campos correctos
+          Ver FASE5_TEXT.md para estructura esperada
+
+PROBLEMA: LaTeX invalido (errores al compilar)
+CAUSA: Caracteres especiales sin escape en JSON
+SOLUCIÓN: Asegúrate que JSON esté en UTF-8
+          Caracteres especiales: \ $ % & # _ { } ~ ^
+
+PROBLEMA: Tabla faltante
+CAUSA: Fase 4 no regeneró tabla correctamente
+SOLUCIÓN: Verifica que JSON tenga estructura de Fase 4
+          Ejecuta FASE4_DEMO.py primero
+
+PROBLEMA: Pasos vacíos en solución
+CAUSA: Esperado si JSON no tiene solution['steps']
+SOLUCIÓN: Si quieres pasos, agregalos a solution['steps']
+          Si no hay pasos, es normal que esté vacío
+
+PROBLEMA: Instrucciones genéricas
+CAUSA: problem no tiene 'instructions' ni 'how_to_solve'
+SOLUCIÓN: Si quieres custom instructions, agrega a JSON
+          Si no, se usan genéricas (válido)
+
+================================================================================
+METADATA RETORNADO
+================================================================================
+
+output.metadata =
+{
+  "phase1_validator": {...},
+  "phase2_structure": {...},
+  "phase3_details": {...},
+  "phase4_content": {...},
+  "phase5_text": {
+    "status": "completed",
+    "exercise_type": "ConversionRow",
+    "statement_extracted": true,
+    "instructions_extracted": true,
+    "explanation_extracted": true,
+    "steps_extracted": true,
+    "document_complete": true,
+    "is_solution": false,
+    "pipeline_complete": true
+  },
+  "output_json": null  ← ESPECIAL: indica que es última fase
+}
+
+================================================================================
+CASOS DE USO COMPLETOS
+================================================================================
+
+USO 1: Generar Examen para Estudiantes
+---
+ejercicio = cargar_json('ejercicio.json')
+phase5 = Phase5Text()
+output = phase5.render(ejercicio, is_solution=False)
+guardar('examen.tex', output.latex_content)
+compilar('examen.tex')  # → examen.pdf (para imprimir)
+
+USO 2: Generar Clave de Respuestas
+---
+ejercicio = cargar_json('ejercicio.json')
+phase5 = Phase5Text()
+output = phase5.render(ejercicio, is_solution=True)
+guardar('solucion.tex', output.latex_content)
+compilar('solucion.tex')  # → solucion.pdf (para corrección)
+
+USO 3: Batch Processing
+---
+for i, ejercicio in enumerate(ejercicios):
+    phase5 = Phase5Text()
+    output_false = phase5.render(ejercicio, False)
+    output_true = phase5.render(ejercicio, True)
+    guardar(f'ej_{i}_enunciado.tex', output_false.latex_content)
+    guardar(f'ej_{i}_solucion.tex', output_true.latex_content)
+
+USO 4: Validación
+---
+ejercicio = cargar_json('ejercicio.json')
+phase5 = Phase5Text()
+output = phase5.render(ejercicio, is_solution=False)
+if output.metadata['phase5_text']['document_complete']:
+    print("✓ Ejercicio completamente renderizado")
+else:
+    print("✗ Problema en renderización")
+
+================================================================================
+REFERENCIAS RÁPIDAS
+================================================================================
+
+Archivo Principal:
+  renderers/latex/phase5_text.py
+
+Clase:
+  Phase5Text(ExerciseRendererPhase)
+
+Métodos Públicos:
+  render(exercise_json, is_solution=False)
+    → RendererOutput { latex_content, metadata }
+
+Métodos Privados (no uses directamente):
+  _extract_statement()
+  _extract_instructions()
+  _extract_explanation()
+  _extract_steps()
+  _regenerate_table()
+  _generate_full_document_latex()
+
+Constantes de Color:
+  PROBLEMA_COLOR = (240, 240, 240)
+  SOLUCION_COLOR = (200, 255, 200)
+  ENCABEZADO_COLOR = (200, 200, 200)
+
+Constantes de Tipografía:
+  FONT_TITLE = "\\textbf{}"
+  FONT_STATEMENT = "\\textit{}"
+  FONT_EXPLANATION = "\\texttt{}"
+
+================================================================================
+DOCUMENTACIÓN COMPLETA
+================================================================================
+
+Documentos disponibles:
+
+1. FASE5_SUMMARY.md
+   - Resumen ejecutivo
+   - Para principiantes y gerentes
+
+2. FASE5_TEXT.md
+   - Documentación técnica completa
+   - Para desarrolladores y arquitectos
+
+3. INDICE_FASE5.md
+   - Índice y referencia estructural
+   - Navegar por todos los archivos
+
+4. RESUMEN_GENERAL_FASES_1_2_3_4_5.md
+   - Visión del pipeline completo
+   - Integración de todas las fases
+
+5. FASE5_COMPLETADA.txt
+   - Checklist de completitud
+   - Status de production-ready
+
+6. FASE5_QUICK_REFERENCE.txt
+   - Este archivo
+   - Cheat sheet para uso rápido
+
+7. FASE5_DEMO.py
+   - Código ejecutable
+   - Ejemplos completos de uso
+
+================================================================================
+SUMMARY
+================================================================================
+
+Fase 5 es la ÚLTIMA FASE del pipeline de 5 fases.
+
+ENTRADA: JSON + tabla de Fase 4
+PROCESO: Extrae enunciado, instrucciones, explicación, pasos
+SALIDA: Documento LaTeX COMPLETO (compilable a PDF)
+
+MODO ENUNCIADO (is_solution=False):
+  - 1 sección: Enunciado + Instrucciones
+  - Tabla sin valores
+  - Para que estudiante resuelva
+
+MODO SOLUCIÓN (is_solution=True):
+  - 2 secciones: Enunciado + Solución (Explicación + Pasos)
+  - Tabla con valores
+  - Para corrección del profesor
+
+ESPECIAL: output_json=None indica que es la ÚLTIMA fase (no hay siguiente)
+
+STATUS: ✓ PRODUCTION READY
+
+================================================================================

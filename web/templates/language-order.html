@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenamientos y Significados - Lenguajes Formales</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-back a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease-out;
+            margin-bottom: 2rem;
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .orders-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .order-item {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .order-header h3 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .order-header .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .order-words {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .word-with-meaning {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .meanings-preview {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+        
+        .meaning-pair {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .meaning-pair:last-child {
+            border-bottom: none;
+        }
+        
+        .meaning-word {
+            font-family: 'Courier New', monospace;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .meaning-value {
+            color: #667eea;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="/">← Volver al Menú Principal</a>
+        </div>
+        
+        <header>
+            <h1>Ordenamientos y Significados</h1>
+            <p>Ordena palabras de un lenguaje y asigna significados</p>
+        </header>
+        
+        <div class="grid-2">
+            <!-- Panel de Creación -->
+            <div class="panel">
+                <h2>Crear Nuevo Ordenamiento</h2>
+                
+                <div class="input-group">
+                    <label for="languageSelect">Lenguaje</label>
+                    <select id="languageSelect">
+                        <option value="">-- Seleccionar lenguaje --</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="orderTypeSelect">Tipo de Ordenamiento</label>
+                    <select id="orderTypeSelect">
+                        <option value="lexicographic">Lexicográfico (A-Z)</option>
+                        <option value="numeric">Numérico (0-9)</option>
+                        <option value="custom">Personalizado</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="meaningTypeSelect">Generar Significados</label>
+                    <select id="meaningTypeSelect">
+                        <option value="none">Sin significados</option>
+                        <option value="numeric">Numéricos (0, 1, 2...)</option>
+                        <option value="binary">Binarios (0, 1, 10, 11...)</option>
+                    </select>
+                </div>
+                
+                <button class="btn-primary" onclick="createOrder()">Crear Ordenamiento</button>
+                
+                <div id="alertBox" style="margin-top: 1rem;"></div>
+            </div>
+            
+            <!-- Panel de Información -->
+            <div class="panel">
+                <h2>Información</h2>
+                <p style="color: #666; line-height: 1.6;">
+                    <strong>Ordenamiento:</strong> Define un orden total sobre las palabras de un lenguaje.
+                </p>
+                <p style="color: #666; line-height: 1.6;">
+                    <strong>Tipos:</strong>
+                </p>
+                <ul style="color: #666; margin: 1rem 0;">
+                    <li><strong>Lexicográfico:</strong> Orden alfabético</li>
+                    <li><strong>Numérico:</strong> Orden numérico (requiere dígitos)</li>
+                    <li><strong>Personalizado:</strong> Orden manual</li>
+                </ul>
+                <p style="color: #666; line-height: 1.6;">
+                    <strong>Significados:</strong> Asigna valores a cada palabra del ordenamiento.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Panel de Listado -->
+        <div class="panel">
+            <h2>Ordenamientos Disponibles</h2>
+            
+            <div id="ordersList" class="orders-list">
+                <p style="text-align: center; color: #999;">Cargando ordenamientos...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:5000';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLanguages();
+            loadOrders();
+        });
+        
+        async function loadLanguages() {
+            try {
+                const response = await fetch(`${API_BASE}/api/languages`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const select = document.getElementById('languageSelect');
+                    select.innerHTML = '<option value="">-- Seleccionar lenguaje --</option>' +
+                        data.languages.map(l => 
+                            `<option value="${l.id}">${l.name} (${l.cardinality} palabras)</option>`
+                        ).join('');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        async function loadOrders() {
+            try {
+                const response = await fetch(`${API_BASE}/api/analysis/orders`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayOrders(data.orders);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        async function createOrder() {
+            const languageId = document.getElementById('languageSelect').value;
+            const orderType = document.getElementById('orderTypeSelect').value;
+            const meaningType = document.getElementById('meaningTypeSelect').value;
+            
+            if (!languageId) {
+                showAlert('Por favor selecciona un lenguaje', 'error');
+                return;
+            }
+            
+            try {
+                // Obtener el lenguaje para tener acceso a sus palabras
+                const langResponse = await fetch(`${API_BASE}/api/languages/${languageId}`);
+                const langData = await langResponse.json();
+                
+                if (!langData.success) {
+                    showAlert('Error al cargar el lenguaje', 'error');
+                    return;
+                }
+                
+                // Crear el ordenamiento
+                const createResponse = await fetch(`${API_BASE}/api/analysis/orders`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        language_id: languageId,
+                        order_type: orderType
+                    })
+                });
+                
+                const createData = await createResponse.json();
+                
+                if (!createData.success) {
+                    showAlert('Error al crear el ordenamiento', 'error');
+                    return;
+                }
+                
+                showAlert('Ordenamiento creado exitosamente', 'success');
+                loadOrders();
+            } catch (error) {
+                showAlert('Error: ' + error.message, 'error');
+            }
+        }
+        
+        function displayOrders(orders) {
+            const container = document.getElementById('ordersList');
+            
+            if (orders.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999;">No hay ordenamientos. Crea uno nuevo.</p>';
+                return;
+            }
+            
+            container.innerHTML = orders.map(order => `
+                <div class="order-item">
+                    <div class="order-header">
+                        <h3>Lenguaje ID: ${order.language_id.substring(0, 8)}...</h3>
+                        <span class="badge">${order.order_type}</span>
+                    </div>
+                    
+                    <div>
+                        <strong>Palabras Ordenadas (${order.ordered_words.length}):</strong>
+                        <div class="order-words">
+                            ${order.ordered_words.map(w => `<div>${w}</div>`).join('')}
+                        </div>
+                    </div>
+                    
+                    ${Object.keys(order.meanings).length > 0 ? `
+                        <div class="meanings-preview">
+                            <strong>Significados Asignados:</strong>
+                            ${Object.entries(order.meanings).slice(0, 5).map(([word, meaning]) => `
+                                <div class="meaning-pair">
+                                    <span class="meaning-word">${word}</span>
+                                    <span class="meaning-value">→ ${meaning}</span>
+                                </div>
+                            `).join('')}
+                            ${Object.keys(order.meanings).length > 5 ? `
+                                <div style="margin-top: 0.5rem; color: #999;">
+                                    ... y ${Object.keys(order.meanings).length - 5} más
+                                </div>
+                            ` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    <button class="btn-danger" style="margin-top: 1rem; width: auto;" onclick="deleteOrder('${order.id}')">Eliminar</button>
+                </div>
+            `).join('');
+        }
+        
+        async function deleteOrder(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar este ordenamiento?')) {
+                try {
+                    // Nota: Necesitaría un endpoint DELETE para órdenes
+                    showAlert('Funcionalidad no disponible aún', 'error');
+                } catch (error) {
+                    showAlert('Error: ' + error.message, 'error');
+                }
+            }
+        }
+        
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => { alertBox.innerHTML = ''; }, 4000);
+        }
+    </script>
+</body>
+</html>

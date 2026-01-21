@@ -1,0 +1,40 @@
+{
+  "id": "ae1c777f-a724-4452-a740-f4c5a7103ef5",
+  "type": "numeracion",
+  "metadata": {
+    "title": "Conversión Decimal a Binario",
+    "topic": "Bases Numéricas",
+    "difficulty": 2,
+    "tags": [
+      "conversion",
+      "binario",
+      "numeracion"
+    ],
+    "created_at": "2026-01-15T13:46:26.573556",
+    "updated_at": "2026-01-15T13:46:26.573589",
+    "version": "1.0",
+    "author": null,
+    "source": null
+  },
+  "statement": {
+    "text": "Convierte 157 a binario",
+    "instructions": null,
+    "hints": [],
+    "problem_fields": {
+      "decimal": 157
+    }
+  },
+  "solution": {
+    "explanation": "157 = 10011101 en binario",
+    "steps": [],
+    "solution_fields": {
+      "result": "10011101"
+    }
+  },
+  "generator_params": {
+    "seed": null,
+    "generator_id": null,
+    "randomizer_config": {}
+  },
+  "original_exercise_data": null
+}

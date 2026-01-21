@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCD & Biquinarios - GeneratorFEExercises</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-button:hover {
+            color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-section {
+            background: #f0f7ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .bit-display {
+            display: flex;
+            gap: 4px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .bit {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            border: 2px solid #667eea;
+            background: white;
+        }
+
+        .bit.zero {
+            color: #666;
+            border-color: #ddd;
+        }
+
+        .bit.one {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .component-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+            text-align: center;
+        }
+
+        .component-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .component-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #0d47a1;
+            border-left: 4px solid #2196f3;
+        }
+
+        footer {
+            padding: 20px;
+            background: #f8f9fa;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bit {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9em;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📟 BCD & Biquinarios</h1>
+            <p>Convierte números a representaciones especiales: BCD y Biquinario</p>
+        </header>
+
+        <div class="content">
+            <!-- Tabs de navegación -->
+            <div class="tabs">
+                <button class="tab-button active" onclick="switchTab('bcd')">
+                    🔢 BCD (4-8 bits)
+                </button>
+                <button class="tab-button" onclick="switchTab('biquinario')">
+                    ✕ Biquinario (7 bits)
+                </button>
+                <button class="tab-button" onclick="switchTab('compare')">
+                    🔄 Comparar
+                </button>
+            </div>
+
+            <!-- Tab BCD -->
+            <div id="bcd" class="tab-content active">
+                <div class="form-section">
+                    <h2 style="color: #333; margin-bottom: 20px;">BCD (Binary Coded Decimal)</h2>
+                    
+                    <div class="input-group">
+                        <label for="bcd-input">Número Decimal (0-9999)</label>
+                        <input type="number" id="bcd-input" value="42" min="0" max="9999">
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="convertBCD()">
+                            📈 Convertir a BCD
+                        </button>
+                        <button class="btn-secondary" onclick="resetBCD()">
+                            🔄 Limpiar
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>ℹ️ Nota:</strong> BCD codifica cada dígito decimal (0-9) en 4 bits.
+                        Por ejemplo, 42 = 0100 0010
+                    </div>
+                </div>
+
+                <div class="result-section" id="bcd-results" style="display: none;">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">Resultado BCD</h3>
+                    
+                    <div>
+                        <label style="font-weight: 600; color: #666; margin-bottom: 10px; display: block;">
+                            Representación Binaria (BCD):
+                        </label>
+                        <div class="bit-display" id="bcd-binary"></div>
+                    </div>
+
+                    <div class="components-grid" id="bcd-nibbles"></div>
+
+                    <div style="margin-top: 20px;">
+                        <p><strong>Hexadecimal:</strong> <code id="bcd-hex">-</code></p>
+                        <p><strong>Decimal (BCD):</strong> <code id="bcd-dec">-</code></p>
+                        <p><strong>Total Bits:</strong> <code id="bcd-bits">-</code></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Biquinario -->
+            <div id="biquinario" class="tab-content">
+                <div class="form-section">
+                    <h2 style="color: #333; margin-bottom: 20px;">Biquinario (7 bits)</h2>
+                    
+                    <div class="input-group">
+                        <label for="biq-input">Número Decimal (0-99)</label>
+                        <input type="number" id="biq-input" value="42" min="0" max="99">
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="convertBiquinario()">
+                            📈 Convertir a Biquinario
+                        </button>
+                        <button class="btn-secondary" onclick="resetBiquinario()">
+                            🔄 Limpiar
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>ℹ️ Nota:</strong> Biquinario usa 2 bits quinarios (base 5) + 3 bits binarios.
+                        Estructura: [Quinario (2 bits)] [Binario (3 bits)]
+                    </div>
+                </div>
+
+                <div class="result-section" id="biq-results" style="display: none;">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">Resultado Biquinario</h3>
+                    
+                    <div>
+                        <label style="font-weight: 600; color: #666; margin-bottom: 10px; display: block;">
+                            Representación Binaria (Biquinario):
+                        </label>
+                        <div class="bit-display" id="biq-binary"></div>
+                    </div>
+
+                    <div class="components-grid">
+                        <div class="component-box">
+                            <div class="component-label">Parte Quinaria (2 bits)</div>
+                            <div class="component-value" id="biq-quinario">-</div>
+                        </div>
+                        <div class="component-box">
+                            <div class="component-label">Parte Binaria (3 bits)</div>
+                            <div class="component-value" id="biq-binary-part">-</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <p><strong>Hexadecimal:</strong> <code id="biq-hex">-</code></p>
+                        <p><strong>Decimal (Biq):</strong> <code id="biq-dec">-</code></p>
+                        <p><strong>Total Bits:</strong> <code id="biq-bits">-</code></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Comparación -->
+            <div id="compare" class="tab-content">
+                <div class="form-section">
+                    <h2 style="color: #333; margin-bottom: 20px;">Comparar Representaciones</h2>
+                    
+                    <div class="input-group">
+                        <label for="comp-input">Número Decimal (0-99)</label>
+                        <input type="number" id="comp-input" value="42" min="0" max="99">
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="compareReps()">
+                            🔄 Comparar Todas
+                        </button>
+                        <button class="btn-secondary" onclick="resetCompare()">
+                            🔄 Limpiar
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>ℹ️ Nota:</strong> Visualiza cómo un número se representa en diferentes bases.
+                    </div>
+                </div>
+
+                <div class="result-section" id="comp-results" style="display: none;">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">Comparación de Representaciones</h3>
+                    <div id="comp-table"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                GeneratorFEExercises - Fase 7 Web UI | 
+                <a href="/">Inicio</a> • 
+                <a href="/ieee754">IEEE754</a> • 
+                <a href="/converter">Convertidor</a> •
+                <a href="/distribution">Distribución</a>
+            </p>
+            <p style="margin-top: 10px; color: #999;">
+                API Endpoints: /api/representations/bcd, /api/representations/biquinario
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * Cambiar entre tabs
+         */
+        function switchTab(tabName) {
+            // Ocultar todos los tabs
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Desactivar todos los botones
+            document.querySelectorAll('.tab-button').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Mostrar tab seleccionado
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activar botón seleccionado
+            event.target.classList.add('active');
+        }
+
+        /**
+         * Mostrar bits con colores
+         */
+        function showBits(container, bits) {
+            const bitDisplay = document.getElementById(container);
+            bitDisplay.innerHTML = '';
+            
+            for (let i = 0; i < bits.length; i++) {
+                const bit = bits[i];
+                const elem = document.createElement('div');
+                elem.className = `bit ${bit === '1' ? 'one' : 'zero'}`;
+                elem.textContent = bit;
+                bitDisplay.appendChild(elem);
+            }
+        }
+
+        /**
+         * Convertir a BCD
+         */
+        async function convertBCD() {
+            const number = parseInt(document.getElementById('bcd-input').value);
+            
+            if (isNaN(number) || number < 0 || number > 9999) {
+                alert('Por favor ingresa un número entre 0 y 9999');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/representations/bcd', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ number })
+                });
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                // Mostrar resultados
+                document.getElementById('bcd-results').style.display = 'block';
+                showBits('bcd-binary', data.bcd_binary);
+                
+                // Mostrar nibbles
+                const nibblesDiv = document.getElementById('bcd-nibbles');
+                nibblesDiv.innerHTML = '';
+                data.nibbles.forEach((nibble, i) => {
+                    const box = document.createElement('div');
+                    box.className = 'component-box';
+                    box.innerHTML = `
+                        <div class="component-label">Dígito ${i + 1}</div>
+                        <div class="component-value">${nibble.digit}</div>
+                        <div style="font-size: 0.9em; color: #999; margin-top: 5px;">
+                            ${nibble.binary}
+                        </div>
+                    `;
+                    nibblesDiv.appendChild(box);
+                });
+                
+                document.getElementById('bcd-hex').textContent = data.bcd_hex;
+                document.getElementById('bcd-dec').textContent = data.bcd_decimal;
+                document.getElementById('bcd-bits').textContent = data.total_bits;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al conectar con el servidor');
+            }
+        }
+
+        function resetBCD() {
+            document.getElementById('bcd-input').value = '42';
+            document.getElementById('bcd-results').style.display = 'none';
+        }
+
+        /**
+         * Convertir a Biquinario
+         */
+        async function convertBiquinario() {
+            const number = parseInt(document.getElementById('biq-input').value);
+            
+            if (isNaN(number) || number < 0 || number > 99) {
+                alert('Por favor ingresa un número entre 0 y 99');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/representations/biquinario', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ number })
+                });
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                // Mostrar resultados
+                document.getElementById('biq-results').style.display = 'block';
+                showBits('biq-binary', data.biquinario);
+                
+                document.getElementById('biq-quinario').textContent = 
+                    data.components.quinario_part.binary;
+                document.getElementById('biq-binary-part').textContent = 
+                    data.components.binary_part.binary;
+                
+                document.getElementById('biq-hex').textContent = data.biquinario_hex;
+                document.getElementById('biq-dec').textContent = data.biquinario_decimal;
+                document.getElementById('biq-bits').textContent = data.total_bits;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al conectar con el servidor');
+            }
+        }
+
+        function resetBiquinario() {
+            document.getElementById('biq-input').value = '42';
+            document.getElementById('biq-results').style.display = 'none';
+        }
+
+        /**
+         * Comparar todas las representaciones
+         */
+        async function compareReps() {
+            const number = parseInt(document.getElementById('comp-input').value);
+            
+            if (isNaN(number) || number < 0 || number > 99) {
+                alert('Por favor ingresa un número entre 0 y 99');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/representations/compare', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ number })
+                });
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    alert('Error: ' + data.error);
+                    return;
+                }
+                
+                // Crear tabla de comparación
+                const tableDiv = document.getElementById('comp-table');
+                let html = '<table style="width: 100%; border-collapse: collapse;">';
+                html += '<tr style="background: #f5f5f5;">';
+                html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Representación</th>';
+                html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Valor</th>';
+                html += '</tr>';
+                
+                Object.entries(data.representations).forEach(([key, value]) => {
+                    if (value !== 'N/A') {
+                        html += '<tr>';
+                        html += `<td style="padding: 12px; border: 1px solid #ddd; font-weight: 600; text-transform: capitalize;">${key}</td>`;
+                        html += `<td style="padding: 12px; border: 1px solid #ddd; font-family: 'Courier New', monospace;">${value}</td>`;
+                        html += '</tr>';
+                    }
+                });
+                
+                html += '</table>';
+                tableDiv.innerHTML = html;
+                document.getElementById('comp-results').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al conectar con el servidor');
+            }
+        }
+
+        function resetCompare() {
+            document.getElementById('comp-input').value = '42';
+            document.getElementById('comp-results').style.display = 'none';
+        }
+    </script>
+    <script src="/static/js/dark-mode.js"></script>
+</body>
+</html>

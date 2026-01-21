@@ -1,0 +1,439 @@
+{
+  "temario_fe": {
+    "titulo": "Fundamentos de Electrónica - Catálogo de Temas",
+    "version": "2.0",
+    "fecha_actualización": "2026-01-15",
+    "categorías": {
+      "contenido": [
+        "para_mas_adelante",
+        "solo_problemas_y_resolutores",
+        "solo_teoría",
+        "tanto_problemas_como_teoría"
+      ],
+      "dependencias": [
+        "autosuficiente",
+        "necesita_programa_extra"
+      ]
+    },
+    "items": [
+      {
+        "id": "1",
+        "titulo": "Introducción a la Electrónica",
+        "nivel": 1,
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.1",
+        "titulo": "Conceptos Básicos",
+        "nivel": 2,
+        "parent_id": "1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.1.1",
+        "titulo": "Magnitudes fundamentales",
+        "nivel": 3,
+        "parent_id": "1.1",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.1.2",
+        "titulo": "Ley de Ohm",
+        "nivel": 3,
+        "parent_id": "1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.1.3",
+        "titulo": "Potencia eléctrica",
+        "nivel": 3,
+        "parent_id": "1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.2",
+        "titulo": "Componentes Electrónicos",
+        "nivel": 2,
+        "parent_id": "1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "1.2.1",
+        "titulo": "Resistencias",
+        "nivel": 3,
+        "parent_id": "1.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.2.2",
+        "titulo": "Condensadores",
+        "nivel": 3,
+        "parent_id": "1.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.2.3",
+        "titulo": "Bobinas",
+        "nivel": 3,
+        "parent_id": "1.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "1.2.4",
+        "titulo": "Semiconductores",
+        "nivel": 3,
+        "parent_id": "1.2",
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2",
+        "titulo": "Electrónica Digital",
+        "nivel": 1,
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1",
+        "titulo": "Sistemas de Representación de la Información",
+        "nivel": 2,
+        "parent_id": "2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1",
+        "titulo": "Sistemas de Numeración",
+        "nivel": 3,
+        "parent_id": "2.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.1",
+        "titulo": "Bases Teóricas",
+        "nivel": 4,
+        "parent_id": "2.1.1",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.1.1",
+        "titulo": "Sistemas de numeración posicionales y no posicionales",
+        "nivel": 5,
+        "parent_id": "2.1.1.1",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.1.2",
+        "titulo": "Sistemas de numeración posicionales: por potencias de la base B",
+        "nivel": 5,
+        "parent_id": "2.1.1.1",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.1.3",
+        "titulo": "Conversión entre sistemas de numeración con pesos potencias de una base B",
+        "nivel": 5,
+        "parent_id": "2.1.1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1.1.1.4",
+        "titulo": "Sistemas de numeración no posicionales: números romanos",
+        "nivel": 5,
+        "parent_id": "2.1.1.1",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.2",
+        "titulo": "Sistemas Binarios, Octales y Hexadecimales",
+        "nivel": 4,
+        "parent_id": "2.1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1.1.3",
+        "titulo": "Representación en Longitud Fija",
+        "nivel": 4,
+        "parent_id": "2.1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.4",
+        "titulo": "Números Enteros con Signo",
+        "nivel": 4,
+        "parent_id": "2.1.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.1.5",
+        "titulo": "Operaciones Aritméticas",
+        "nivel": 4,
+        "parent_id": "2.1.1",
+        "contenido": "solo_problemas_y_resolutores",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1.1.5.1",
+        "titulo": "Operaciones Básicas (suma, resta, multiplicación, división)",
+        "nivel": 5,
+        "parent_id": "2.1.1.5",
+        "contenido": "solo_problemas_y_resolutores",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1.1.5.2",
+        "titulo": "Números con Parte Fraccionaria - Punto Fijo",
+        "nivel": 5,
+        "parent_id": "2.1.1.5",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra",
+        "detalles": [
+          "Representación fija (fixed-point)",
+          "Paso entre bases en punto fijo",
+          "Paso entre bases 2, 4, 8, 16",
+          "Paso entre bases 3, 9 y 27",
+          "Rangos de valores representables",
+          "Cálculo del épsilon"
+        ]
+      },
+      {
+        "id": "2.1.1.5.3",
+        "titulo": "Números en Punto Flotante - IEEE 754",
+        "nivel": 5,
+        "parent_id": "2.1.1.5",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra",
+        "detalles": [
+          "Representación en punto flotante según norma IEEE 754",
+          "Épsilon de la representación",
+          "Rangos de valores representables",
+          "Formas normalizadas y denormalizadas",
+          "Operaciones de redondeo y truncamiento",
+          "Función 'normalizar' en punto flotante",
+          "Conversión entre punto fijo y punto flotante",
+          "Operaciones aritméticas en punto flotante"
+        ]
+      },
+      {
+        "id": "2.1.2",
+        "titulo": "Sistemas de Representación Alfanumérica",
+        "nivel": 3,
+        "parent_id": "2.1",
+        "contenido": "para_mas_adelante",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.2.1",
+        "titulo": "Codificación de Datos",
+        "nivel": 4,
+        "parent_id": "2.1.2",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.1.2.2",
+        "titulo": "Sistemas de Detección de Errores",
+        "nivel": 4,
+        "parent_id": "2.1.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.1.2.3",
+        "titulo": "Sistemas de Detección/Corrección de Errores",
+        "nivel": 4,
+        "parent_id": "2.1.2",
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.2",
+        "titulo": "Álgebras de Boole",
+        "nivel": 2,
+        "parent_id": "2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.2.1",
+        "titulo": "Los Postulados de Huntington de 1904",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.2.2",
+        "titulo": "Propiedades y Teoremas del Álgebra de Boole",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "solo_problemas_y_resolutores",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.2.3",
+        "titulo": "El Álgebra de Conmutación de Shannon",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.2.4",
+        "titulo": "Las Puertas Lógicas Básicas",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.2.5",
+        "titulo": "Funciones Lógicas",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "solo_problemas_y_resolutores",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.2.6",
+        "titulo": "Sistemas Combinacionales Básicos",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.2.7",
+        "titulo": "Sistemas Combinacionales Avanzados",
+        "nivel": 3,
+        "parent_id": "2.2",
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.3",
+        "titulo": "Sistemas Secuenciales",
+        "nivel": 2,
+        "parent_id": "2",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.3.1",
+        "titulo": "Introducción",
+        "nivel": 3,
+        "parent_id": "2.3",
+        "contenido": "solo_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "2.3.2",
+        "titulo": "Elementos Básicos",
+        "nivel": 3,
+        "parent_id": "2.3",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.3.3",
+        "titulo": "Sistemas Secuenciales Principales",
+        "nivel": 3,
+        "parent_id": "2.3",
+        "contenido": "solo_problemas_y_resolutores",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.3.4",
+        "titulo": "Máquinas de Estados Finitos (FSM)",
+        "nivel": 3,
+        "parent_id": "2.3",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "2.3.5",
+        "titulo": "Memorias Digitales",
+        "nivel": 3,
+        "parent_id": "2.3",
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "3",
+        "titulo": "Electrónica Analógica",
+        "nivel": 1,
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "3.1",
+        "titulo": "Dispositivos Lineales Pasivos",
+        "nivel": 2,
+        "parent_id": "3",
+        "contenido": "para_mas_adelante",
+        "dependencia": "necesita_programa_extra"
+      },
+      {
+        "id": "3.1.1",
+        "titulo": "Leyes Fundamentales de la Electricidad",
+        "nivel": 3,
+        "parent_id": "3.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "autosuficiente"
+      },
+      {
+        "id": "3.1.2",
+        "titulo": "Componentes Pasivos",
+        "nivel": 3,
+        "parent_id": "3.1",
+        "contenido": "tanto_problemas_como_teoría",
+        "dependencia": "necesita_programa_extra"
+      }
+    ],
+    "estadísticas": {
+      "total_items": 46,
+      "resumen_contenido": {
+        "solo_teoría": 5,
+        "solo_problemas_y_resolutores": 4,
+        "tanto_problemas_como_teoría": 26,
+        "para_mas_adelante": 11
+      },
+      "resumen_dependencias": {
+        "autosuficiente": 22,
+        "necesita_programa_extra": 24
+      },
+      "items_por_nivel": {
+        "nivel_1": 3,
+        "nivel_2": 8,
+        "nivel_3": 20,
+        "nivel_4": 11,
+        "nivel_5": 4
+      }
+    },
+    "notas": "Estructura plana para facilitar consultas, actualizaciones y filtrados. Usa 'parent_id' para relaciones jerárquicas sin anidamiento.",
+    "próximos_pasos": [
+      "Crear generadores de problemas para temas 'solo_problemas_y_resolutores'",
+      "Crear simuladores para temas que necesitan 'programa_extra'",
+      "Desarrollar contenido teorico para 'solo_teoría'",
+      "Implementar primero: 2.1.1.1.3 (Conversión entre bases)"
+    ]
+  }
+}

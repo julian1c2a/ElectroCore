@@ -1,0 +1,29 @@
+[
+    {
+        "titulo": "Sistema de Seguridad de Bóveda Bancaria",
+        "vars": ["A: Sensor Reloj (1=Laboral)", "B: Llave Director (1=Si)", "C: Llave Gerente (1=Si)", "D: Código (1=OK)"],
+        "salida": "Z: Apertura",
+        "logicas": [
+            "La puerta se abre SI estamos en horario laboral Y se ha introducido el código correcto. ADEMÁS, por seguridad, fuera de horario laboral (A=0) la puerta también se puede abrir, pero SOLO si están presentes AMBAS llaves (Director y Gerente).",
+            "La puerta se abre siempre que el código de seguridad sea correcto, SALVO que estemos fuera de horario laboral y falte alguna de las llaves (Director o Gerente)."
+        ]
+    },
+    {
+        "titulo": "Control de Reactor Químico Industrial",
+        "vars": ["P: Presión (1=Alta)", "T: Temp (1=Alta)", "N: Nivel (1=Alto)", "M: Manual (1=ON)"],
+        "salida": "E: Válvula Escape",
+        "logicas": [
+            "La válvula de escape debe abrirse SIEMPRE que se active el interruptor manual. AUTOMÁTICAMENTE, también debe abrirse si la Presión es alta Y (la Temperatura es alta O el Nivel es crítico).",
+            "Por seguridad, la válvula se abre si al menos DOS de los tres sensores (Presión, Temperatura, Nivel) están en estado alto. El interruptor Manual abre la válvula directamente."
+        ]
+    },
+    {
+        "titulo": "Sistema de Riego Inteligente",
+        "vars": ["H: Humedad (1=Seco)", "L: Luz (1=Día)", "D: Depósito (1=Lleno)", "T: Temp (1=Calor)"],
+        "salida": "R: Riego",
+        "logicas": [
+            "Riega SI (Seco Y Depósito lleno). ADEMÁS, si hace Calor excesivo, riega forzosamente siempre que haya agua.",
+            "Nunca riega sin agua. Si hay agua, riega si está Seco, PERO evita regar de Día (L=1) salvo que haga Calor excesivo."
+        ]
+    }
+]

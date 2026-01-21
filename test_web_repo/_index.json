@@ -1,0 +1,158 @@
+{
+  "7038d000-3fb0-41b5-95a0-ebe65a8e0696": {
+    "type": "numeracion",
+    "file": "numeracion\\7038d000-3fb0-41b5-95a0-ebe65a8e0696.json",
+    "metadata": {
+      "title": "Conversión Decimal a Binario",
+      "topic": "Bases Numéricas",
+      "difficulty": 2,
+      "tags": [
+        "conversion",
+        "binario",
+        "numeracion"
+      ],
+      "created_at": "2026-01-15T13:46:09.370786",
+      "updated_at": "2026-01-15T13:46:09.370811",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 2,
+    "tags": [
+      "conversion",
+      "binario",
+      "numeracion"
+    ],
+    "created_at": "2026-01-15T13:46:09.370786"
+  },
+  "c7e079db-7f36-495f-8c4d-27d0682072ce": {
+    "type": "karnaugh",
+    "file": "karnaugh\\c7e079db-7f36-495f-8c4d-27d0682072ce.json",
+    "metadata": {
+      "title": "Simplificación K-Map 4 Variables",
+      "topic": "Álgebra Digital",
+      "difficulty": 3,
+      "tags": [
+        "karnaugh",
+        "simplificacion",
+        "algebra"
+      ],
+      "created_at": "2026-01-15T13:46:09.372651",
+      "updated_at": "2026-01-15T13:46:09.372659",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 3,
+    "tags": [
+      "karnaugh",
+      "simplificacion",
+      "algebra"
+    ],
+    "created_at": "2026-01-15T13:46:09.372651"
+  },
+  "65f35fac-ebf3-4652-92fa-b5be402b3622": {
+    "type": "secuencial",
+    "file": "secuencial\\65f35fac-ebf3-4652-92fa-b5be402b3622.json",
+    "metadata": {
+      "title": "Contador Síncrono Mod-8",
+      "topic": "Lógica Secuencial",
+      "difficulty": 3,
+      "tags": [
+        "contador",
+        "sincronico",
+        "secuencial"
+      ],
+      "created_at": "2026-01-15T13:46:09.374551",
+      "updated_at": "2026-01-15T13:46:09.374557",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 3,
+    "tags": [
+      "contador",
+      "sincronico",
+      "secuencial"
+    ],
+    "created_at": "2026-01-15T13:46:09.374551"
+  },
+  "ae1c777f-a724-4452-a740-f4c5a7103ef5": {
+    "type": "numeracion",
+    "file": "numeracion\\ae1c777f-a724-4452-a740-f4c5a7103ef5.json",
+    "metadata": {
+      "title": "Conversión Decimal a Binario",
+      "topic": "Bases Numéricas",
+      "difficulty": 2,
+      "tags": [
+        "conversion",
+        "binario",
+        "numeracion"
+      ],
+      "created_at": "2026-01-15T13:46:26.573556",
+      "updated_at": "2026-01-15T13:46:26.573589",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 2,
+    "tags": [
+      "conversion",
+      "binario",
+      "numeracion"
+    ],
+    "created_at": "2026-01-15T13:46:26.573556"
+  },
+  "bc176473-8277-497a-88a6-c58907742eef": {
+    "type": "karnaugh",
+    "file": "karnaugh\\bc176473-8277-497a-88a6-c58907742eef.json",
+    "metadata": {
+      "title": "Simplificación K-Map 4 Variables",
+      "topic": "Álgebra Digital",
+      "difficulty": 3,
+      "tags": [
+        "karnaugh",
+        "simplificacion",
+        "algebra"
+      ],
+      "created_at": "2026-01-15T13:46:26.575649",
+      "updated_at": "2026-01-15T13:46:26.575656",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 3,
+    "tags": [
+      "karnaugh",
+      "simplificacion",
+      "algebra"
+    ],
+    "created_at": "2026-01-15T13:46:26.575649"
+  },
+  "c608d76c-a7ab-4f6c-aac2-cc2bc78c4e00": {
+    "type": "secuencial",
+    "file": "secuencial\\c608d76c-a7ab-4f6c-aac2-cc2bc78c4e00.json",
+    "metadata": {
+      "title": "Contador Síncrono Mod-8",
+      "topic": "Lógica Secuencial",
+      "difficulty": 3,
+      "tags": [
+        "contador",
+        "sincronico",
+        "secuencial"
+      ],
+      "created_at": "2026-01-15T13:46:26.577932",
+      "updated_at": "2026-01-15T13:46:26.577938",
+      "version": "1.0",
+      "author": null,
+      "source": null
+    },
+    "difficulty": 3,
+    "tags": [
+      "contador",
+      "sincronico",
+      "secuencial"
+    ],
+    "created_at": "2026-01-15T13:46:26.577932"
+  }
+}

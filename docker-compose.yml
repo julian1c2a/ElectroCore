@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: exam-generator
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./problems_db:/app/problems_db
+      - ./backups:/app/backups
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -m uvicorn web.app:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+volumes:
+  problems_db:
+  backups:

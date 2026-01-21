@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Distribución - GeneratorFEExercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .controls {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .control-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .control-group select,
+        .control-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .control-group select:focus,
+        .control-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #45a049;
+        }
+
+        .stats {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-box label {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-box span {
+            display: block;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+        }
+
+        .charts {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        #chartContainer {
+            position: relative;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        footer {
+            padding: 20px;
+            background: #f8f9fa;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .control-group {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            #chartContainer {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Visualizador de Distribución</h1>
+            <p>Analiza cómo se distribuyen los números en diferentes representaciones numéricas</p>
+        </header>
+
+        <div class="content">
+            <!-- Controles -->
+            <section class="controls">
+                <h2 style="margin-bottom: 20px; color: #333;">Configuración</h2>
+
+                <!-- Tipo de Representación -->
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #667eea; font-size: 1.1em; margin-bottom: 15px;">Tipo de Representación</h3>
+                    <div class="control-group">
+                        <div>
+                            <label for="numType">Selecciona tipo</label>
+                            <select id="numType" onchange="toggleControls()">
+                                <option value="fixed_point">Punto Fijo</option>
+                                <option value="floating_point">Punto Flotante (IEEE754)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="base">Base (2-36)</label>
+                            <input type="number" id="base" value="2" min="2" max="36" step="1">
+                            <small style="color: #666; font-size: 0.85em; display: block; margin-top: 5px;">
+                                Base numérica (2-36)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Punto Fijo -->
+                <div id="fixedPointControls" style="margin-bottom: 25px;">
+                    <h3 style="color: #667eea; font-size: 1.1em; margin-bottom: 15px;">Números en Punto Fijo</h3>
+                    <div class="control-group">
+                        <div>
+                            <label for="E">Bits Enteros (E)</label>
+                            <input type="number" id="E" value="4" min="1" max="16" step="1">
+                            <small style="color: #666; font-size: 0.85em; display: block; margin-top: 5px;">
+                                Bits para la parte entera (1-16)
+                            </small>
+                        </div>
+                        <div>
+                            <label for="F">Bits Fraccionarios (F)</label>
+                            <input type="number" id="F" value="4" min="1" max="16" step="1">
+                            <small style="color: #666; font-size: 0.85em; display: block; margin-top: 5px;">
+                                Bits para la parte fraccionaria (1-16)
+                            </small>
+                        </div>
+                        <div>
+                            <label for="representation">Tipo de Representación</label>
+                            <select id="representation">
+                                <option value="unsigned">Sin Signo (Unsigned)</option>
+                                <option value="signed_magnitude">Magnitud y Signo</option>
+                                <option value="twos_complement">Complemento a Dos</option>
+                                <option value="ones_complement">Complemento a Uno</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Punto Flotante -->
+                <div id="floatingPointControls" style="margin-bottom: 25px; display: none;">
+                    <h3 style="color: #667eea; font-size: 1.1em; margin-bottom: 15px;">Números en Punto Flotante (IEEE754)</h3>
+                    <div class="control-group">
+                        <div>
+                            <label for="E_fp">Bits Exponente</label>
+                            <input type="number" id="E_fp" value="8" min="1" max="16" step="1">
+                            <small style="color: #666; font-size: 0.85em; display: block; margin-top: 5px;">
+                                Bits para el exponente (1-16)
+                            </small>
+                        </div>
+                        <div>
+                            <label for="F_fp">Bits Mantisa</label>
+                            <input type="number" id="F_fp" value="23" min="1" max="32" step="1">
+                            <small style="color: #666; font-size: 0.85em; display: block; margin-top: 5px;">
+                                Bits para la mantisa (1-32)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de control -->
+                <div class="button-group">
+                    <button class="btn-primary" onclick="analyzeDistribution()">
+                        📈 Analizar Distribución
+                    </button>
+                    <button class="btn-secondary" onclick="resetDistribution()">
+                        🔄 Limpiar
+                    </button>
+                    <button class="btn-success" onclick="exportChart()">
+                        💾 Exportar PNG
+                    </button>
+                </div>
+            </section>
+
+            <!-- Estadísticas -->
+            <section class="stats">
+                <h2 style="margin-bottom: 20px; color: #333;">📋 Estadísticas</h2>
+                <div id="stats"></div>
+            </section>
+
+            <!-- Gráficas -->
+            <section class="charts">
+                <h2 style="margin-bottom: 20px; color: #333;">Visualización</h2>
+                <div id="charts">
+                    <p style="text-align: center; color: #999; padding: 40px 20px;">
+                        👈 Usa los controles anteriores para generar una gráfica
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>
+                GeneratorFEExercises - Fase 7 Web UI | 
+                <a href="/">Inicio</a> • 
+                <a href="/ieee754">IEEE754</a> • 
+                <a href="/converter">Convertidor</a>
+            </p>
+            <p style="margin-top: 10px; color: #999;">
+                API Endpoint: POST /api/distribution/chart-data
+            </p>
+        </footer>
+    </div>
+
+    <script src="/static/js/charts.js"></script>
+    <script src="/static/js/dark-mode.js"></script>
+</body>
+</html>

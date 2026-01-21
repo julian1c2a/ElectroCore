@@ -1,0 +1,13 @@
+{
+  "university": "UNIVERSIDAD DE MÁLAGA",
+  "department": "Departamento de Tecnología Electrónica",
+  "subject": "Fundamentos de Electrónica",
+  "exam_title": "Examen de Teoría",
+  "exam_type": "Parte Digital",
+  "term": "Curso 2025/2026",
+  "semester": "1er Cuatrimestre",
+  "date": "21 de Enero de 2026",
+  "professors": "Profesores: Almudena | Julián",
+  "show_professors": false,
+  "logo_path": "../../resources/png/image_38294.png"
+}

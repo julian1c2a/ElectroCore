@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bases - GeneratorFEExercises</title>
+    <link rel="stylesheet" href="/static/css/variables.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-row .input-group {
+            margin-bottom: 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        
+        .result-table th {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: left;
+            color: #333;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .result-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .result-table tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .base-header {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Volver a inicio</a>
+        
+        <header>
+            <h1>🔢 Calculadora de Conversión de Bases</h1>
+            <p>Convierte números entre múltiples sistemas de numeración</p>
+        </header>
+        
+        <div class="panel">
+            <h2>Parámetros de Conversión</h2>
+            
+            <div class="input-group">
+                <label for="value-input">Número:</label>
+                <input type="text" id="value-input" value="1234" placeholder="Ej: 1234, 1111010010, FF2">
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="from-base">Base Origen:</label>
+                    <select id="from-base">
+                        <option value="2">Binaria (2)</option>
+                        <option value="8">Octal (8)</option>
+                        <option value="10" selected>Decimal (10)</option>
+                        <option value="16">Hexadecimal (16)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label>Bases Destino:</label>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                    <label><input type="checkbox" value="2" checked> Binaria (2)</label>
+                    <label><input type="checkbox" value="8" checked> Octal (8)</label>
+                    <label><input type="checkbox" value="10" checked> Decimal (10)</label>
+                    <label><input type="checkbox" value="16" checked> Hex (16)</label>
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="convert()">Convertir</button>
+        </div>
+        
+        <div class="panel" id="results-panel" style="display: none;">
+            <h2>Resultados</h2>
+            
+            <table class="result-table" id="results-table">
+                <thead>
+                    <tr>
+                        <th>Base</th>
+                        <th>Valor</th>
+                        <th>Decimal Equivalente</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            <p>GeneratorFEExercises v7.0 | Calculadora de Bases</p>
+        </footer>
+    </div>
+    
+    <script>
+        async function convert() {
+            try {
+                const value = document.getElementById('value-input').value.trim();
+                const from_base = parseInt(document.getElementById('from-base').value);
+                
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                const to_bases = Array.from(checkboxes).map(cb => parseInt(cb.value));
+                
+                if (!value) {
+                    alert('Ingresa un número');
+                    return;
+                }
+                
+                if (to_bases.length === 0) {
+                    alert('Selecciona al menos una base destino');
+                    return;
+                }
+                
+                const response = await fetch('/api/convert', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ value, from_base, to_bases })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    const tbody = document.getElementById('results-body');
+                    tbody.innerHTML = '';
+                    
+                    for (const base in data.results) {
+                        const result = data.results[base];
+                        const row = `
+                            <tr>
+                                <td class="base-header">${base}</td>
+                                <td>${result.value}</td>
+                                <td>${result.decimal}</td>
+                            </tr>
+                        `;
+                        tbody.innerHTML += row;
+                    }
+                    
+                    document.getElementById('results-panel').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+        
+        document.getElementById('value-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convert();
+        });
+    </script>
+    <script src="/static/js/dark-mode.js"></script>
+</body>
+</html>
