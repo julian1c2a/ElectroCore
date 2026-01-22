@@ -1,6 +1,7 @@
 import os
 import re
 import unicodedata
+import json
 import shutil
 from collections import deque
 
@@ -17,7 +18,8 @@ class Node:
         self.status = 'pending'
 
     def _clean_name(self, name):
-        return re.sub(r'^\s*#+\s*|\s*-\s*', '', name).strip()
+        cleaned = re.sub(r'^\s*#+\s*|\s*-\s*', '', name).strip()
+        return cleaned.replace('**', '')
 
     def _sanitize(self, name):
         if not name: return "unnamed"
