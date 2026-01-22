@@ -711,15 +711,15 @@ class AlfabetoBinario(AlfabetoEstandar):
 
 class AlfabetoDesdeLenguaje(Alfabeto):
     """
-    Alfabeto cuyos símbolos son las palabras de un lenguaje.
+    Alfabeto cuyos simbolos son las palabras de un lenguaje.
     
-    Esto permite crear jerarquías multinivel:
-    - Nivel 0: Alfabeto básico Σ₀ = {0, 1}
-    - Nivel 1: Lenguaje L₁ sobre Σ₀ = {00, 01, 10, 11}
-    - Nivel 2: Alfabeto Σ₁ = L₁ (usando palabras como símbolos)
-    - Nivel 3: Lenguaje L₂ sobre Σ₁
+    Esto permite crear jerarquias multinivel:
+    - Nivel 0: Alfabeto basico Sigma_0 = {0, 1}
+    - Nivel 1: Lenguaje L_1 sobre Sigma_0 = {00, 01, 10, 11}
+    - Nivel 2: Alfabeto Sigma_1 = L_1 (usando palabras como simbolos)
+    - Nivel 3: Lenguaje L_2 sobre Sigma_1
     
-    Los símbolos del alfabeto son las palabras del lenguaje proporcionado.
+    Los simbolos del alfabeto son las palabras del lenguaje proporcionado.
     El lenguaje debe ser finito y estar completamente enumerado.
     
     Example:
