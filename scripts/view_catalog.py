@@ -29,9 +29,21 @@ def main():
     print(f"\n📊 Estadísticas Generales:")
     print(f"   - Total de items: {len(catalog)}")
     
-    # Contar por tipo
-    types = Counter(item['tipo'] for item in catalog)
-    print(f"\n📋 Distribución por tipo:")
+    # Inferir tipo basado en nivel (los items no tienen campo 'tipo')
+    def get_tipo(item):
+        nivel = item['nivel']
+        if nivel == 1:
+            return 'root'
+        elif nivel == 2:
+            return 'module'
+        elif nivel == 3:
+            return 'section'
+        else:
+            return 'topic'
+    
+    # Contar por tipo inferido
+    types = Counter(get_tipo(item) for item in catalog)
+    print(f"\n📋 Distribución por tipo (inferido del nivel):")
     for tipo, count in types.items():
         print(f"   - {tipo}: {count}")
     
@@ -48,10 +60,9 @@ def main():
     for i, item in enumerate(catalog[:10], 1):
         print(f"\n{i}. {item['titulo']}")
         print(f"   ID: {item['id']}")
-        print(f"   Tipo: {item.get('tipo', 'N/A')}")
         print(f"   Nivel: {item['nivel']}")
         print(f"   Markdown: {item['md_path']}")
-        if item.get('python_refs'):
+        if item.get('python_refs') and len(item['python_refs']) > 0:
             print(f"   Funciones Python: {', '.join(item['python_refs'])}")
     
     print("\n" + "-" * 70)
@@ -79,8 +90,8 @@ def main():
         
         for child in children:
             indent = "  " * level
-            tipo = child.get('tipo', '')
-            icon = "📁" if tipo in ['root', 'module', 'section'] else "📄"
+            nivel = child['nivel']
+            icon = "📁" if nivel <= 3 else "📄"
             print(f"{indent}{icon} {child['titulo']}")
             printed_count[0] += 1
             

@@ -1,0 +1,705 @@
+"""
+alfabetos.py
+
+Módulo para la definición y manipulación de alfabetos en teoría de códigos
+y lenguajes formales.
+
+Un alfabeto es un conjunto finito no vacío de símbolos. Este módulo proporciona
+clases y funciones para crear, validar y operar con alfabetos de diferentes tipos.
+
+Classes:
+    Alfabeto: Clase abstracta base para representar alfabetos
+    AlfabetoExplicito: Alfabeto definido mediante lista explícita de símbolos
+    AlfabetoEstandar: Alfabeto estándar basado en base numérica (2-36)
+    
+Functions:
+    crear_alfabeto_explicito: Factory para crear alfabeto desde símbolos
+    crear_alfabeto_estandar_desde_cardinal: Factory para alfabeto numérico
+"""
+
+from abc import ABC, abstractmethod
+from typing import Dict, List, Set, Optional, Iterator
+from collections import OrderedDict
+
+
+# ============================================================================
+# CLASE ABSTRACTA BASE
+# ============================================================================
+
+class Alfabeto(ABC):
+    """
+    Clase abstracta base para representar un alfabeto.
+    
+    Un alfabeto es un conjunto finito no vacío de símbolos.
+    Esta clase define la interfaz común para todos los tipos de alfabetos.
+    
+    Attributes:
+        simbolos: Lista ordenada de símbolos del alfabeto
+        cardinal: Número de símbolos en el alfabeto
+    """
+    
+    def __init__(self):
+        """Inicializa un alfabeto vacío."""
+        self._simbolos: List[str] = []
+        self._indices: Dict[str, int] = {}
+        self._cardinal: int = 0
+    
+    @abstractmethod
+    def construir(self) -> None:
+        """
+        Construye el alfabeto.
+        
+        Método abstracto que debe ser implementado por las subclases
+        para definir cómo se construye el alfabeto específico.
+        """
+        pass
+    
+    @property
+    def simbolos(self) -> List[str]:
+        """Retorna la lista ordenada de símbolos."""
+        return self._simbolos.copy()
+    
+    @property
+    def cardinal(self) -> int:
+        """Retorna el cardinal (tamaño) del alfabeto."""
+        return self._cardinal
+    
+    @property
+    def indices(self) -> Dict[str, int]:
+        """Retorna el diccionario de símbolos a índices."""
+        return self._indices.copy()
+    
+    def contiene(self, simbolo: str) -> bool:
+        """
+        Verifica si un símbolo pertenece al alfabeto.
+        
+        Args:
+            simbolo: Símbolo a verificar
+            
+        Returns:
+            bool: True si el símbolo está en el alfabeto
+        """
+        return simbolo in self._indices
+    
+    def indice_de(self, simbolo: str) -> Optional[int]:
+        """
+        Obtiene el índice de un símbolo en el alfabeto.
+        
+        Args:
+            simbolo: Símbolo del cual obtener el índice
+            
+        Returns:
+            Optional[int]: Índice del símbolo, o None si no existe
+        """
+        return self._indices.get(simbolo)
+    
+    def simbolo_en(self, indice: int) -> Optional[str]:
+        """
+        Obtiene el símbolo en una posición específica.
+        
+        Args:
+            indice: Posición del símbolo (0-indexed)
+            
+        Returns:
+            Optional[str]: Símbolo en esa posición, o None si índice inválido
+        """
+        if 0 <= indice < self._cardinal:
+            return self._simbolos[indice]
+        return None
+    
+    def validar_palabra(self, palabra: str) -> bool:
+        """
+        Valida si una palabra está formada por símbolos del alfabeto.
+        
+        Args:
+            palabra: Cadena a validar
+            
+        Returns:
+            bool: True si todos los caracteres pertenecen al alfabeto
+        """
+        return all(char in self._indices for char in palabra)
+    
+    def comparar_simbolos(self, simbolo1: str, simbolo2: str) -> Optional[int]:
+        """
+        Compara dos símbolos del alfabeto según su orden.
+        
+        La comparación se basa en el índice de los símbolos en el alfabeto.
+        
+        Args:
+            simbolo1: Primer símbolo a comparar
+            simbolo2: Segundo símbolo a comparar
+            
+        Returns:
+            Optional[int]: 
+                -1 si simbolo1 < simbolo2
+                 0 si simbolo1 = simbolo2
+                 1 si simbolo1 > simbolo2
+                None si algún símbolo no pertenece al alfabeto
+                
+        Example:
+            >>> alf = AlfabetoEstandar(10)  # decimal
+            >>> alf.comparar_simbolos('3', '7')
+            -1
+            >>> alf.comparar_simbolos('5', '5')
+            0
+            >>> alf.comparar_simbolos('9', '2')
+            1
+        """
+        idx1 = self.indice_de(simbolo1)
+        idx2 = self.indice_de(simbolo2)
+        
+        if idx1 is None or idx2 is None:
+            return None
+        
+        if idx1 < idx2:
+            return -1
+        elif idx1 == idx2:
+            return 0
+        else:
+            return 1
+    
+    def es_menor(self, simbolo1: str, simbolo2: str) -> bool:
+        """
+        Verifica si simbolo1 < simbolo2 en el orden del alfabeto.
+        
+        Args:
+            simbolo1: Primer símbolo
+            simbolo2: Segundo símbolo
+            
+        Returns:
+            bool: True si simbolo1 está antes que simbolo2
+            
+        Raises:
+            ValueError: Si algún símbolo no pertenece al alfabeto
+        """
+        resultado = self.comparar_simbolos(simbolo1, simbolo2)
+        if resultado is None:
+            raise ValueError(f"Uno o ambos símbolos no pertenecen al alfabeto")
+        return resultado == -1
+    
+    def es_igual(self, simbolo1: str, simbolo2: str) -> bool:
+        """
+        Verifica si simbolo1 = simbolo2 (mismo símbolo).
+        
+        Args:
+            simbolo1: Primer símbolo
+            simbolo2: Segundo símbolo
+            
+        Returns:
+            bool: True si son el mismo símbolo
+            
+        Raises:
+            ValueError: Si algún símbolo no pertenece al alfabeto
+        """
+        resultado = self.comparar_simbolos(simbolo1, simbolo2)
+        if resultado is None:
+            raise ValueError(f"Uno o ambos símbolos no pertenecen al alfabeto")
+        return resultado == 0
+    
+    def es_mayor(self, simbolo1: str, simbolo2: str) -> bool:
+        """
+        Verifica si simbolo1 > simbolo2 en el orden del alfabeto.
+        
+        Args:
+            simbolo1: Primer símbolo
+            simbolo2: Segundo símbolo
+            
+        Returns:
+            bool: True si simbolo1 está después que simbolo2
+            
+        Raises:
+            ValueError: Si algún símbolo no pertenece al alfabeto
+        """
+        resultado = self.comparar_simbolos(simbolo1, simbolo2)
+        if resultado is None:
+            raise ValueError(f"Uno o ambos símbolos no pertenecen al alfabeto")
+        return resultado == 1
+    
+    def es_menor_o_igual(self, simbolo1: str, simbolo2: str) -> bool:
+        """
+        Verifica si simbolo1 <= simbolo2 en el orden del alfabeto.
+        
+        Args:
+            simbolo1: Primer símbolo
+            simbolo2: Segundo símbolo
+            
+        Returns:
+            bool: True si simbolo1 está antes o es igual a simbolo2
+            
+        Raises:
+            ValueError: Si algún símbolo no pertenece al alfabeto
+        """
+        resultado = self.comparar_simbolos(simbolo1, simbolo2)
+        if resultado is None:
+            raise ValueError(f"Uno o ambos símbolos no pertenecen al alfabeto")
+        return resultado <= 0
+    
+    def es_mayor_o_igual(self, simbolo1: str, simbolo2: str) -> bool:
+        """
+        Verifica si simbolo1 >= simbolo2 en el orden del alfabeto.
+        
+        Args:
+            simbolo1: Primer símbolo
+            simbolo2: Segundo símbolo
+            
+        Returns:
+            bool: True si simbolo1 está después o es igual a simbolo2
+            
+        Raises:
+            ValueError: Si algún símbolo no pertenece al alfabeto
+        """
+        resultado = self.comparar_simbolos(simbolo1, simbolo2)
+        if resultado is None:
+            raise ValueError(f"Uno o ambos símbolos no pertenecen al alfabeto")
+        return resultado >= 0
+    
+    def comparar_palabras_lexicografico(self, palabra1: str, palabra2: str) -> Optional[int]:
+        """
+        Compara dos palabras lexicográficamente según el orden del alfabeto.
+        
+        Args:
+            palabra1: Primera palabra
+            palabra2: Segunda palabra
+            
+        Returns:
+            Optional[int]:
+                -1 si palabra1 < palabra2
+                 0 si palabra1 = palabra2
+                 1 si palabra1 > palabra2
+                None si alguna palabra contiene símbolos no válidos
+                
+        Example:
+            >>> alf = AlfabetoEstandar(2)  # binario
+            >>> alf.comparar_palabras_lexicografico('101', '110')
+            -1
+            >>> alf.comparar_palabras_lexicografico('11', '11')
+            0
+        """
+        # Validar que ambas palabras pertenecen al alfabeto
+        if not self.validar_palabra(palabra1) or not self.validar_palabra(palabra2):
+            return None
+        
+        # Comparar símbolo por símbolo
+        for s1, s2 in zip(palabra1, palabra2):
+            resultado = self.comparar_simbolos(s1, s2)
+            if resultado != 0:
+                return resultado
+        
+        # Si todos los símbolos coinciden, la más corta es menor
+        if len(palabra1) < len(palabra2):
+            return -1
+        elif len(palabra1) > len(palabra2):
+            return 1
+        else:
+            return 0
+    
+    def generar_palabras(self, longitud: int) -> List[str]:
+        """
+        Genera todas las palabras posibles de una longitud dada.
+        
+        Args:
+            longitud: Longitud de las palabras a generar
+            
+        Returns:
+            List[str]: Lista de todas las palabras posibles
+            
+        Example:
+            >>> alf = AlfabetoEstandar(2)
+            >>> alf.generar_palabras(2)
+            ['00', '01', '10', '11']
+        """
+        if longitud == 0:
+            return ['']
+        
+        if longitud == 1:
+            return self._simbolos.copy()
+        
+        palabras = []
+        
+        def generar_recursivo(palabra_actual: str, long_restante: int):
+            if long_restante == 0:
+                palabras.append(palabra_actual)
+                return
+            
+            for simbolo in self._simbolos:
+                generar_recursivo(palabra_actual + simbolo, long_restante - 1)
+        
+        generar_recursivo('', longitud)
+        return palabras
+    
+    def __len__(self) -> int:
+        """Retorna el cardinal del alfabeto."""
+        return self._cardinal
+    
+    def __contains__(self, simbolo: str) -> bool:
+        """Permite usar 'simbolo in alfabeto'."""
+        return self.contiene(simbolo)
+    
+    def __iter__(self) -> Iterator[str]:
+        """Permite iterar sobre los símbolos del alfabeto."""
+        return iter(self._simbolos)
+    
+    def __str__(self) -> str:
+        """Representación en string del alfabeto."""
+        simbolos_str = ', '.join(f"'{s}'" for s in self._simbolos)
+        return f"Σ = {{{simbolos_str}}} (cardinal={self._cardinal})"
+    
+    def __repr__(self) -> str:
+        """Representación técnica del alfabeto."""
+        return f"{self.__class__.__name__}(cardinal={self._cardinal})"
+    
+    def __eq__(self, other) -> bool:
+        """Compara dos alfabetos por igualdad."""
+        if not isinstance(other, Alfabeto):
+            return False
+        return set(self._simbolos) == set(other._simbolos)
+
+
+# ============================================================================
+# ALFABETO EXPLÍCITO
+# ============================================================================
+
+class AlfabetoExplicito(Alfabeto):
+    """
+    Alfabeto definido mediante una lista explícita de símbolos.
+    
+    Los símbolos se proporcionan directamente y mantienen el orden
+    en que fueron especificados. Cada símbolo tiene un índice asociado
+    según su posición.
+    
+    Example:
+        >>> alf = AlfabetoExplicito('0', '1', '2', '3')
+        >>> alf.cardinal
+        4
+        >>> alf.indice_de('2')
+        2
+    """
+    
+    def __init__(self, *simbolos: str):
+        """
+        Inicializa un alfabeto con símbolos explícitos.
+        
+        Args:
+            *simbolos: Símbolos del alfabeto (argumentos variables)
+            
+        Raises:
+            ValueError: Si no se proporcionan símbolos o hay duplicados
+        """
+        super().__init__()
+        
+        if not simbolos:
+            raise ValueError("El alfabeto debe tener al menos un símbolo")
+        
+        # Verificar duplicados
+        if len(set(simbolos)) != len(simbolos):
+            raise ValueError("El alfabeto no puede contener símbolos duplicados")
+        
+        self._simbolos_origen = list(simbolos)
+        self.construir()
+    
+    def construir(self) -> None:
+        """Construye el alfabeto con los símbolos proporcionados."""
+        self._simbolos = self._simbolos_origen.copy()
+        self._cardinal = len(self._simbolos)
+        self._indices = {simbolo: idx for idx, simbolo in enumerate(self._simbolos)}
+
+
+# ============================================================================
+# ALFABETO ESTÁNDAR
+# ============================================================================
+
+class AlfabetoEstandar(Alfabeto):
+    """
+    Alfabeto estándar basado en una base numérica.
+    
+    Para bases <= 10: usa dígitos '0' a 'base-1'
+    Para bases > 10: usa '0'-'9' seguido de 'A'-'Z'
+    
+    El índice de cada símbolo coincide con su valor numérico.
+    
+    Example:
+        >>> alf_bin = AlfabetoEstandar(2)
+        >>> print(alf_bin)
+        Σ = {'0', '1'} (cardinal=2)
+        
+        >>> alf_hex = AlfabetoEstandar(16)
+        >>> alf_hex.cardinal
+        16
+        >>> alf_hex.simbolo_en(15)
+        'F'
+    """
+    
+    def __init__(self, base: int, mayusculas: bool = True):
+        """
+        Inicializa un alfabeto estándar para una base numérica.
+        
+        Args:
+            base: Base numérica (2 <= base <= 36)
+            mayusculas: Si True, usa A-Z; si False, usa a-z
+            
+        Raises:
+            ValueError: Si la base está fuera del rango permitido
+        """
+        super().__init__()
+        
+        if base < 2:
+            raise ValueError("La base debe ser >= 2")
+        if base > 36:
+            raise ValueError("La base debe ser <= 36 (0-9 + A-Z)")
+        
+        self._base = base
+        self._mayusculas = mayusculas
+        self.construir()
+    
+    def construir(self) -> None:
+        """Construye el alfabeto estándar según la base."""
+        self._simbolos = []
+        letra_inicial = 'A' if self._mayusculas else 'a'
+        
+        for i in range(self._base):
+            if i < 10:
+                self._simbolos.append(str(i))
+            else:
+                self._simbolos.append(chr(ord(letra_inicial) + i - 10))
+        
+        self._cardinal = len(self._simbolos)
+        self._indices = {simbolo: idx for idx, simbolo in enumerate(self._simbolos)}
+    
+    @property
+    def base(self) -> int:
+        """Retorna la base numérica del alfabeto."""
+        return self._base
+    
+    def valor_numerico(self, simbolo: str) -> Optional[int]:
+        """
+        Obtiene el valor numérico de un símbolo.
+        
+        En alfabetos estándar, el valor numérico coincide con el índice.
+        
+        Args:
+            simbolo: Símbolo del cual obtener el valor
+            
+        Returns:
+            Optional[int]: Valor numérico del símbolo
+        """
+        return self.indice_de(simbolo)
+
+
+# ============================================================================
+# ALFABETO BINARIO
+# ============================================================================
+
+class AlfabetoBinario(AlfabetoEstandar):
+    """
+    Alfabeto binario: {0, 1}
+    
+    Clase especializada para el alfabeto binario más común en sistemas digitales.
+    Garantiza que siempre contiene exactamente '0' con índice 0 y '1' con índice 1.
+    
+    Example:
+        >>> alf = AlfabetoBinario()
+        >>> alf.simbolos
+        ['0', '1']
+        >>> alf.indices
+        {'0': 0, '1': 1}
+        >>> alf.valor_numerico('1')
+        1
+    """
+    
+    def __init__(self):
+        """Inicializa el alfabeto binario con símbolos '0' y '1'."""
+        super().__init__(base=2, mayusculas=True)
+    
+    def __repr__(self) -> str:
+        """Representación técnica del alfabeto binario."""
+        return "AlfabetoBinario()"
+
+
+# ============================================================================
+# ALFABETOS PREDEFINIDOS
+# ============================================================================
+
+class AlfabetosPredefinidos:
+    """Colección de alfabetos estándar comúnmente usados."""
+    
+    @staticmethod
+    def binario() -> AlfabetoBinario:
+        """Alfabeto binario: {0, 1}"""
+        return AlfabetoBinario()
+    
+    @staticmethod
+    def octal() -> AlfabetoEstandar:
+        """Alfabeto octal: {0, 1, 2, 3, 4, 5, 6, 7}"""
+        return AlfabetoEstandar(8)
+    
+    @staticmethod
+    def decimal() -> AlfabetoEstandar:
+        """Alfabeto decimal: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}"""
+        return AlfabetoEstandar(10)
+    
+    @staticmethod
+    def hexadecimal(mayusculas: bool = True) -> AlfabetoEstandar:
+        """Alfabeto hexadecimal: {0-9, A-F} o {0-9, a-f}"""
+        return AlfabetoEstandar(16, mayusculas)
+    
+    @staticmethod
+    def bcd() -> AlfabetoExplicito:
+        """Alfabeto BCD (Binary Coded Decimal): 4 bits"""
+        return AlfabetoExplicito(
+            '0000', '0001', '0010', '0011', '0100',
+            '0101', '0110', '0111', '1000', '1001'
+        )
+    
+    @staticmethod
+    def ascii_minusculas() -> AlfabetoExplicito:
+        """Alfabeto de letras minúsculas a-z"""
+        return AlfabetoExplicito(*[chr(i) for i in range(ord('a'), ord('z') + 1)])
+    
+    @staticmethod
+    def ascii_mayusculas() -> AlfabetoExplicito:
+        """Alfabeto de letras mayúsculas A-Z"""
+        return AlfabetoExplicito(*[chr(i) for i in range(ord('A'), ord('Z') + 1)])
+
+
+# ============================================================================
+# FUNCIONES FACTORY
+# ============================================================================
+
+def crear_alfabeto_explicito(*simbolos: str) -> AlfabetoExplicito:
+    """
+    Crea un alfabeto con símbolos explícitos.
+    
+    Args:
+        *simbolos: Símbolos del alfabeto
+        
+    Returns:
+        AlfabetoExplicito: Alfabeto creado
+        
+    Example:
+        >>> alf = crear_alfabeto_explicito('0', '1', '2', '3')
+        >>> alf.cardinal
+        4
+        >>> alf.indices
+        {'0': 0, '1': 1, '2': 2, '3': 3}
+    """
+    return AlfabetoExplicito(*simbolos)
+
+
+def crear_alfabeto_estandar_desde_cardinal(
+    base: int, 
+    mayusculas: bool = True
+) -> AlfabetoEstandar:
+    """
+    Crea un alfabeto estándar desde una base numérica.
+    
+    Args:
+        base: Base numérica (2-36)
+        mayusculas: Si usar mayúsculas para letras
+        
+    Returns:
+        AlfabetoEstandar: Alfabeto creado
+        
+    Example:
+        >>> alf = crear_alfabeto_estandar_desde_cardinal(16)
+        >>> alf.simbolos
+        ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+         'A', 'B', 'C', 'D', 'E', 'F']
+    """
+    return AlfabetoEstandar(base, mayusculas)
+
+
+# ============================================================================
+# FUNCIONES AUXILIARES
+# ============================================================================
+
+def obtener_alfabeto_desde_lista(simbolos: List[str]) -> Dict[str, int]:
+    """
+    Convierte una lista de símbolos en un diccionario símbolo→índice.
+    
+    Args:
+        simbolos: Lista de símbolos
+        
+    Returns:
+        Dict[str, int]: Diccionario {símbolo: índice}
+        
+    Example:
+        >>> obtener_alfabeto_desde_lista(['a', 'b', 'c'])
+        {'a': 0, 'b': 1, 'c': 2}
+    """
+    return {simbolo: idx for idx, simbolo in enumerate(simbolos)}
+
+
+def unir_alfabetos(alf1: Alfabeto, alf2: Alfabeto) -> AlfabetoExplicito:
+    """
+    Crea un nuevo alfabeto como unión de dos alfabetos.
+    
+    Args:
+        alf1: Primer alfabeto
+        alf2: Segundo alfabeto
+        
+    Returns:
+        AlfabetoExplicito: Alfabeto unión (sin duplicados)
+        
+    Example:
+        >>> a1 = crear_alfabeto_explicito('0', '1')
+        >>> a2 = crear_alfabeto_explicito('1', '2')
+        >>> union = unir_alfabetos(a1, a2)
+        >>> union.simbolos
+        ['0', '1', '2']
+    """
+    simbolos_unidos = list(dict.fromkeys(alf1.simbolos + alf2.simbolos))
+    return AlfabetoExplicito(*simbolos_unidos)
+
+
+if __name__ == "__main__":
+    # Ejemplos de uso
+    print("=" * 70)
+    print("EJEMPLOS DE USO - Módulo alfabetos.py")
+    print("=" * 70)
+    
+    # Alfabeto explícito
+    print("\n1. Alfabeto explícito:")
+    alf_exp = crear_alfabeto_explicito('a', 'b', 'c', 'd')
+    print(f"   {alf_exp}")
+    print(f"   Índices: {alf_exp.indices}")
+    
+    # Alfabeto estándar binario
+    print("\n2. Alfabeto binario:")
+    alf_bin = AlfabetosPredefinidos.binario()
+    print(f"   {alf_bin}")
+    print(f"   Palabras de longitud 3: {alf_bin.generar_palabras(3)}")
+    
+    # Alfabeto hexadecimal
+    print("\n3. Alfabeto hexadecimal:")
+    alf_hex = AlfabetosPredefinidos.hexadecimal()
+    print(f"   {alf_hex}")
+    print(f"   Símbolo en posición 15: {alf_hex.simbolo_en(15)}")
+    
+    # Validación de palabras
+    print("\n4. Validación de palabras:")
+    palabra = "CAFE"
+    es_valida = alf_hex.validar_palabra(palabra)
+    print(f"   ¿'{palabra}' es válida en hexadecimal? {es_valida}")
+    
+    # Comparación de símbolos
+    print("\n5. Comparación de símbolos:")
+    alf_dec = AlfabetosPredefinidos.decimal()
+    print(f"   Alfabeto: {alf_dec}")
+    print(f"   ¿'3' < '7'? {alf_dec.es_menor('3', '7')}")
+    print(f"   ¿'5' = '5'? {alf_dec.es_igual('5', '5')}")
+    print(f"   ¿'9' > '2'? {alf_dec.es_mayor('9', '2')}")
+    print(f"   comparar_simbolos('4', '6'): {alf_dec.comparar_simbolos('4', '6')}")
+    
+    # Comparación lexicográfica
+    print("\n6. Comparación lexicográfica de palabras:")
+    print(f"   comparar_palabras('123', '456'): {alf_dec.comparar_palabras_lexicografico('123', '456')}")
+    print(f"   comparar_palabras('999', '999'): {alf_dec.comparar_palabras_lexicografico('999', '999')}")
+    print(f"   comparar_palabras('789', '123'): {alf_dec.comparar_palabras_lexicografico('789', '123')}")
+    
+    # Comparación binaria
+    print("\n7. Comparación en binario:")
+    print(f"   Alfabeto: {alf_bin}")
+    print(f"   comparar_palabras('101', '110'): {alf_bin.comparar_palabras_lexicografico('101', '110')}")
+    print(f"   comparar_palabras('1111', '10'): {alf_bin.comparar_palabras_lexicografico('1111', '10')}")
+    
+    print("\n" + "=" * 70)

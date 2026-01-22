@@ -850,7 +850,267 @@
         "nivel": 5,
         "parent_id": "1.6.1.1",
         "md_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md",
-        "python_refs": [],
+        "python_refs": [
+          {
+            "module": "alfabetos",
+            "function": "Alfabeto",
+            "description": "Clase abstracta base para representar alfabetos",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "AlfabetoExplicito",
+            "description": "Alfabeto definido mediante lista explícita de símbolos con índices",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "AlfabetoEstandar",
+            "description": "Alfabeto estándar basado en base numérica (2-36)",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "crear_alfabeto_explicito",
+            "description": "Factory para crear alfabeto con símbolos explícitos",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "crear_alfabeto_estandar_desde_cardinal",
+            "description": "Factory para crear alfabeto estándar desde base numérica",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.AlfabetosPredefinidos",
+            "function": "binario",
+            "description": "Alfabeto binario predefinido {0, 1}",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.AlfabetosPredefinidos",
+            "function": "octal",
+            "description": "Alfabeto octal predefinido {0-7}",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.AlfabetosPredefinidos",
+            "function": "decimal",
+            "description": "Alfabeto decimal predefinido {0-9}",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.AlfabetosPredefinidos",
+            "function": "hexadecimal",
+            "description": "Alfabeto hexadecimal predefinido {0-9, A-F}",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.AlfabetosPredefinidos",
+            "function": "bcd",
+            "description": "Alfabeto BCD (Binary Coded Decimal) con códigos de 4 bits",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "unir_alfabetos",
+            "description": "Crea nuevo alfabeto como unión de dos alfabetos (sin duplicados)",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos",
+            "function": "AlfabetoBinario",
+            "description": "Alfabeto binario especializado con '0' → 0 y '1' → 1",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.Alfabeto",
+            "function": "comparar_simbolos",
+            "description": "Compara dos símbolos según su orden en el alfabeto",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.Alfabeto",
+            "function": "es_menor",
+            "description": "Verifica si simbolo1 < simbolo2 (operador <)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.Alfabeto",
+            "function": "es_igual",
+            "description": "Verifica si simbolo1 = simbolo2 (operador =)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.Alfabeto",
+            "function": "es_mayor",
+            "description": "Verifica si simbolo1 > simbolo2 (operador >)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "alfabetos.Alfabeto",
+            "function": "comparar_palabras_lexicografico",
+            "description": "Compara dos palabras lexicográficamente según el alfabeto",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "Lenguaje",
+            "description": "Clase abstracta base para representar lenguajes formales",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajeUniverso",
+            "description": "Lenguaje universo Σ^l - todas las palabras de longitud l",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajePredicado",
+            "description": "Sublenguaje definido por función predicado",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajeAutomata",
+            "description": "Lenguaje definido por máquina de estados/autómata",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes.LenguajeAutomata",
+            "function": "combinar_con",
+            "description": "Combina autómatas para reducir casos INDETERMINADO",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajeExplicito",
+            "description": "Lenguaje definido por lista explícita de palabras",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajeVacio",
+            "description": "Lenguaje vacío ∅ - no contiene ninguna palabra",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "LenguajeInfinito",
+            "description": "Lenguaje de longitud infinita (casos especiales)",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes.Lenguaje",
+            "function": "es_sublenguaje_de",
+            "description": "Verifica si L1 ⊆ L2 (todas las palabras de L1 están en L2)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes.Lenguaje",
+            "function": "es_superlenguaje_de",
+            "description": "Verifica si L1 ⊇ L2 (L1 contiene a L2)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes.Lenguaje",
+            "function": "es_igual_a",
+            "description": "Verifica si L1 = L2 (mismo conjunto de palabras)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes.Lenguaje",
+            "function": "es_vacio",
+            "description": "Verifica si el lenguaje es vacío (L = ∅)",
+            "implemented": false,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "union",
+            "description": "Unión de dos lenguajes L₁ ∪ L₂ = {w | w ∈ L₁ o w ∈ L₂}",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "interseccion",
+            "description": "Intersección de dos lenguajes L₁ ∩ L₂ = {w | w ∈ L₁ y w ∈ L₂}",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "complemento",
+            "description": "Complemento de un lenguaje L̄ = Σ^l \\ L",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "diferencia",
+            "description": "Diferencia L₁ \\ L₂ = {w | w ∈ L₁ y w ∉ L₂}",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "diferencia_simetrica",
+            "description": "Diferencia simétrica L₁ △ L₂ = (L₁ \\ L₂) ∪ (L₂ \\ L₁)",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "concatenacion",
+            "description": "Concatenación L₁ · L₂ = {w₁w₂ | w₁ ∈ L₁, w₂ ∈ L₂}",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "potencia",
+            "description": "Potencia L^n = L · L · ... · L (n veces)",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          },
+          {
+            "module": "lenguajes",
+            "function": "producto_cartesiano",
+            "description": "Producto cartesiano L₁ × L₂ = {(w₁, w₂) | w₁ ∈ L₁, w₂ ∈ L₂}",
+            "implemented": true,
+            "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
+          }
+        ],
         "status": "pending"
       },
       {
