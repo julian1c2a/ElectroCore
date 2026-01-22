@@ -1,0 +1,229 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo",
+  "nodes": [
+    {
+      "id": "1.2.3",
+      "title": "Aplicaciones del Diodo",
+      "level": 3,
+      "parent_id": "1.2",
+      "children_ids": [
+        "1.2.3.1",
+        "1.2.3.2",
+        "1.2.3.3",
+        "1.2.3.4",
+        "1.2.3.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        }
+      ]
+    },
+    {
+      "id": "1.2.3.1",
+      "title": "Rectificadores: media onda, onda completa (con y sin transformador).",
+      "level": 4,
+      "parent_id": "1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/rectificadores_media_onda_onda_completa_con_y_sin_transformador.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/rectificadores_media_onda_onda_completa_con_y_sin_transformador.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.2.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        },
+        {
+          "id": "1.2.3.1",
+          "title": "Rectificadores: media onda, onda completa (con y sin transformador)."
+        }
+      ]
+    },
+    {
+      "id": "1.2.3.2",
+      "title": "Filtros capacitivos.",
+      "level": 4,
+      "parent_id": "1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/filtros_capacitivos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/filtros_capacitivos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.3.1",
+      "next_id": "1.2.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        },
+        {
+          "id": "1.2.3.2",
+          "title": "Filtros capacitivos."
+        }
+      ]
+    },
+    {
+      "id": "1.2.3.3",
+      "title": "Reguladores de tensión con diodo Zener.",
+      "level": 4,
+      "parent_id": "1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/reguladores_de_tension_con_diodo_zener.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/reguladores_de_tension_con_diodo_zener.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.3.2",
+      "next_id": "1.2.3.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        },
+        {
+          "id": "1.2.3.3",
+          "title": "Reguladores de tensión con diodo Zener."
+        }
+      ]
+    },
+    {
+      "id": "1.2.3.4",
+      "title": "Recortadores (clippers) y enclavadores (clampers).",
+      "level": 4,
+      "parent_id": "1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/recortadores_clippers_y_enclavadores_clampers.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/recortadores_clippers_y_enclavadores_clampers.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.3.3",
+      "next_id": "1.2.3.5",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        },
+        {
+          "id": "1.2.3.4",
+          "title": "Recortadores (clippers) y enclavadores (clampers)."
+        }
+      ]
+    },
+    {
+      "id": "1.2.3.5",
+      "title": "Otros diodos especiales (LED, fotodiodo, varactor).",
+      "level": 4,
+      "parent_id": "1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/otros_diodos_especiales_led_fotodiodo_varactor.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/aplicaciones_del_diodo/otros_diodos_especiales_led_fotodiodo_varactor.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.3.4",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.3",
+          "title": "Aplicaciones del Diodo"
+        },
+        {
+          "id": "1.2.3.5",
+          "title": "Otros diodos especiales (LED, fotodiodo, varactor)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos",
+  "nodes": [
+    {
+      "id": "1.4.3",
+      "title": "Puertas lógicas CMOS",
+      "level": 3,
+      "parent_id": "1.4",
+      "children_ids": [
+        "1.4.3.1",
+        "1.4.3.2",
+        "1.4.3.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.3",
+          "title": "Puertas lógicas CMOS"
+        }
+      ]
+    },
+    {
+      "id": "1.4.3.1",
+      "title": "Implementación de puertas lógicas básicas (NAND, NOR, NOT) utilizando tecnología CMOS.",
+      "level": 4,
+      "parent_id": "1.4.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/implementacion_de_puertas_logicas_basicas_nand_nor_not_utilizando_tecnologia_cmos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/implementacion_de_puertas_logicas_basicas_nand_nor_not_utilizando_tecnologia_cmos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.4.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.3",
+          "title": "Puertas lógicas CMOS"
+        },
+        {
+          "id": "1.4.3.1",
+          "title": "Implementación de puertas lógicas básicas (NAND, NOR, NOT) utilizando tecnología CMOS."
+        }
+      ]
+    },
+    {
+      "id": "1.4.3.2",
+      "title": "Análisis de retardos y consumo de potencia en puertas lógicas CMOS.",
+      "level": 4,
+      "parent_id": "1.4.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/analisis_de_retardos_y_consumo_de_potencia_en_puertas_logicas_cmos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/analisis_de_retardos_y_consumo_de_potencia_en_puertas_logicas_cmos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.3.1",
+      "next_id": "1.4.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.3",
+          "title": "Puertas lógicas CMOS"
+        },
+        {
+          "id": "1.4.3.2",
+          "title": "Análisis de retardos y consumo de potencia en puertas lógicas CMOS."
+        }
+      ]
+    },
+    {
+      "id": "1.4.3.3",
+      "title": "Comparación entre tecnología CMOS y BJT en puertas lógicas.",
+      "level": 4,
+      "parent_id": "1.4.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/comparacion_entre_tecnologia_cmos_y_bjt_en_puertas_logicas.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/puertas_logicas_cmos/comparacion_entre_tecnologia_cmos_y_bjt_en_puertas_logicas.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.3.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.3",
+          "title": "Puertas lógicas CMOS"
+        },
+        {
+          "id": "1.4.3.3",
+          "title": "Comparación entre tecnología CMOS y BJT en puertas lógicas."
+        }
+      ]
+    }
+  ]
+}

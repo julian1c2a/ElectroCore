@@ -1,0 +1,229 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole",
+  "nodes": [
+    {
+      "id": "1.6.2",
+      "title": "Álgebras de Boole",
+      "level": 3,
+      "parent_id": "1.6",
+      "children_ids": [
+        "1.6.2.1",
+        "1.6.2.2",
+        "1.6.2.3",
+        "1.6.2.4",
+        "1.6.2.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1",
+      "next_id": "1.6.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        }
+      ]
+    },
+    {
+      "id": "1.6.2.1",
+      "title": "Postulados de Huntington.",
+      "level": 4,
+      "parent_id": "1.6.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/postulados_de_huntington.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/postulados_de_huntington.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        },
+        {
+          "id": "1.6.2.1",
+          "title": "Postulados de Huntington."
+        }
+      ]
+    },
+    {
+      "id": "1.6.2.2",
+      "title": "Propiedades y Teoremas.",
+      "level": 4,
+      "parent_id": "1.6.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/propiedades_y_teoremas.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/propiedades_y_teoremas.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.2.1",
+      "next_id": "1.6.2.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        },
+        {
+          "id": "1.6.2.2",
+          "title": "Propiedades y Teoremas."
+        }
+      ]
+    },
+    {
+      "id": "1.6.2.3",
+      "title": "Álgebra de Conmutación de Shannon.",
+      "level": 4,
+      "parent_id": "1.6.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/algebra_de_conmutacion_de_shannon.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/algebra_de_conmutacion_de_shannon.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.2.2",
+      "next_id": "1.6.2.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        },
+        {
+          "id": "1.6.2.3",
+          "title": "Álgebra de Conmutación de Shannon."
+        }
+      ]
+    },
+    {
+      "id": "1.6.2.4",
+      "title": "Puertas Lógicas Básicas y Sistemas Completos.",
+      "level": 4,
+      "parent_id": "1.6.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/puertas_logicas_basicas_y_sistemas_completos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/puertas_logicas_basicas_y_sistemas_completos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.2.3",
+      "next_id": "1.6.2.5",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        },
+        {
+          "id": "1.6.2.4",
+          "title": "Puertas Lógicas Básicas y Sistemas Completos."
+        }
+      ]
+    },
+    {
+      "id": "1.6.2.5",
+      "title": "Funciones Lógicas: Representaciones (Tablas, Mapas K, Expresiones) y Minimización (QuineMcCluskey).",
+      "level": 4,
+      "parent_id": "1.6.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/funciones_logicas_representaciones_tablas_mapas_k_expresiones_y_minimizacion_quinemccluskey.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/algebras_de_boole/funciones_logicas_representaciones_tablas_mapas_k_expresiones_y_minimizacion_quinemccluskey.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.2.4",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.2",
+          "title": "Álgebras de Boole"
+        },
+        {
+          "id": "1.6.2.5",
+          "title": "Funciones Lógicas: Representaciones (Tablas, Mapas K, Expresiones) y Minimización (QuineMcCluskey)."
+        }
+      ]
+    }
+  ]
+}

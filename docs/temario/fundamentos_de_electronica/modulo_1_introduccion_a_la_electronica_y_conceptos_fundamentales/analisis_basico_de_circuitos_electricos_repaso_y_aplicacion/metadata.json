@@ -1,0 +1,229 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion",
+  "nodes": [
+    {
+      "id": "1.1.3",
+      "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)",
+      "level": 3,
+      "parent_id": "1.1",
+      "children_ids": [
+        "1.1.3.1",
+        "1.1.3.2",
+        "1.1.3.3",
+        "1.1.3.4",
+        "1.1.3.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.2",
+      "next_id": "1.1.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        }
+      ]
+    },
+    {
+      "id": "1.1.3.1",
+      "title": "Leyes de Kirchhoff (tensión y corrienteLKT y LKC).",
+      "level": 4,
+      "parent_id": "1.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/leyes_de_kirchhoff_tension_y_corrientelkt_y_lkc.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/leyes_de_kirchhoff_tension_y_corrientelkt_y_lkc.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.1.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        },
+        {
+          "id": "1.1.3.1",
+          "title": "Leyes de Kirchhoff (tensión y corrienteLKT y LKC)."
+        }
+      ]
+    },
+    {
+      "id": "1.1.3.2",
+      "title": "Resolución de circuitos mediante el métodos de lazos y de nudos.",
+      "level": 4,
+      "parent_id": "1.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/resolucion_de_circuitos_mediante_el_metodos_de_lazos_y_de_nudos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/resolucion_de_circuitos_mediante_el_metodos_de_lazos_y_de_nudos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.3.1",
+      "next_id": "1.1.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        },
+        {
+          "id": "1.1.3.2",
+          "title": "Resolución de circuitos mediante el métodos de lazos y de nudos."
+        }
+      ]
+    },
+    {
+      "id": "1.1.3.3",
+      "title": "Teoremas de circuitos lineales: superposición, Thevenin y Norton.",
+      "level": 4,
+      "parent_id": "1.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/teoremas_de_circuitos_lineales_superposicion_thevenin_y_norton.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/teoremas_de_circuitos_lineales_superposicion_thevenin_y_norton.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.3.2",
+      "next_id": "1.1.3.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        },
+        {
+          "id": "1.1.3.3",
+          "title": "Teoremas de circuitos lineales: superposición, Thevenin y Norton."
+        }
+      ]
+    },
+    {
+      "id": "1.1.3.4",
+      "title": "Análisis de circuitos en corriente continua (DC).",
+      "level": 4,
+      "parent_id": "1.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/analisis_de_circuitos_en_corriente_continua_dc.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/analisis_de_circuitos_en_corriente_continua_dc.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.3.3",
+      "next_id": "1.1.3.5",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        },
+        {
+          "id": "1.1.3.4",
+          "title": "Análisis de circuitos en corriente continua (DC)."
+        }
+      ]
+    },
+    {
+      "id": "1.1.3.5",
+      "title": "Introducción a la corriente alterna (AC) y análisis de circuitos lineales en AC.",
+      "level": 4,
+      "parent_id": "1.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/introduccion_a_la_corriente_alterna_ac_y_analisis_de_circuitos_lineales_en_ac.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/analisis_basico_de_circuitos_electricos_repaso_y_aplicacion/introduccion_a_la_corriente_alterna_ac_y_analisis_de_circuitos_lineales_en_ac.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.3.4",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.3",
+          "title": "Análisis Básico de Circuitos Eléctricos (Repaso y Aplicación)"
+        },
+        {
+          "id": "1.1.3.5",
+          "title": "Introducción a la corriente alterna (AC) y análisis de circuitos lineales en AC."
+        }
+      ]
+    }
+  ]
+}

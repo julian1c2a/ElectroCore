@@ -1,0 +1,28 @@
+# Seguidor de tensión.
+
+**Ruta:** [📚 Fundamentos de Electrónica](../../index.md) > [Módulo 5: Amplificadores Operacionales (OpAmps)](../index.md) > [Circuitos Básicos con OpAmps](index.md)
+[⬅️ Anterior](amplificador_inversor_y_no_inversor.md) | [Siguiente ➡️](sumador_restador_integrador_y_derivador.md)
+
+---
+
+**ID:** `1.5.2.2`
+
+
+## 📝 Contenido Teórico
+
+*Pendiente de desarrollar*
+
+## 🔧 Funciones Python Asociadas
+
+*No hay funciones Python asociadas aún*
+
+## 📚 Recursos Adicionales
+
+- Pendiente de añadir referencias
+
+## ✅ Estado de Desarrollo
+
+- [ ] Teoría documentada
+- [ ] Ejemplos añadidos
+- [ ] Funciones Python implementadas
+- [ ] Tests unitarios creados

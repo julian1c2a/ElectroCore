@@ -1,0 +1,153 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor",
+  "nodes": [
+    {
+      "id": "1.2.2",
+      "title": "El Diodo Semiconductor",
+      "level": 3,
+      "parent_id": "1.2",
+      "children_ids": [
+        "1.2.2.1",
+        "1.2.2.2",
+        "1.2.2.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.1",
+      "next_id": "1.2.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.2",
+          "title": "El Diodo Semiconductor"
+        }
+      ]
+    },
+    {
+      "id": "1.2.2.1",
+      "title": "Características VI del diodo ideal y real.",
+      "level": 4,
+      "parent_id": "1.2.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/caracteristicas_vi_del_diodo_ideal_y_real.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/caracteristicas_vi_del_diodo_ideal_y_real.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.2.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.2",
+          "title": "El Diodo Semiconductor"
+        },
+        {
+          "id": "1.2.2.1",
+          "title": "Características VI del diodo ideal y real."
+        }
+      ]
+    },
+    {
+      "id": "1.2.2.2",
+      "title": "Modelos de diodo (ideal, de tensión constante, exponencial).",
+      "level": 4,
+      "parent_id": "1.2.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/modelos_de_diodo_ideal_de_tension_constante_exponencial.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/modelos_de_diodo_ideal_de_tension_constante_exponencial.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.2.1",
+      "next_id": "1.2.2.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.2",
+          "title": "El Diodo Semiconductor"
+        },
+        {
+          "id": "1.2.2.2",
+          "title": "Modelos de diodo (ideal, de tensión constante, exponencial)."
+        }
+      ]
+    },
+    {
+      "id": "1.2.2.3",
+      "title": "Circuitos con diodos: análisis y aplicaciones básicas.",
+      "level": 4,
+      "parent_id": "1.2.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/circuitos_con_diodos_analisis_y_aplicaciones_basicas.md",
+      "relative_path": "fundamentos_de_electronica/modulo_2_dispositivos_semiconductores_y_diodos/el_diodo_semiconductor/circuitos_con_diodos_analisis_y_aplicaciones_basicas.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.2.2.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.2",
+          "title": "Módulo 2: Dispositivos Semiconductores y Diodos"
+        },
+        {
+          "id": "1.2.2",
+          "title": "El Diodo Semiconductor"
+        },
+        {
+          "id": "1.2.2.3",
+          "title": "Circuitos con diodos: análisis y aplicaciones básicas."
+        }
+      ]
+    }
+  ]
+}

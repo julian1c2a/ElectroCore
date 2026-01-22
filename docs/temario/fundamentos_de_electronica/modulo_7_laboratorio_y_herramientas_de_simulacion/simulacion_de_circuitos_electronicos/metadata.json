@@ -1,0 +1,115 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos",
+  "nodes": [
+    {
+      "id": "1.7.2",
+      "title": "Simulación de Circuitos Electrónicos",
+      "level": 3,
+      "parent_id": "1.7",
+      "children_ids": [
+        "1.7.2.1",
+        "1.7.2.2"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.7.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.2",
+          "title": "Simulación de Circuitos Electrónicos"
+        }
+      ]
+    },
+    {
+      "id": "1.7.2.1",
+      "title": "Introducción a herramientas de simulación (ej. SPICE (NGSPICE), Proteus, Multisim).",
+      "level": 4,
+      "parent_id": "1.7.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/introduccion_a_herramientas_de_simulacion_ej_spice_ngspice_proteus_multisim.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/introduccion_a_herramientas_de_simulacion_ej_spice_ngspice_proteus_multisim.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.7.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.2",
+          "title": "Simulación de Circuitos Electrónicos"
+        },
+        {
+          "id": "1.7.2.1",
+          "title": "Introducción a herramientas de simulación (ej. SPICE (NGSPICE), Proteus, Multisim)."
+        }
+      ]
+    },
+    {
+      "id": "1.7.2.2",
+      "title": "Diseño y análisis de circuitos mediante simulación.",
+      "level": 4,
+      "parent_id": "1.7.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/diseno_y_analisis_de_circuitos_mediante_simulacion.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/simulacion_de_circuitos_electronicos/diseno_y_analisis_de_circuitos_mediante_simulacion.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.7.2.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.2",
+          "title": "Simulación de Circuitos Electrónicos"
+        },
+        {
+          "id": "1.7.2.2",
+          "title": "Diseño y análisis de circuitos mediante simulación."
+        }
+      ]
+    }
+  ]
+}

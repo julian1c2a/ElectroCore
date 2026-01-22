@@ -1,0 +1,40 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales",
+  "nodes": [
+    {
+      "id": "1.1",
+      "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales",
+      "level": 2,
+      "parent_id": "1",
+      "children_ids": [
+        "1.1.1",
+        "1.1.2",
+        "1.1.3",
+        "1.1.4",
+        "1.1.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        }
+      ]
+    }
+  ]
+}

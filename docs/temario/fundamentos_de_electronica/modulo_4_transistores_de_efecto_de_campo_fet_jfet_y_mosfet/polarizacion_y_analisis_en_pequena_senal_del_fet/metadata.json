@@ -1,0 +1,153 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet",
+  "nodes": [
+    {
+      "id": "1.4.2",
+      "title": "Polarización y Análisis en Pequeña Señal del FET",
+      "level": 3,
+      "parent_id": "1.4",
+      "children_ids": [
+        "1.4.2.1",
+        "1.4.2.2",
+        "1.4.2.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.1",
+      "next_id": "1.4.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.2",
+          "title": "Polarización y Análisis en Pequeña Señal del FET"
+        }
+      ]
+    },
+    {
+      "id": "1.4.2.1",
+      "title": "Circuitos de polarización.",
+      "level": 4,
+      "parent_id": "1.4.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/circuitos_de_polarizacion.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/circuitos_de_polarizacion.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.4.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.2",
+          "title": "Polarización y Análisis en Pequeña Señal del FET"
+        },
+        {
+          "id": "1.4.2.1",
+          "title": "Circuitos de polarización."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2.2",
+      "title": "Modelos de pequeña señal.",
+      "level": 4,
+      "parent_id": "1.4.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/modelos_de_pequena_senal.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/modelos_de_pequena_senal.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.2.1",
+      "next_id": "1.4.2.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.2",
+          "title": "Polarización y Análisis en Pequeña Señal del FET"
+        },
+        {
+          "id": "1.4.2.2",
+          "title": "Modelos de pequeña señal."
+        }
+      ]
+    },
+    {
+      "id": "1.4.2.3",
+      "title": "Análisis de amplificadores con FETs.",
+      "level": 4,
+      "parent_id": "1.4.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/analisis_de_amplificadores_con_fets.md",
+      "relative_path": "fundamentos_de_electronica/modulo_4_transistores_de_efecto_de_campo_fet_jfet_y_mosfet/polarizacion_y_analisis_en_pequena_senal_del_fet/analisis_de_amplificadores_con_fets.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.4.2.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.4",
+          "title": "Módulo 4: Transistores de Efecto de Campo (FET, JFET y MOSFET)"
+        },
+        {
+          "id": "1.4.2",
+          "title": "Polarización y Análisis en Pequeña Señal del FET"
+        },
+        {
+          "id": "1.4.2.3",
+          "title": "Análisis de amplificadores con FETs."
+        }
+      ]
+    }
+  ]
+}

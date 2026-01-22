@@ -1,0 +1,139 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros",
+  "nodes": [
+    {
+      "id": "1.6.1.2.6",
+      "title": "Operaciones Aritméticas con Enteros",
+      "level": 5,
+      "parent_id": "1.6.1.2",
+      "children_ids": [
+        "1.6.1.2.6.1",
+        "1.6.1.2.6.2"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.5",
+      "next_id": "1.6.1.2.7",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.6",
+          "title": "Operaciones Aritméticas con Enteros"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.6.1",
+      "title": "Comparación, Suma y Resta en varios sistemas.",
+      "level": 6,
+      "parent_id": "1.6.1.2.6",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/comparacion_suma_y_resta_en_varios_sistemas.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/comparacion_suma_y_resta_en_varios_sistemas.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.6.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.6",
+          "title": "Operaciones Aritméticas con Enteros"
+        },
+        {
+          "id": "1.6.1.2.6.1",
+          "title": "Comparación, Suma y Resta en varios sistemas."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.6.2",
+      "title": "Multiplicación y División en binario.",
+      "level": 6,
+      "parent_id": "1.6.1.2.6",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/multiplicacion_y_division_en_binario.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/operaciones_aritmeticas_con_enteros/multiplicacion_y_division_en_binario.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.6.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.6",
+          "title": "Operaciones Aritméticas con Enteros"
+        },
+        {
+          "id": "1.6.1.2.6.2",
+          "title": "Multiplicación y División en binario."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica",
+  "nodes": [
+    {
+      "id": "1.1.1",
+      "title": "Introducción a la Electrónica",
+      "level": 3,
+      "parent_id": "1.1",
+      "children_ids": [
+        "1.1.1.1",
+        "1.1.1.2",
+        "1.1.1.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.1",
+          "title": "Introducción a la Electrónica"
+        }
+      ]
+    },
+    {
+      "id": "1.1.1.1",
+      "title": "Definición y campo de aplicación de la electrónica en la ingeniería.",
+      "level": 4,
+      "parent_id": "1.1.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/definicion_y_campo_de_aplicacion_de_la_electronica_en_la_ingenieria.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/definicion_y_campo_de_aplicacion_de_la_electronica_en_la_ingenieria.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.1.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.1",
+          "title": "Introducción a la Electrónica"
+        },
+        {
+          "id": "1.1.1.1",
+          "title": "Definición y campo de aplicación de la electrónica en la ingeniería."
+        }
+      ]
+    },
+    {
+      "id": "1.1.1.2",
+      "title": "Conceptos de señal, sistema y dispositivo electrónico.",
+      "level": 4,
+      "parent_id": "1.1.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/conceptos_de_senal_sistema_y_dispositivo_electronico.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/conceptos_de_senal_sistema_y_dispositivo_electronico.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.1.1",
+      "next_id": "1.1.1.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.1",
+          "title": "Introducción a la Electrónica"
+        },
+        {
+          "id": "1.1.1.2",
+          "title": "Conceptos de señal, sistema y dispositivo electrónico."
+        }
+      ]
+    },
+    {
+      "id": "1.1.1.3",
+      "title": "Clasificación de sistemas electrónicos: analógicos, digitales y de potencia.",
+      "level": 4,
+      "parent_id": "1.1.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/clasificacion_de_sistemas_electronicos_analogicos_digitales_y_de_potencia.md",
+      "relative_path": "fundamentos_de_electronica/modulo_1_introduccion_a_la_electronica_y_conceptos_fundamentales/introduccion_a_la_electronica/clasificacion_de_sistemas_electronicos_analogicos_digitales_y_de_potencia.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.1.1.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.1",
+          "title": "Módulo 1: Introducción a la Electrónica y Conceptos Fundamentales"
+        },
+        {
+          "id": "1.1.1",
+          "title": "Introducción a la Electrónica"
+        },
+        {
+          "id": "1.1.1.3",
+          "title": "Clasificación de sistemas electrónicos: analógicos, digitales y de potencia."
+        }
+      ]
+    }
+  ]
+}

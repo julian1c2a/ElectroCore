@@ -1,0 +1,169 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica",
+  "nodes": [
+    {
+      "id": "1.6.1.3",
+      "title": "Sistemas de Representación Alfanumérica",
+      "level": 4,
+      "parent_id": "1.6.1",
+      "children_ids": [
+        "1.6.1.3.1",
+        "1.6.1.3.2",
+        "1.6.1.3.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.3",
+          "title": "Sistemas de Representación Alfanumérica"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.3.1",
+      "title": "Codificación de Datos: ASCII, Unicode (UTF8, UTF16, UTF32).",
+      "level": 5,
+      "parent_id": "1.6.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/codificacion_de_datos_ascii_unicode_utf8_utf16_utf32.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/codificacion_de_datos_ascii_unicode_utf8_utf16_utf32.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.3",
+          "title": "Sistemas de Representación Alfanumérica"
+        },
+        {
+          "id": "1.6.1.3.1",
+          "title": "Codificación de Datos: ASCII, Unicode (UTF8, UTF16, UTF32)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.3.2",
+      "title": "Sistemas de Detección de Errores (Distancia Hamming, CRC).",
+      "level": 5,
+      "parent_id": "1.6.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/sistemas_de_deteccion_de_errores_distancia_hamming_crc.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/sistemas_de_deteccion_de_errores_distancia_hamming_crc.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.3.1",
+      "next_id": "1.6.1.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.3",
+          "title": "Sistemas de Representación Alfanumérica"
+        },
+        {
+          "id": "1.6.1.3.2",
+          "title": "Sistemas de Detección de Errores (Distancia Hamming, CRC)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.3.3",
+      "title": "Sistemas de Corrección de Errores (Códigos de Hamming).",
+      "level": 5,
+      "parent_id": "1.6.1.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/sistemas_de_correccion_de_errores_codigos_de_hamming.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_representacion_alfanumerica/sistemas_de_correccion_de_errores_codigos_de_hamming.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.3.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.3",
+          "title": "Sistemas de Representación Alfanumérica"
+        },
+        {
+          "id": "1.6.1.3.3",
+          "title": "Sistemas de Corrección de Errores (Códigos de Hamming)."
+        }
+      ]
+    }
+  ]
+}

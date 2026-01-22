@@ -1,0 +1,185 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales",
+  "nodes": [
+    {
+      "id": "1.6.1.2.3",
+      "title": "Sistemas Binarios, Octales y Hexadecimales",
+      "level": 5,
+      "parent_id": "1.6.1.2",
+      "children_ids": [
+        "1.6.1.2.3.1",
+        "1.6.1.2.3.2",
+        "1.6.1.2.3.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.2",
+      "next_id": "1.6.1.2.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.3",
+          "title": "Sistemas Binarios, Octales y Hexadecimales"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.3.1",
+      "title": "Conversión entre binario y decimal.",
+      "level": 6,
+      "parent_id": "1.6.1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_entre_binario_y_decimal.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_entre_binario_y_decimal.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.3",
+          "title": "Sistemas Binarios, Octales y Hexadecimales"
+        },
+        {
+          "id": "1.6.1.2.3.1",
+          "title": "Conversión entre binario y decimal."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.3.2",
+      "title": "Conversión entre octal/hexadecimal y decimal.",
+      "level": 6,
+      "parent_id": "1.6.1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_entre_octal_hexadecimal_y_decimal.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_entre_octal_hexadecimal_y_decimal.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.3.1",
+      "next_id": "1.6.1.2.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.3",
+          "title": "Sistemas Binarios, Octales y Hexadecimales"
+        },
+        {
+          "id": "1.6.1.2.3.2",
+          "title": "Conversión entre octal/hexadecimal y decimal."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.3.3",
+      "title": "Conversión directa entre binario, octal y hexadecimal.",
+      "level": 6,
+      "parent_id": "1.6.1.2.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_directa_entre_binario_octal_y_hexadecimal.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_binarios_octales_y_hexadecimales/conversion_directa_entre_binario_octal_y_hexadecimal.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.3.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.3",
+          "title": "Sistemas Binarios, Octales y Hexadecimales"
+        },
+        {
+          "id": "1.6.1.2.3.3",
+          "title": "Conversión directa entre binario, octal y hexadecimal."
+        }
+      ]
+    }
+  ]
+}

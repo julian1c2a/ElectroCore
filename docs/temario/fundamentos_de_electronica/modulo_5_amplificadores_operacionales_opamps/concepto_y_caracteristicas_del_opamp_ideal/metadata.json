@@ -1,0 +1,115 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal",
+  "nodes": [
+    {
+      "id": "1.5.1",
+      "title": "Concepto y Características del OpAmp Ideal",
+      "level": 3,
+      "parent_id": "1.5",
+      "children_ids": [
+        "1.5.1.1",
+        "1.5.1.2"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.5.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.1",
+          "title": "Concepto y Características del OpAmp Ideal"
+        }
+      ]
+    },
+    {
+      "id": "1.5.1.1",
+      "title": "Terminales, realimentación negativa.",
+      "level": 4,
+      "parent_id": "1.5.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/terminales_realimentacion_negativa.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/terminales_realimentacion_negativa.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.5.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.1",
+          "title": "Concepto y Características del OpAmp Ideal"
+        },
+        {
+          "id": "1.5.1.1",
+          "title": "Terminales, realimentación negativa."
+        }
+      ]
+    },
+    {
+      "id": "1.5.1.2",
+      "title": "Modelo ideal y sus propiedades.",
+      "level": 4,
+      "parent_id": "1.5.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/modelo_ideal_y_sus_propiedades.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/concepto_y_caracteristicas_del_opamp_ideal/modelo_ideal_y_sus_propiedades.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.1.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.1",
+          "title": "Concepto y Características del OpAmp Ideal"
+        },
+        {
+          "id": "1.5.1.2",
+          "title": "Modelo ideal y sus propiedades."
+        }
+      ]
+    }
+  ]
+}

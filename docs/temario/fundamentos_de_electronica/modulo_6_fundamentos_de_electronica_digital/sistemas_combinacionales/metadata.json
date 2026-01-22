@@ -1,0 +1,229 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales",
+  "nodes": [
+    {
+      "id": "1.6.3",
+      "title": "Sistemas Combinacionales",
+      "level": 3,
+      "parent_id": "1.6",
+      "children_ids": [
+        "1.6.3.1",
+        "1.6.3.2",
+        "1.6.3.3",
+        "1.6.3.4",
+        "1.6.3.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.2",
+      "next_id": "1.6.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        }
+      ]
+    },
+    {
+      "id": "1.6.3.1",
+      "title": "Componentes Básicos: Codificadores, Decodificadores, Multiplexores, Demultiplexores.",
+      "level": 4,
+      "parent_id": "1.6.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/componentes_basicos_codificadores_decodificadores_multiplexores_demultiplexores.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/componentes_basicos_codificadores_decodificadores_multiplexores_demultiplexores.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        },
+        {
+          "id": "1.6.3.1",
+          "title": "Componentes Básicos: Codificadores, Decodificadores, Multiplexores, Demultiplexores."
+        }
+      ]
+    },
+    {
+      "id": "1.6.3.2",
+      "title": "Circuitos Aritméticos: Sumadores, Restadores, Comparadores.",
+      "level": 4,
+      "parent_id": "1.6.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/circuitos_aritmeticos_sumadores_restadores_comparadores.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/circuitos_aritmeticos_sumadores_restadores_comparadores.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.3.1",
+      "next_id": "1.6.3.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        },
+        {
+          "id": "1.6.3.2",
+          "title": "Circuitos Aritméticos: Sumadores, Restadores, Comparadores."
+        }
+      ]
+    },
+    {
+      "id": "1.6.3.3",
+      "title": "Unidades Aritmético Lógicas (ALU).",
+      "level": 4,
+      "parent_id": "1.6.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/unidades_aritmetico_logicas_alu.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/unidades_aritmetico_logicas_alu.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.3.2",
+      "next_id": "1.6.3.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        },
+        {
+          "id": "1.6.3.3",
+          "title": "Unidades Aritmético Lógicas (ALU)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.3.4",
+      "title": "Riesgos en Circuitos Combinacionales (Glitches, Carreras).",
+      "level": 4,
+      "parent_id": "1.6.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/riesgos_en_circuitos_combinacionales_glitches_carreras.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/riesgos_en_circuitos_combinacionales_glitches_carreras.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.3.3",
+      "next_id": "1.6.3.5",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        },
+        {
+          "id": "1.6.3.4",
+          "title": "Riesgos en Circuitos Combinacionales (Glitches, Carreras)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.3.5",
+      "title": "Problemas eléctricos: fanin y fanout.",
+      "level": 4,
+      "parent_id": "1.6.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/problemas_electricos_fanin_y_fanout.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_combinacionales/problemas_electricos_fanin_y_fanout.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.3.4",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.3",
+          "title": "Sistemas Combinacionales"
+        },
+        {
+          "id": "1.6.3.5",
+          "title": "Problemas eléctricos: fanin y fanout."
+        }
+      ]
+    }
+  ]
+}

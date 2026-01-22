@@ -1,0 +1,231 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros",
+  "nodes": [
+    {
+      "id": "1.6.1.2.5",
+      "title": "Números Enteros con Signo (Números Enteros)",
+      "level": 5,
+      "parent_id": "1.6.1.2",
+      "children_ids": [
+        "1.6.1.2.5.1",
+        "1.6.1.2.5.2",
+        "1.6.1.2.5.3",
+        "1.6.1.2.5.4"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.4",
+      "next_id": "1.6.1.2.6",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.5",
+          "title": "Números Enteros con Signo (Números Enteros)"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.5.1",
+      "title": "Magnitud y signo.",
+      "level": 6,
+      "parent_id": "1.6.1.2.5",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/magnitud_y_signo.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/magnitud_y_signo.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.5.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.5",
+          "title": "Números Enteros con Signo (Números Enteros)"
+        },
+        {
+          "id": "1.6.1.2.5.1",
+          "title": "Magnitud y signo."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.5.2",
+      "title": "Complemento a la base (C2, C10).",
+      "level": 6,
+      "parent_id": "1.6.1.2.5",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/complemento_a_la_base_c2_c10.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/complemento_a_la_base_c2_c10.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.5.1",
+      "next_id": "1.6.1.2.5.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.5",
+          "title": "Números Enteros con Signo (Números Enteros)"
+        },
+        {
+          "id": "1.6.1.2.5.2",
+          "title": "Complemento a la base (C2, C10)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.5.3",
+      "title": "Exceso a K.",
+      "level": 6,
+      "parent_id": "1.6.1.2.5",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/exceso_a_k.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/exceso_a_k.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.5.2",
+      "next_id": "1.6.1.2.5.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.5",
+          "title": "Números Enteros con Signo (Números Enteros)"
+        },
+        {
+          "id": "1.6.1.2.5.3",
+          "title": "Exceso a K."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.5.4",
+      "title": "Códigos BCD con signo (Exceso 3, Aiken).",
+      "level": 6,
+      "parent_id": "1.6.1.2.5",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/codigos_bcd_con_signo_exceso_3_aiken.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/numeros_enteros_con_signo_numeros_enteros/codigos_bcd_con_signo_exceso_3_aiken.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.5.3",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.5",
+          "title": "Números Enteros con Signo (Números Enteros)"
+        },
+        {
+          "id": "1.6.1.2.5.4",
+          "title": "Códigos BCD con signo (Exceso 3, Aiken)."
+        }
+      ]
+    }
+  ]
+}

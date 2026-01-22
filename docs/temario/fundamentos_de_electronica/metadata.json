@@ -1,0 +1,38 @@
+{
+  "directory": "fundamentos_de_electronica",
+  "nodes": [
+    {
+      "id": "1",
+      "title": "📚 Fundamentos de Electrónica",
+      "level": 1,
+      "parent_id": "root",
+      "children_ids": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/index.md",
+      "relative_path": "fundamentos_de_electronica/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        }
+      ]
+    }
+  ]
+}

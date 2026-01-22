@@ -1,0 +1,77 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/limitaciones_del_opamp_real",
+  "nodes": [
+    {
+      "id": "1.5.3",
+      "title": "Limitaciones del OpAmp Real",
+      "level": 3,
+      "parent_id": "1.5",
+      "children_ids": [
+        "1.5.3.1"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/limitaciones_del_opamp_real/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/limitaciones_del_opamp_real/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.3",
+          "title": "Limitaciones del OpAmp Real"
+        }
+      ]
+    },
+    {
+      "id": "1.5.3.1",
+      "title": "Offset de entrada, corriente de polarización, slew rate, ancho de banda.",
+      "level": 4,
+      "parent_id": "1.5.3",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/limitaciones_del_opamp_real/offset_de_entrada_corriente_de_polarizacion_slew_rate_ancho_de_banda.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/limitaciones_del_opamp_real/offset_de_entrada_corriente_de_polarizacion_slew_rate_ancho_de_banda.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.3",
+          "title": "Limitaciones del OpAmp Real"
+        },
+        {
+          "id": "1.5.3.1",
+          "title": "Offset de entrada, corriente de polarización, slew rate, ancho de banda."
+        }
+      ]
+    }
+  ]
+}

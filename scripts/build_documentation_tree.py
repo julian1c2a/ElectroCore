@@ -418,6 +418,77 @@ class DocumentationBuilder:
             
             node.metadata = metadata
     
+    def generate_preview(self) -> Dict[str, Any]:
+        """Genera una vista previa JSON de lo que se creará (sin crear archivos)."""
+        # Preparar nodos
+        self._set_node_paths(self.root, self.target_dir)
+        self._create_metadata()
+        
+        preview = {
+            "metadata": {
+                "source": Config.SOURCE_MD,
+                "target_dir": Config.TARGET_DIR,
+                "catalog_path": Config.CATALOG_JSON,
+                "timestamp": "2026-01-22"
+            },
+            "summary": {
+                "total_directories": 0,
+                "total_markdown_files": 0,
+                "total_metadata_files": 0,
+                "total_python_refs": 0
+            },
+            "structure": []
+        }
+        
+        # Contar y construir estructura
+        def build_node_preview(node: DocumentNode) -> Dict[str, Any]:
+            """Construye vista previa recursiva de un nodo."""
+            node_preview = {
+                "id": node.node_id,
+                "title": node.original_name,
+                "level": node.level,
+                "type": "directory" if node.is_directory else "file"
+            }
+            
+            # Información de rutas
+            if node.metadata:
+                node_preview["paths"] = {
+                    "markdown": node.path,
+                    "metadata": os.path.join(os.path.dirname(node.path), Config.METADATA_FILENAME),
+                    "relative": node.metadata.relative_path
+                }
+                
+                # Navegación
+                node_preview["navigation"] = {
+                    "parent_id": node.metadata.parent_id,
+                    "prev_id": node.metadata.prev_id,
+                    "next_id": node.metadata.next_id,
+                    "breadcrumb": node.metadata.breadcrumb
+                }
+                
+                # Referencias Python
+                if node.python_functions:
+                    node_preview["python_refs"] = [ref.to_dict() for ref in node.python_functions]
+                    preview["summary"]["total_python_refs"] += len(node.python_functions)
+            
+            # Actualizar contadores
+            if node.is_directory:
+                preview["summary"]["total_directories"] += 1
+            else:
+                preview["summary"]["total_markdown_files"] += 1
+                preview["summary"]["total_metadata_files"] += 1  # Un metadata.json por directorio
+            
+            # Procesar hijos
+            if node.children:
+                node_preview["children"] = [build_node_preview(child) for child in node.children]
+            
+            return node_preview
+        
+        # Construir estructura desde la raíz
+        preview["structure"] = [build_node_preview(child) for child in self.root.children]
+        
+        return preview
+    
     def _generate_markdown_files(self):
         """Genera todos los archivos markdown."""
         # BFS para generar por niveles
@@ -679,6 +750,22 @@ def main():
     if args.dry_run:
         print("\n⚠️  Modo DRY-RUN: No se crearán archivos")
         print(f"   Se generarían archivos en: {Config.TARGET_DIR}")
+        
+        # Generar vista previa JSON detallada
+        builder = DocumentationBuilder(root_node, Config.TARGET_DIR)
+        preview = builder.generate_preview()
+        
+        output_file = "docs/build_preview.json"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(preview, f, indent=2, ensure_ascii=False)
+        
+        print(f"\n📋 Vista previa generada: {output_file}")
+        print(f"\n📊 Resumen:")
+        print(f"   - Directorios: {preview['summary']['total_directories']}")
+        print(f"   - Archivos markdown: {preview['summary']['total_markdown_files']}")
+        print(f"   - Archivos metadata: {preview['summary']['total_metadata_files']}")
+        print(f"   - Referencias Python: {preview['summary']['total_python_refs']}")
+        
         return 0
     
     # Construir documentación

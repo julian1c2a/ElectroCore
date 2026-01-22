@@ -1,0 +1,28 @@
+# Elementos de Memoria Básicos: Latches y FlipFlops (RS, D, T, JK).
+
+**Ruta:** [📚 Fundamentos de Electrónica](../../index.md) > [Módulo 6: Fundamentos de Electrónica Digital](../index.md) > [Sistemas Secuenciales](index.md)
+[Siguiente ➡️](circuitos_secuenciales_registros_de_desplazamiento_y_contadores_sincronos_asincronos.md)
+
+---
+
+**ID:** `1.6.4.1`
+
+
+## 📝 Contenido Teórico
+
+*Pendiente de desarrollar*
+
+## 🔧 Funciones Python Asociadas
+
+*No hay funciones Python asociadas aún*
+
+## 📚 Recursos Adicionales
+
+- Pendiente de añadir referencias
+
+## ✅ Estado de Desarrollo
+
+- [ ] Teoría documentada
+- [ ] Ejemplos añadidos
+- [ ] Funciones Python implementadas
+- [ ] Tests unitarios creados

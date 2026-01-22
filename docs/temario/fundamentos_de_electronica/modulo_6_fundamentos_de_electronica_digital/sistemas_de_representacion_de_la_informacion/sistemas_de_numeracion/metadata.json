@@ -1,0 +1,50 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion",
+  "nodes": [
+    {
+      "id": "1.6.1.2",
+      "title": "Sistemas de Numeración",
+      "level": 4,
+      "parent_id": "1.6.1",
+      "children_ids": [
+        "1.6.1.2.1",
+        "1.6.1.2.2",
+        "1.6.1.2.3",
+        "1.6.1.2.4",
+        "1.6.1.2.5",
+        "1.6.1.2.6",
+        "1.6.1.2.7"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.1",
+      "next_id": "1.6.1.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        }
+      ]
+    }
+  ]
+}

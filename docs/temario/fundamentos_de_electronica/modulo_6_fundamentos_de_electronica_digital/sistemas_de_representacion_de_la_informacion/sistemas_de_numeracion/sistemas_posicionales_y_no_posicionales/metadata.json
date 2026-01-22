@@ -1,0 +1,139 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales",
+  "nodes": [
+    {
+      "id": "1.6.1.2.1",
+      "title": "Sistemas Posicionales y No Posicionales",
+      "level": 5,
+      "parent_id": "1.6.1.2",
+      "children_ids": [
+        "1.6.1.2.1.1",
+        "1.6.1.2.1.2"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.1",
+          "title": "Sistemas Posicionales y No Posicionales"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.1.1",
+      "title": "Definiciones y Ejemplos (Romano, Base 5, Temporal).",
+      "level": 6,
+      "parent_id": "1.6.1.2.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/definiciones_y_ejemplos_romano_base_5_temporal.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/definiciones_y_ejemplos_romano_base_5_temporal.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.1",
+          "title": "Sistemas Posicionales y No Posicionales"
+        },
+        {
+          "id": "1.6.1.2.1.1",
+          "title": "Definiciones y Ejemplos (Romano, Base 5, Temporal)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.1.2",
+      "title": "Unicidad de la Representación.",
+      "level": 6,
+      "parent_id": "1.6.1.2.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/unicidad_de_la_representacion.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/sistemas_posicionales_y_no_posicionales/unicidad_de_la_representacion.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.1.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.1",
+          "title": "Sistemas Posicionales y No Posicionales"
+        },
+        {
+          "id": "1.6.1.2.1.2",
+          "title": "Unicidad de la Representación."
+        }
+      ]
+    }
+  ]
+}

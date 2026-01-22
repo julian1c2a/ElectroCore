@@ -1,0 +1,28 @@
+# Amplificador inversor y no inversor.
+
+**Ruta:** [📚 Fundamentos de Electrónica](../../index.md) > [Módulo 5: Amplificadores Operacionales (OpAmps)](../index.md) > [Circuitos Básicos con OpAmps](index.md)
+[Siguiente ➡️](seguidor_de_tension.md)
+
+---
+
+**ID:** `1.5.2.1`
+
+
+## 📝 Contenido Teórico
+
+*Pendiente de desarrollar*
+
+## 🔧 Funciones Python Asociadas
+
+*No hay funciones Python asociadas aún*
+
+## 📚 Recursos Adicionales
+
+- Pendiente de añadir referencias
+
+## ✅ Estado de Desarrollo
+
+- [ ] Teoría documentada
+- [ ] Ejemplos añadidos
+- [ ] Funciones Python implementadas
+- [ ] Tests unitarios creados

@@ -1,0 +1,229 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt",
+  "nodes": [
+    {
+      "id": "1.3.1",
+      "title": "Estructura y Funcionamiento del BJT",
+      "level": 3,
+      "parent_id": "1.3",
+      "children_ids": [
+        "1.3.1.1",
+        "1.3.1.2",
+        "1.3.1.3",
+        "1.3.1.4",
+        "1.3.1.5"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.3.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        }
+      ]
+    },
+    {
+      "id": "1.3.1.1",
+      "title": "Tipos NPN y PNP.",
+      "level": 4,
+      "parent_id": "1.3.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/tipos_npn_y_pnp.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/tipos_npn_y_pnp.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.3.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        },
+        {
+          "id": "1.3.1.1",
+          "title": "Tipos NPN y PNP."
+        }
+      ]
+    },
+    {
+      "id": "1.3.1.2",
+      "title": "Modelo de EbersMoll.",
+      "level": 4,
+      "parent_id": "1.3.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/modelo_de_ebersmoll.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/modelo_de_ebersmoll.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.3.1.1",
+      "next_id": "1.3.1.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        },
+        {
+          "id": "1.3.1.2",
+          "title": "Modelo de EbersMoll."
+        }
+      ]
+    },
+    {
+      "id": "1.3.1.3",
+      "title": "Modos de operación: corte, activa y saturación.",
+      "level": 4,
+      "parent_id": "1.3.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/modos_de_operacion_corte_activa_y_saturacion.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/modos_de_operacion_corte_activa_y_saturacion.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.3.1.2",
+      "next_id": "1.3.1.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        },
+        {
+          "id": "1.3.1.3",
+          "title": "Modos de operación: corte, activa y saturación."
+        }
+      ]
+    },
+    {
+      "id": "1.3.1.4",
+      "title": "Curvas características de entrada y salida.",
+      "level": 4,
+      "parent_id": "1.3.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/curvas_caracteristicas_de_entrada_y_salida.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/curvas_caracteristicas_de_entrada_y_salida.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.3.1.3",
+      "next_id": "1.3.1.5",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        },
+        {
+          "id": "1.3.1.4",
+          "title": "Curvas características de entrada y salida."
+        }
+      ]
+    },
+    {
+      "id": "1.3.1.5",
+      "title": "Relaciones de corrientes y tensiones (α, β).",
+      "level": 4,
+      "parent_id": "1.3.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/relaciones_de_corrientes_y_tensiones.md",
+      "relative_path": "fundamentos_de_electronica/modulo_3_transistores_bipolares_de_union_bjt/estructura_y_funcionamiento_del_bjt/relaciones_de_corrientes_y_tensiones.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.3.1.4",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.3",
+          "title": "Módulo 3: Transistores Bipolares de Unión (BJT)"
+        },
+        {
+          "id": "1.3.1",
+          "title": "Estructura y Funcionamiento del BJT"
+        },
+        {
+          "id": "1.3.1.5",
+          "title": "Relaciones de corrientes y tensiones (α, β)."
+        }
+      ]
+    }
+  ]
+}

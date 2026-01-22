@@ -1,0 +1,191 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps",
+  "nodes": [
+    {
+      "id": "1.5.2",
+      "title": "Circuitos Básicos con OpAmps",
+      "level": 3,
+      "parent_id": "1.5",
+      "children_ids": [
+        "1.5.2.1",
+        "1.5.2.2",
+        "1.5.2.3",
+        "1.5.2.4"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.1",
+      "next_id": "1.5.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.2",
+          "title": "Circuitos Básicos con OpAmps"
+        }
+      ]
+    },
+    {
+      "id": "1.5.2.1",
+      "title": "Amplificador inversor y no inversor.",
+      "level": 4,
+      "parent_id": "1.5.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/amplificador_inversor_y_no_inversor.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/amplificador_inversor_y_no_inversor.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.5.2.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.2",
+          "title": "Circuitos Básicos con OpAmps"
+        },
+        {
+          "id": "1.5.2.1",
+          "title": "Amplificador inversor y no inversor."
+        }
+      ]
+    },
+    {
+      "id": "1.5.2.2",
+      "title": "Seguidor de tensión.",
+      "level": 4,
+      "parent_id": "1.5.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/seguidor_de_tension.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/seguidor_de_tension.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.2.1",
+      "next_id": "1.5.2.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.2",
+          "title": "Circuitos Básicos con OpAmps"
+        },
+        {
+          "id": "1.5.2.2",
+          "title": "Seguidor de tensión."
+        }
+      ]
+    },
+    {
+      "id": "1.5.2.3",
+      "title": "Sumador, restador, integrador y derivador.",
+      "level": 4,
+      "parent_id": "1.5.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/sumador_restador_integrador_y_derivador.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/sumador_restador_integrador_y_derivador.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.2.2",
+      "next_id": "1.5.2.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.2",
+          "title": "Circuitos Básicos con OpAmps"
+        },
+        {
+          "id": "1.5.2.3",
+          "title": "Sumador, restador, integrador y derivador."
+        }
+      ]
+    },
+    {
+      "id": "1.5.2.4",
+      "title": "Comparadores.",
+      "level": 4,
+      "parent_id": "1.5.2",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/comparadores.md",
+      "relative_path": "fundamentos_de_electronica/modulo_5_amplificadores_operacionales_opamps/circuitos_basicos_con_opamps/comparadores.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.5.2.3",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.5",
+          "title": "Módulo 5: Amplificadores Operacionales (OpAmps)"
+        },
+        {
+          "id": "1.5.2",
+          "title": "Circuitos Básicos con OpAmps"
+        },
+        {
+          "id": "1.5.2.4",
+          "title": "Comparadores."
+        }
+      ]
+    }
+  ]
+}

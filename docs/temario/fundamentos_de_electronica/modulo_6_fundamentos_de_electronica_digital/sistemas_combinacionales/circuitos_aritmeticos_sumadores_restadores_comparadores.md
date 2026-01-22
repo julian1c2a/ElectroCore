@@ -1,0 +1,28 @@
+# Circuitos Aritméticos: Sumadores, Restadores, Comparadores.
+
+**Ruta:** [📚 Fundamentos de Electrónica](../../index.md) > [Módulo 6: Fundamentos de Electrónica Digital](../index.md) > [Sistemas Combinacionales](index.md)
+[⬅️ Anterior](componentes_basicos_codificadores_decodificadores_multiplexores_demultiplexores.md) | [Siguiente ➡️](unidades_aritmetico_logicas_alu.md)
+
+---
+
+**ID:** `1.6.3.2`
+
+
+## 📝 Contenido Teórico
+
+*Pendiente de desarrollar*
+
+## 🔧 Funciones Python Asociadas
+
+*No hay funciones Python asociadas aún*
+
+## 📚 Recursos Adicionales
+
+- Pendiente de añadir referencias
+
+## ✅ Estado de Desarrollo
+
+- [ ] Teoría documentada
+- [ ] Ejemplos añadidos
+- [ ] Funciones Python implementadas
+- [ ] Tests unitarios creados

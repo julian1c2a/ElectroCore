@@ -1,0 +1,191 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales",
+  "nodes": [
+    {
+      "id": "1.6.4",
+      "title": "Sistemas Secuenciales",
+      "level": 3,
+      "parent_id": "1.6",
+      "children_ids": [
+        "1.6.4.1",
+        "1.6.4.2",
+        "1.6.4.3",
+        "1.6.4.4"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.3",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.4",
+          "title": "Sistemas Secuenciales"
+        }
+      ]
+    },
+    {
+      "id": "1.6.4.1",
+      "title": "Elementos de Memoria Básicos: Latches y FlipFlops (RS, D, T, JK).",
+      "level": 4,
+      "parent_id": "1.6.4",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/elementos_de_memoria_basicos_latches_y_flipflops_rs_d_t_jk.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/elementos_de_memoria_basicos_latches_y_flipflops_rs_d_t_jk.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.4.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.4",
+          "title": "Sistemas Secuenciales"
+        },
+        {
+          "id": "1.6.4.1",
+          "title": "Elementos de Memoria Básicos: Latches y FlipFlops (RS, D, T, JK)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.4.2",
+      "title": "Circuitos Secuenciales: Registros de Desplazamiento y Contadores (Síncronos, Asíncronos).",
+      "level": 4,
+      "parent_id": "1.6.4",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/circuitos_secuenciales_registros_de_desplazamiento_y_contadores_sincronos_asincronos.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/circuitos_secuenciales_registros_de_desplazamiento_y_contadores_sincronos_asincronos.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.4.1",
+      "next_id": "1.6.4.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.4",
+          "title": "Sistemas Secuenciales"
+        },
+        {
+          "id": "1.6.4.2",
+          "title": "Circuitos Secuenciales: Registros de Desplazamiento y Contadores (Síncronos, Asíncronos)."
+        }
+      ]
+    },
+    {
+      "id": "1.6.4.3",
+      "title": "Máquinas de Estados Finitos (FSM): Modelos de Mealy y Moore, diseño y análisis.",
+      "level": 4,
+      "parent_id": "1.6.4",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/maquinas_de_estados_finitos_fsm_modelos_de_mealy_y_moore_diseno_y_analisis.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/maquinas_de_estados_finitos_fsm_modelos_de_mealy_y_moore_diseno_y_analisis.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.4.2",
+      "next_id": "1.6.4.4",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.4",
+          "title": "Sistemas Secuenciales"
+        },
+        {
+          "id": "1.6.4.3",
+          "title": "Máquinas de Estados Finitos (FSM): Modelos de Mealy y Moore, diseño y análisis."
+        }
+      ]
+    },
+    {
+      "id": "1.6.4.4",
+      "title": "Memorias Digitales: ROM, RAM, Flash.",
+      "level": 4,
+      "parent_id": "1.6.4",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/memorias_digitales_rom_ram_flash.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_secuenciales/memorias_digitales_rom_ram_flash.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.4.3",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.4",
+          "title": "Sistemas Secuenciales"
+        },
+        {
+          "id": "1.6.4.4",
+          "title": "Memorias Digitales: ROM, RAM, Flash."
+        }
+      ]
+    }
+  ]
+}

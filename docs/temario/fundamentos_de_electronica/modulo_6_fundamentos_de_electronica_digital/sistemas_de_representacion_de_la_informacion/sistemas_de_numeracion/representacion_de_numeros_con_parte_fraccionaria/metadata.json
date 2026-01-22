@@ -1,0 +1,185 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria",
+  "nodes": [
+    {
+      "id": "1.6.1.2.7",
+      "title": "Representación de Números con Parte Fraccionaria",
+      "level": 5,
+      "parent_id": "1.6.1.2",
+      "children_ids": [
+        "1.6.1.2.7.1",
+        "1.6.1.2.7.2",
+        "1.6.1.2.7.3"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.6",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.7",
+          "title": "Representación de Números con Parte Fraccionaria"
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.7.1",
+      "title": "Punto Fijo (Fixedpoint): concepto, conversiones, rango, precisión.",
+      "level": 6,
+      "parent_id": "1.6.1.2.7",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/punto_fijo_fixedpoint_concepto_conversiones_rango_precision.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/punto_fijo_fixedpoint_concepto_conversiones_rango_precision.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.6.1.2.7.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.7",
+          "title": "Representación de Números con Parte Fraccionaria"
+        },
+        {
+          "id": "1.6.1.2.7.1",
+          "title": "Punto Fijo (Fixedpoint): concepto, conversiones, rango, precisión."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.7.2",
+      "title": "Punto Flotante (Floatingpoint): norma IEEE 754, rango, precisión, normalización.",
+      "level": 6,
+      "parent_id": "1.6.1.2.7",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/punto_flotante_floatingpoint_norma_ieee_754_rango_precision_normalizacion.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/punto_flotante_floatingpoint_norma_ieee_754_rango_precision_normalizacion.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.7.1",
+      "next_id": "1.6.1.2.7.3",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.7",
+          "title": "Representación de Números con Parte Fraccionaria"
+        },
+        {
+          "id": "1.6.1.2.7.2",
+          "title": "Punto Flotante (Floatingpoint): norma IEEE 754, rango, precisión, normalización."
+        }
+      ]
+    },
+    {
+      "id": "1.6.1.2.7.3",
+      "title": "Operaciones en Punto Fijo y Flotante.",
+      "level": 6,
+      "parent_id": "1.6.1.2.7",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/operaciones_en_punto_fijo_y_flotante.md",
+      "relative_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/sistemas_de_numeracion/representacion_de_numeros_con_parte_fraccionaria/operaciones_en_punto_fijo_y_flotante.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.6.1.2.7.2",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.6",
+          "title": "Módulo 6: Fundamentos de Electrónica Digital"
+        },
+        {
+          "id": "1.6.1",
+          "title": "Sistemas de Representación de la Información"
+        },
+        {
+          "id": "1.6.1.2",
+          "title": "Sistemas de Numeración"
+        },
+        {
+          "id": "1.6.1.2.7",
+          "title": "Representación de Números con Parte Fraccionaria"
+        },
+        {
+          "id": "1.6.1.2.7.3",
+          "title": "Operaciones en Punto Fijo y Flotante."
+        }
+      ]
+    }
+  ]
+}

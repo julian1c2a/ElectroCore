@@ -1,0 +1,115 @@
+{
+  "directory": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio",
+  "nodes": [
+    {
+      "id": "1.7.1",
+      "title": "Instrumentación Básica de Laboratorio",
+      "level": 3,
+      "parent_id": "1.7",
+      "children_ids": [
+        "1.7.1.1",
+        "1.7.1.2"
+      ],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/index.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/index.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.7.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.1",
+          "title": "Instrumentación Básica de Laboratorio"
+        }
+      ]
+    },
+    {
+      "id": "1.7.1.1",
+      "title": "Uso de multímetro, osciloscopio, fuente de alimentación, generador de funciones.",
+      "level": 4,
+      "parent_id": "1.7.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/uso_de_multimetro_osciloscopio_fuente_de_alimentacion_generador_de_funciones.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/uso_de_multimetro_osciloscopio_fuente_de_alimentacion_generador_de_funciones.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": null,
+      "next_id": "1.7.1.2",
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.1",
+          "title": "Instrumentación Básica de Laboratorio"
+        },
+        {
+          "id": "1.7.1.1",
+          "title": "Uso de multímetro, osciloscopio, fuente de alimentación, generador de funciones."
+        }
+      ]
+    },
+    {
+      "id": "1.7.1.2",
+      "title": "Medidas de tensión, corriente y potencia.",
+      "level": 4,
+      "parent_id": "1.7.1",
+      "children_ids": [],
+      "md_path": "docs/temario/fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/medidas_de_tension_corriente_y_potencia.md",
+      "relative_path": "fundamentos_de_electronica/modulo_7_laboratorio_y_herramientas_de_simulacion/instrumentacion_basica_de_laboratorio/medidas_de_tension_corriente_y_potencia.md",
+      "python_refs": [],
+      "status": "pending",
+      "has_exercises": false,
+      "has_examples": false,
+      "prev_id": "1.7.1.1",
+      "next_id": null,
+      "breadcrumb": [
+        {
+          "id": "root",
+          "title": "Fundamentos de Electrónica"
+        },
+        {
+          "id": "1",
+          "title": "📚 Fundamentos de Electrónica"
+        },
+        {
+          "id": "1.7",
+          "title": "Módulo 7: Laboratorio y Herramientas de Simulación"
+        },
+        {
+          "id": "1.7.1",
+          "title": "Instrumentación Básica de Laboratorio"
+        },
+        {
+          "id": "1.7.1.2",
+          "title": "Medidas de tensión, corriente y potencia."
+        }
+      ]
+    }
+  ]
+}
