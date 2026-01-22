@@ -311,14 +311,207 @@ En sistemas digitales, es común usar códigos de longitud fija:
 - **Parámetros**: `(L1: Lenguaje, L2: Lenguaje, separador: str) -> LenguajeExplicito`
 - **Nota**: Representado como palabras con separador
 - **Estado**: ✅ Implementada
-  
+
+---
+
+## 🔧 Alfabetos Jerárquicos
+
+### Concepto de Alfabeto desde Lenguaje
+
+Un alfabeto puede definirse no solo con símbolos básicos, sino usando **palabras de un lenguaje como símbolos**. Esto permite crear jerarquías multinivel:
+
+- **Nivel 0**: Alfabeto básico Σ₀ = {0, 1}
+- **Nivel 1**: Lenguaje L₁ sobre Σ₀ = {00, 01, 10, 11}
+- **Nivel 2**: Alfabeto Σ₁ = L₁ (las palabras de L₁ son símbolos de Σ₁)
+- **Nivel 3**: Lenguaje L₂ sobre Σ₁ (palabras formadas por símbolos del nivel anterior)
+
+**Aplicaciones prácticas**:
+
+- **BCD a bytes**: Usar dígitos BCD (4 bits) como símbolos → bytes (8 bits)
+- **Códigos de error**: Usar palabras de código Hamming como símbolos
+- **Protocolos de comunicación**: Tramas como símbolos de nivel superior
+- **Lenguaje natural**: Palabras como símbolos → frases
+
+### [[core.alfabetos.AlfabetoDesdeLenguaje]]
+
+- **Descripción**: Alfabeto cuyos símbolos son las palabras de un lenguaje finito
+- **Parámetros**: `(lenguaje: Lenguaje, separador: str = " ")`
+- **Ejemplo**:
+
+  ```python
+  L1 = LenguajeUniverso(binario, longitud=2)  # {00, 01, 10, 11}
+  alf_nivel2 = AlfabetoDesdeLenguaje(L1)      # Símbolos: '00', '01', '10', '11'
+  ```
+
+- **Atributos adicionales**:
+  - `lenguaje_fuente`: Lenguaje del que provienen los símbolos
+  - `separador`: String usado para separar símbolos al formar palabras
+- **Estado**: ✅ Implementada
+
+---
+
+## 🔧 Lenguajes de Longitud Fija y Distancia de Hamming
+
+### Teoría de Códigos: Distancia de Hamming
+
+En teoría de códigos, la **distancia de Hamming** entre dos palabras de igual longitud es el número de posiciones en las que difieren sus símbolos.
+
+**Definición**: d_H(w₁, w₂) = |{i | w₁[i] ≠ w₂[i]}|
+
+**Propiedades importantes**:
+
+- d_H(w, w) = 0 (distancia a sí misma)
+- d_H(w₁, w₂) = d_H(w₂, w₁) (simétrica)
+- d_H(w₁, w₃) ≤ d_H(w₁, w₂) + d_H(w₂, w₃) (desigualdad triangular)
+
+**Peso de Hamming**: w_H(w) = número de símbolos no nulos (diferentes del primer símbolo del alfabeto)
+
+- Ejemplo binario: w_H("0101") = 2 (dos unos)
+
+**Distancia mínima de un código**: d_min = min{d_H(w₁, w₂) | w₁, w₂ ∈ L, w₁ ≠ w₂}
+
+**Capacidad de detección y corrección**:
+
+- d_min ≥ 2: puede **detectar** 1 error
+- d_min ≥ 3: puede **detectar** 2 errores o **corregir** 1 error
+- d_min ≥ 2t+1: puede **corregir** t errores
+
+### [[core.lenguajes.LenguajeLongitudFija]]
+
+- **Descripción**: Clase abstracta base para lenguajes donde todas las palabras tienen longitud fija
+- **Hereda de**: `Lenguaje`
+- **Capacidades adicionales**: Cálculo de distancia y peso de Hamming
+- **Métodos**:
+  - `distancia_hamming(palabra1, palabra2) -> int`: Calcula d_H
+  - `distancia_minima() -> int`: Calcula d_min del código
+  - `peso_hamming(palabra) -> int`: Calcula w_H
+- **Estado**: ✅ Implementada
+
+### [[core.lenguajes.LenguajeExplicitoLongitudFija]]
+
+- **Descripción**: Lenguaje explícito con todas las palabras de la misma longitud
+- **Hereda de**: `LenguajeLongitudFija`
+- **Parámetros**: `(alfabeto: Alfabeto, palabras: Set[str], nombre: str = "")`
+- **Validación**: Verifica que todas las palabras tengan la misma longitud
+- **Ejemplo**:
+
+  ```python
+  # Código de repetición triple
+  L = LenguajeExplicitoLongitudFija(binario, {"000", "111"}, "Rep-3")
+  L.distancia_minima()  # → 3 (puede corregir 1 error)
+  ```
+
+- **Estado**: ✅ Implementada
+
+**Nota**: `LenguajeExplicito` actúa como factory: si todas las palabras tienen la misma longitud, retorna automáticamente `LenguajeExplicitoLongitudFija`.
+
+---
+
+## 🔧 Semántica como Orden Parcial
+
+### Concepto de Semántica
+
+La **semántica** asocia significado a las palabras de un lenguaje mediante un **orden parcial** (L, ≤) donde:
+
+- L es un lenguaje formal
+- ≤ es una relación de orden parcial:
+  - **Reflexiva**: w ≤ w
+  - **Antisimétrica**: si w₁ ≤ w₂ y w₂ ≤ w₁ entonces w₁ = w₂
+  - **Transitiva**: si w₁ ≤ w₂ y w₂ ≤ w₃ entonces w₁ ≤ w₃
+- Tiene **elemento mínimo** ⊥ (bottom): ⊥ ≤ w para toda w ∈ L
+- Tiene **elemento máximo** ⊤ (top): w ≤ ⊤ para toda w ∈ L
+- Es **conexo**: no hay partes desconectadas (toda palabra es comparable con ⊥ y ⊤)
+
+**Relaciones de orden**:
+
+- w₁ < w₂: menor estrictamente
+- w₁ = w₂: iguales según el orden
+- w₁ > w₂: mayor estrictamente
+- w₁ ⊥ w₂: incomparables (no relacionados)
+
+### [[core.semantica.Semantica]]
+
+- **Descripción**: Clase abstracta base para definir semántica como orden parcial
+- **Parámetros**: `(lenguaje: Lenguaje)`
+- **Métodos principales**:
+  - `comparar(palabra1, palabra2) -> RelacionOrden`: Compara dos palabras
+  - `es_menor()`, `es_igual()`, `es_mayor()`, `es_comparable()`
+  - `minimo() -> str`: Retorna elemento ⊥
+  - `maximo() -> str`: Retorna elemento ⊤
+  - `supremo(conjunto) -> str`: Menor cota superior
+  - `infimo(conjunto) -> str`: Mayor cota inferior
+  - `ordenar(palabras) -> List[str]`: Ordena según el orden parcial
+- **Estado**: ✅ Implementada
+
+### [[core.semantica.SemanticaLexicografica]]
+
+- **Descripción**: Orden lexicográfico según el alfabeto (como diccionario)
+- **Parámetros**: `(lenguaje: Lenguaje, alfabeto: Alfabeto)`
+- **Ejemplo**: En binario de longitud 3:
+  - ⊥ = "000"
+  - ⊤ = "111"
+  - "001" < "010" < "011" < "100" < "101" < "110" < "111"
+- **Estado**: ✅ Implementada
+
+### [[core.semantica.SemanticaPesoHamming]]
+
+- **Descripción**: Orden por peso de Hamming (número de símbolos no nulos)
+- **Parámetros**: `(lenguaje: LenguajeLongitudFija)`
+- **Características**:
+  - Palabras con menor peso son menores
+  - Palabras con mismo peso son incomparables
+  - ⊥ = palabra de peso mínimo (todos ceros)
+  - ⊤ = palabra de peso máximo (todos unos en binario)
+- **Ejemplo**: "0000" < "0001" ⊥ "0010" < "0011" ⊥ "0101" < "1111"
+- **Estado**: ✅ Implementada
+
+### [[core.semantica.SemanticaLongitud]]
+
+- **Descripción**: Orden por longitud de palabras
+- **Parámetros**: `(lenguaje: Lenguaje)`
+- **Características**:
+  - Palabras más cortas son menores
+  - Palabras de misma longitud son incomparables
+- **Aplicación**: Lenguajes de longitud variable
+- **Estado**: ✅ Implementada
+
+### [[core.semantica.SemanticaPersonalizada]]
+
+- **Descripción**: Orden definido por función de comparación personalizada
+- **Parámetros**: `(lenguaje: Lenguaje, funcion_comparacion: Callable[[str, str], RelacionOrden])`
+- **Uso**: Permite definir cualquier criterio de orden
+- **Ejemplo**: Orden por suma de dígitos, número de transiciones, etc.
+- **Estado**: ✅ Implementada
+
+### Operaciones sobre órdenes parciales
+
+**Supremo** (menor cota superior): Dado S ⊆ L, sup(S) es la menor palabra w tal que s ≤ w para todo s ∈ S
+
+**Ínfimo** (mayor cota inferior): Dado S ⊆ L, inf(S) es la mayor palabra w tal que w ≤ s para todo s ∈ S
+
+**Diagrama de Hasse**: Representación visual del orden parcial donde:
+
+- Nodos = palabras del lenguaje
+- Aristas = relaciones de orden inmediatas (sin transitividad)
+- Niveles = palabras con misma "altura" en el orden
+
+---
+
 ## 📚 Recursos Adicionales
 
-- Pendiente de añadir referencias
+- **Demos disponibles**:
+  - `demos/demo_hamming.py` - Distancia de Hamming y códigos de error
+  - `demos/demo_alfabeto_jerarquico.py` - Alfabetos multinivel
+  - `demos/demo_semantica.py` - Órdenes parciales sobre lenguajes
 
 ## ✅ Estado de Desarrollo
 
-- [ ] Teoría documentada
-- [ ] Ejemplos añadidos
-- [ ] Funciones Python implementadas
+- [x] Teoría documentada
+- [x] Ejemplos añadidos
+- [x] Funciones Python implementadas
+  - [x] Alfabetos (básicos, estándar, binario, jerárquicos)
+  - [x] Lenguajes (universo, predicado, autómata, explícito, vacío)
+  - [x] Lenguajes de longitud fija con distancia de Hamming
+  - [x] Operaciones sobre lenguajes (unión, intersección, complemento, etc.)
+  - [x] Semántica como orden parcial (lexicográfico, peso Hamming, longitud, personalizado)
 - [ ] Tests unitarios creados

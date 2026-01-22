@@ -1,6 +1,194 @@
 """
 alfabetos.py
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    print("=" * 70)    print("✅ Demo completado")    print("=" * 70)        demo_codigo_hamming()    demo_palabras_como_simbolos()    demo_codigo_bcd_bytes()    demo_jerarquia_binaria()if __name__ == "__main__":    print()    print(f"\nTotal de mensajes de 2 palabras: {len(mensajes)}")            print(f"   {i}. {mensaje}")    for i, mensaje in enumerate(mensajes[:5], 1):    mensajes = alf_hamming.generar_palabras(2)    print("\nPrimeros 5 mensajes de 2 palabras de código:")    # Generar mensajes como secuencias de palabras de código        print(f"|Σ_Hamming| = {alf_hamming.cardinal}")    print(f"\nΣ_Hamming = {alf_hamming}")    alf_hamming = AlfabetoDesdeLegunaje(L_hamming, separador=" ")    # Usar palabras del código como símbolos        print(f"d_min = {L_hamming.distancia_minima()}")    print(f"|L_Hamming| = {L_hamming.cardinal()}")    print(f"\nL_Hamming = código de Hamming(7,4)")    L_hamming = LenguajeExplicitoLongitudFija(alf_bin, palabras_hamming, "Hamming(7,4)")        }        "1100110", "1101001", "1110000", "1111111"        "1000011", "1001100", "1010101", "1011010",        "0100101", "0101010", "0110011", "0111100",        "0000000", "0001111", "0010110", "0011001",    palabras_hamming = {    # (Simplificado - solo algunas palabras de código)    # Nivel 1: Código de Hamming(7,4) - 16 palabras válidas de 7 bits        alf_bin = AlfabetosPredefinidos.binario()    # Nivel 0: Binario        print("=" * 70)    print("ALFABETO DESDE CÓDIGO DE HAMMING")    print("=" * 70)    """Usar código de Hamming(7,4) como alfabeto."""def demo_codigo_hamming():    print()    print(f"\nTotal de frases de 3 palabras: {len(frases)}")            print(f"   {i}. {frase}")    for i, frase in enumerate(frases[:10], 1):    frases = alf_palabras.generar_palabras(3)    print("\nPrimeras 10 frases de 3 palabras:")    # Generar "frases" (secuencias de palabras)        print(f"\nΣ₂ (palabras): {alf_palabras}")    alf_palabras = AlfabetoDesdeLegunaje(L_vocabulario, separador=" ")    # Nivel 2: Alfabeto con palabras como símbolos        print(f"|L₁| = {L_vocabulario.cardinal()}")    print(f"\nL₁ (vocabulario) = {sorted(L_vocabulario.enumerar())}")    L_vocabulario = LenguajeExplicito(alf_ascii, vocabulario)        }        "gato", "perro", "casa", "coche"        "el", "la", "un", "una",    vocabulario = {    # Nivel 1: Pequeño vocabulario de palabras        print(f"\nΣ₀ (ASCII minúsculas): |Σ₀| = {alf_ascii.cardinal}")    alf_ascii = AlfabetosPredefinidos.ascii_minusculas()    # Nivel 0: Alfabeto ASCII        print("=" * 70)    print("ALFABETO DESDE PALABRAS DEL LENGUAJE NATURAL")    print("=" * 70)    """Usar palabras del lenguaje natural como símbolos."""def demo_palabras_como_simbolos():    print()    print(f"\nTotal de bytes BCD posibles: {len(bytes_bcd)}")            print(f"   {byte_val} = {dig1}{dig2} (decimal: {decimal})")        decimal = dig1 * 10 + dig2        dig2 = alf_bcd.simbolos.index(byte_val[4:])        dig1 = alf_bcd.simbolos.index(byte_val[:4])        # Interpretar como decimal    for i, byte_val in enumerate(bytes_bcd[:10]):    bytes_bcd = alf_byte.generar_palabras(2)    print("\nPrimeros 10 bytes BCD (2 dígitos):")    # Generar "bytes" BCD (2 dígitos BCD = 8 bits)        print(f"\nΣ₂ (bytes BCD) = {alf_byte}")    alf_byte = AlfabetoDesdeLegunaje(L_bcd, separador="")    # Nivel 2: Alfabeto con símbolos BCD (sin separador = concatenación)        print(f"|L_BCD| = {L_bcd.cardinal()}")    print(f"\nL_BCD = conjunto de códigos BCD")    L_bcd = LenguajeExplicito(alf_bin, set(alf_bcd.simbolos))    # Crear lenguaje con símbolos BCD        print(f"Símbolos: {alf_bcd.simbolos}")    print(f"\nΣ₁ (BCD) = {alf_bcd}")    alf_bcd = AlfabetosPredefinidos.bcd()    # Nivel 1: Alfabeto BCD (10 códigos de 4 bits)        print(f"\nΣ₀ = {alf_bin}")    alf_bin = AlfabetosPredefinidos.binario()    # Nivel 0: Alfabeto binario        print("=" * 70)    print("ALFABETO JERÁRQUICO: BCD → BYTES")    print("=" * 70)    """Usar alfabeto BCD para construir bytes (2 dígitos BCD)."""def demo_codigo_bcd_bytes():    print()        print(f"   |L₂| = {L2.cardinal()} = 4² = 16")    print(f"   L₂ = Σ₁² (todas las palabras de longitud 2 sobre Σ₁)")    L2 = LenguajeUniverso(alf1, longitud=2)    print("\n📍 NIVEL 3: Lenguaje sobre Σ₁")    # Nivel 3: Lenguaje sobre Σ₁        print(f"      ... ({len(palabras_nivel2)} palabras totales)")        print(f"      '{palabra}'")    for palabra in palabras_nivel2[:8]:    palabras_nivel2 = alf1.generar_palabras(2)    print("\n   Palabras de longitud 2 sobre Σ₁:")    # Generar palabras de longitud 2 sobre Σ₁        print(f"   Símbolos: {alf1.simbolos}")    print(f"   Σ₁ = L₁ = {alf1}")    alf1 = AlfabetoDesdeLegunaje(L1, separador=" ")    print("\n📍 NIVEL 2: Alfabeto desde L₁")    # Nivel 2: Alfabeto con símbolos = palabras de L1        print(f"   |L₁| = {L1.cardinal()}")    print(f"   L₁ = Σ₀² = {palabras_L1}")    palabras_L1 = L1.enumerar()    L1 = LenguajeUniverso(alf0, longitud=2)    print("\n📍 NIVEL 1: Lenguaje sobre Σ₀")    # Nivel 1: Lenguaje de palabras de 2 bits        print(f"   |Σ₀| = {alf0.cardinal}")    print(f"   Σ₀ = {alf0}")    alf0 = AlfabetosPredefinidos.binario()    print("\n📍 NIVEL 0: Alfabeto básico")    # Nivel 0: Alfabeto binario básico        print("=" * 70)    print("JERARQUÍA MULTINIVEL: ALFABETO BINARIO")    print("=" * 70)    """Demostración de jerarquía de 3 niveles con alfabeto binario."""def demo_jerarquia_binaria():)    LenguajeExplicitoLongitudFija    LenguajeExplicito,    LenguajeUniverso, from core.lenguajes import ()    AlfabetoExplicito    AlfabetoDesdeLegunaje,    AlfabetosPredefinidos, from core.alfabetos import (sys.path.insert(0, str(Path(__file__).parent.parent))from pathlib import Pathimport sys"""- Nivel 3+: Niveles adicionales de abstracción- Nivel 2: Palabras sobre palabras (usando L1 como alfabeto)- Nivel 1: Palabras sobre símbolos básicos- Nivel 0: Símbolos básicosEsto permite crear jerarquías multinivel:como símbolos de un nuevo alfabeto.Demostración de alfabetos jerárquicos: usar palabras de un lenguaje
 Módulo para la definición y manipulación de alfabetos en teoría de códigos
 y lenguajes formales.
 
@@ -11,6 +199,8 @@ Classes:
     Alfabeto: Clase abstracta base para representar alfabetos
     AlfabetoExplicito: Alfabeto definido mediante lista explícita de símbolos
     AlfabetoEstandar: Alfabeto estándar basado en base numérica (2-36)
+    AlfabetoBinario: Alfabeto binario especializado {0, 1}
+    AlfabetoDesdeLenguaje: Alfabeto cuyos símbolos son palabras de un lenguaje
     
 Functions:
     crear_alfabeto_explicito: Factory para crear alfabeto desde símbolos
@@ -513,6 +703,208 @@ class AlfabetoBinario(AlfabetoEstandar):
     def __repr__(self) -> str:
         """Representación técnica del alfabeto binario."""
         return "AlfabetoBinario()"
+
+
+# ============================================================================
+# ALFABETO DESDE LENGUAJE
+# ============================================================================
+
+class AlfabetoDesdeLenguaje(Alfabeto):
+    """
+    Alfabeto cuyos símbolos son las palabras de un lenguaje.
+    
+    Esto permite crear jerarquías multinivel:
+    - Nivel 0: Alfabeto básico Σ₀ = {0, 1}
+    - Nivel 1: Lenguaje L₁ sobre Σ₀ = {00, 01, 10, 11}
+    - Nivel 2: Alfabeto Σ₁ = L₁ (usando palabras como símbolos)
+    - Nivel 3: Lenguaje L₂ sobre Σ₁
+    
+    Los símbolos del alfabeto son las palabras del lenguaje proporcionado.
+    El lenguaje debe ser finito y estar completamente enumerado.
+    
+    Example:
+        >>> # Nivel 0: alfabeto binario
+        >>> alf_bin = AlfabetosPredefinidos.binario()
+        >>> 
+        >>> # Nivel 1: lenguaje de palabras de 2 bits
+        >>> from lenguajes import LenguajeUniverso
+        >>> L1 = LenguajeUniverso(alf_bin, longitud=2)
+        >>> L1.enumerar()
+        ['00', '01', '10', '11']
+        >>> 
+        >>> # Nivel 2: alfabeto con símbolos = palabras de L1
+        >>> alf_nivel2 = AlfabetoDesdeLenguaje(L1)
+        >>> alf_nivel2.simbolos
+        ['00', '01', '10', '11']
+        >>> 
+        >>> # Nivel 3: palabras sobre el nuevo alfabeto
+        >>> alf_nivel2.generar_palabras(2)
+        ['00 00', '00 01', '00 10', '00 11', '01 00', ...]
+    
+    Attributes:
+        lenguaje_fuente: Lenguaje de donde se toman las palabras
+        separador: String para separar símbolos al formar palabras
+    """
+    
+    def __init__(self, lenguaje, separador: str = " "):
+        """
+        Crea alfabeto usando palabras de un lenguaje como símbolos.
+        
+        Args:
+            lenguaje: Lenguaje fuente (debe ser finito)
+            separador: Separador entre símbolos al generar palabras
+                      (por defecto espacio para distinguir símbolos)
+        
+        Raises:
+            ValueError: Si el lenguaje es infinito o vacío
+            ImportError: Si el módulo lenguajes no está disponible
+        
+        Example:
+            >>> # Usar alfabeto BCD como lenguaje de símbolos
+            >>> alf_bcd = AlfabetosPredefinidos.bcd()
+            >>> L_bcd = LenguajeExplicito(alf_bin, set(alf_bcd.simbolos))
+            >>> alf_byte = AlfabetoDesdeLenguaje(L_bcd, separador="")
+            >>> # Ahora cada "símbolo" es un grupo de 4 bits
+        """
+        super().__init__()
+        
+        # Importación tardía para evitar dependencia circular
+        try:
+            from core.lenguajes import Lenguaje
+        except ImportError:
+            from lenguajes import Lenguaje
+        
+        if not isinstance(lenguaje, Lenguaje):
+            raise TypeError(
+                f"Se esperaba un Lenguaje, recibido: {type(lenguaje).__name__}"
+            )
+        
+        # Verificar que el lenguaje sea finito
+        cardinal = lenguaje.cardinal()
+        if cardinal == float('inf'):
+            raise ValueError(
+                "No se puede crear alfabeto desde lenguaje infinito. "
+                "El lenguaje debe ser finito y enumerarble."
+            )
+        
+        if cardinal == 0:
+            raise ValueError("No se puede crear alfabeto desde lenguaje vacío")
+        
+        self._lenguaje_fuente = lenguaje
+        self._separador = separador
+        self.construir()
+    
+    def construir(self) -> None:
+        """Construye el alfabeto enumerando las palabras del lenguaje."""
+        # Los símbolos son las palabras del lenguaje
+        palabras = self._lenguaje_fuente.enumerar()
+        
+        self._simbolos = palabras
+        self._cardinal = len(palabras)
+        self._indices = {simbolo: idx for idx, simbolo in enumerate(palabras)}
+    
+    @property
+    def lenguaje_fuente(self):
+        """Retorna el lenguaje fuente del alfabeto."""
+        return self._lenguaje_fuente
+    
+    @property
+    def separador(self) -> str:
+        """Retorna el separador usado entre símbolos."""
+        return self._separador
+    
+    def generar_palabras(self, longitud: int) -> List[str]:
+        """
+        Genera todas las palabras de longitud dada sobre este alfabeto.
+        
+        Como los símbolos son palabras, usa el separador para unirlas.
+        
+        Args:
+            longitud: Número de símbolos en cada palabra
+            
+        Returns:
+            Lista de palabras del alfabeto jerárquico
+            
+        Example:
+            >>> # Si símbolos = ['00', '01', '10', '11']
+            >>> alf.generar_palabras(2)
+            ['00 00', '00 01', '00 10', '00 11', '01 00', ...]
+        """
+        if longitud == 0:
+            return ['']
+        
+        if longitud == 1:
+            return self._simbolos.copy()
+        
+        # Generación recursiva
+        palabras_cortas = self.generar_palabras(longitud - 1)
+        resultado = []
+        
+        for palabra_corta in palabras_cortas:
+            for simbolo in self._simbolos:
+                if palabra_corta:
+                    nueva = palabra_corta + self._separador + simbolo
+                else:
+                    nueva = simbolo
+                resultado.append(nueva)
+        
+        return resultado
+    
+    def validar_palabra(self, palabra: str) -> bool:
+        """
+        Valida si una palabra es válida sobre este alfabeto jerárquico.
+        
+        Divide la palabra usando el separador y verifica que cada parte
+        sea un símbolo válido.
+        
+        Args:
+            palabra: Palabra a validar
+            
+        Returns:
+            True si la palabra es válida
+            
+        Example:
+            >>> # Si símbolos = ['00', '01', '10', '11'] y separador = ' '
+            >>> alf.validar_palabra('00 01 11')
+            True
+            >>> alf.validar_palabra('00 02')  # '02' no es símbolo
+            False
+        """
+        if not palabra:
+            return True  # Palabra vacía es válida
+        
+        if self._separador:
+            partes = palabra.split(self._separador)
+        else:
+            # Sin separador, debe dividir por longitud de símbolos
+            # Asume que todos los símbolos tienen la misma longitud
+            if not self._simbolos:
+                return False
+            
+            long_simbolo = len(self._simbolos[0])
+            if len(palabra) % long_simbolo != 0:
+                return False
+            
+            partes = [
+                palabra[i:i+long_simbolo] 
+                for i in range(0, len(palabra), long_simbolo)
+            ]
+        
+        return all(parte in self._indices for parte in partes)
+    
+    def __str__(self) -> str:
+        """Representación textual del alfabeto jerárquico."""
+        if self._cardinal <= 10:
+            simbolos_str = ', '.join(f"'{s}'" for s in self._simbolos)
+            return f"Σ = {{{simbolos_str}}} (desde lenguaje, |Σ| = {self._cardinal})"
+        else:
+            primeros = ', '.join(f"'{s}'" for s in self._simbolos[:3])
+            ultimos = ', '.join(f"'{s}'" for s in self._simbolos[-2:])
+            return f"Σ = {{{primeros}, ..., {ultimos}}} (desde lenguaje, |Σ| = {self._cardinal})"
+    
+    def __repr__(self) -> str:
+        """Representación técnica del alfabeto jerárquico."""
+        return f"AlfabetoDesdeLenguaje(lenguaje={self._lenguaje_fuente!r}, separador={self._separador!r})"
 
 
 # ============================================================================
