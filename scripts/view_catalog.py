@@ -20,20 +20,23 @@ def main():
         return
     
     with open(catalog_file, "r", encoding="utf-8") as f:
-        catalog = json.load(f)
+        data = json.load(f)
+    
+    # Extraer la lista de items desde la estructura anidada
+    catalog = data.get('temario_fe', {}).get('items', [])
     
     # Estadísticas
     print(f"\n📊 Estadísticas Generales:")
     print(f"   - Total de items: {len(catalog)}")
     
     # Contar por tipo
-    types = Counter(item['type'] for item in catalog)
+    types = Counter(item['tipo'] for item in catalog)
     print(f"\n📋 Distribución por tipo:")
     for tipo, count in types.items():
         print(f"   - {tipo}: {count}")
     
     # Contar por nivel
-    levels = Counter(item['level'] for item in catalog)
+    levels = Counter(item['nivel'] for item in catalog)
     print(f"\n🏗️  Distribución por nivel:")
     for level in sorted(levels.keys()):
         print(f"   - Nivel {level}: {levels[level]} nodos")
@@ -43,23 +46,23 @@ def main():
     print("-" * 70)
     
     for i, item in enumerate(catalog[:10], 1):
-        print(f"\n{i}. {item['title']}")
+        print(f"\n{i}. {item['titulo']}")
         print(f"   ID: {item['id']}")
-        print(f"   Tipo: {item['type']}")
-        print(f"   Nivel: {item['level']}")
-        print(f"   Markdown: {item['markdown_path']}")
-        if item.get('python_functions'):
-            print(f"   Funciones Python: {', '.join(item['python_functions'])}")
+        print(f"   Tipo: {item.get('tipo', 'N/A')}")
+        print(f"   Nivel: {item['nivel']}")
+        print(f"   Markdown: {item['md_path']}")
+        if item.get('python_refs'):
+            print(f"   Funciones Python: {', '.join(item['python_refs'])}")
     
     print("\n" + "-" * 70)
     
     # Buscar items con funciones Python vinculadas
-    items_with_functions = [item for item in catalog if item.get('python_functions')]
+    items_with_functions = [item for item in catalog if item.get('python_refs') and len(item['python_refs']) > 0]
     
     if items_with_functions:
         print(f"\n🔗 Items con funciones Python vinculadas: {len(items_with_functions)}")
         for item in items_with_functions[:5]:
-            print(f"   - {item['title']}: {', '.join(item['python_functions'])}")
+            print(f"   - {item['titulo']}: {', '.join(item['python_refs'])}")
     else:
         print(f"\n⚠️  Ningún item tiene funciones Python vinculadas aún")
         print("   Usa: python scripts/link_python_functions.py")
@@ -76,8 +79,9 @@ def main():
         
         for child in children:
             indent = "  " * level
-            icon = "📁" if child['type'] in ['root', 'module', 'section'] else "📄"
-            print(f"{indent}{icon} {child['title']}")
+            tipo = child.get('tipo', '')
+            icon = "📁" if tipo in ['root', 'module', 'section'] else "📄"
+            print(f"{indent}{icon} {child['titulo']}")
             printed_count[0] += 1
             
             if printed_count[0] >= 20:
