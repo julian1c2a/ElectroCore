@@ -113,13 +113,18 @@ class ReferenceExtractor:
         """Parsea una referencia individual y extrae metadatos."""
         parts = ref_string.split('.')
         
-        # Determinar módulo y función
+        # Determinar módulo y función/clase/método
+        # Formato esperado: modulo.Clase.metodo o modulo.funcion
         if parts[0] == 'core':
-            module = '.'.join(parts[1:-1]) if len(parts) > 2 else parts[1]
-            function = parts[-1]
+            # Si empieza con 'core', el módulo es parts[1]
+            module = parts[1]
+            # Todo lo demás después del módulo es la función/clase/método
+            function = '.'.join(parts[2:]) if len(parts) > 2 else ''
         else:
-            module = '.'.join(parts[:-1]) if len(parts) > 1 else 'unknown'
-            function = parts[-1]
+            # Si no empieza con 'core', el módulo es el primer elemento
+            module = parts[0]
+            # Todo lo demás es la función/clase/método
+            function = '.'.join(parts[1:]) if len(parts) > 1 else ''
         
         # Intentar extraer descripción (buscar cerca de la referencia)
         description = self._extract_description(ref_string, content)
@@ -176,21 +181,15 @@ class ReferenceExtractor:
             if '.' in function:
                 parts = function.split('.')
                 class_name = parts[0]
-                member_name = '.'.join(parts[1:])
+                member_name = parts[1]  # Solo el primer nivel después del punto
                 
-                # Buscar la clase a nivel de módulo (no usar walk para preservar jerarquía)
+                # Buscar la clase a nivel de módulo
                 for node in tree.body:
                     if isinstance(node, ast.ClassDef) and node.name == class_name:
                         # Buscar el método dentro del body de la clase
                         for item in node.body:
-                            if isinstance(item, ast.FunctionDef):
-                                if item.name == member_name:
-                                    return True
-                                # También buscar si es método anidado (raro pero posible)
-                                if '.' in member_name:
-                                    first_part = member_name.split('.')[0]
-                                    if item.name == first_part:
-                                        return True
+                            if isinstance(item, ast.FunctionDef) and item.name == member_name:
+                                return True
                         # No encontrado en esta clase
                         return False
                 

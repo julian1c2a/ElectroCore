@@ -8,11 +8,14 @@ con soporte para predicados, autómatas y operaciones sobre lenguajes.
 
 Classes:
     EstadoDecision: Enum para estados de autómatas
-    Lenguaje: Clase base para lenguajes
+    Lenguaje: Clase base abstracta para lenguajes
+    LenguajeLongitudFija: Clase abstracta para lenguajes de longitud fija con Hamming
     LenguajeUniverso: Σ^l - todas las palabras de longitud l
     LenguajePredicado: Lenguaje definido por función predicado
     LenguajeAutomata: Lenguaje definido por máquina de estados
-    LenguajeExplicito: Lenguaje con lista explícita de palabras
+    LenguajeExplicito: Lenguaje con lista explícita de palabras (longitud variable)
+    LenguajeExplicitoLongitudFija: Lenguaje explícito de longitud fija
+    LenguajeVacio: ∅ - lenguaje vacío
     LenguajeInfinito: Lenguajes de longitud infinita
 """
 
@@ -20,7 +23,7 @@ from abc import ABC, abstractmethod
 from typing import Set, List, Optional, Callable, Union
 from enum import Enum
 
-from alfabetos import Alfabeto, AlfabetosPredefinidos
+from core.alfabetos import Alfabeto, AlfabetosPredefinidos
 
 
 # ============================================================================
@@ -160,6 +163,149 @@ class Lenguaje(ABC):
 
 
 # ============================================================================
+# LENGUAJE DE LONGITUD FIJA
+# ============================================================================
+
+class LenguajeLongitudFija(Lenguaje):
+    """
+    Clase abstracta base para lenguajes de longitud fija.
+    
+    Todos los lenguajes derivados contienen solo palabras de longitud l fija.
+    Permite calcular distancia de Hamming entre palabras del lenguaje.
+    
+    Propiedades:
+    - Todas las palabras tienen la misma longitud l
+    - Se puede calcular distancia de Hamming entre pares de palabras
+    - Cardinal limitado: |L| ≤ |Σ|^l
+    
+    Example:
+        >>> # LenguajeExplicito es de longitud fija
+        >>> alf = AlfabetosPredefinidos.binario()
+        >>> L = LenguajeExplicito(alf, ["000", "111"], longitud=3)
+        >>> L.distancia_hamming("000", "111")
+        3
+        >>> L.distancia_hamming("000", "001")
+        1
+    """
+    
+    def __init__(self, alfabeto: Alfabeto, longitud: int):
+        """
+        Inicializa un lenguaje de longitud fija.
+        
+        Args:
+            alfabeto: Alfabeto del lenguaje
+            longitud: Longitud fija de todas las palabras (l ≥ 0)
+            
+        Raises:
+            ValueError: Si longitud < 0
+        """
+        if longitud < 0:
+            raise ValueError(f"La longitud debe ser >= 0, recibido: {longitud}")
+        super().__init__(alfabeto, longitud_fija=True, longitud=longitud)
+    
+    @staticmethod
+    def distancia_hamming(palabra1: str, palabra2: str) -> int:
+        """
+        Calcula la distancia de Hamming entre dos palabras.
+        
+        La distancia de Hamming d_H(w1, w2) es el número de posiciones
+        en las que los símbolos difieren.
+        
+        Args:
+            palabra1: Primera palabra
+            palabra2: Segunda palabra
+            
+        Returns:
+            Número de posiciones diferentes (0 ≤ d_H ≤ l)
+            
+        Raises:
+            ValueError: Si las palabras tienen longitudes diferentes
+            
+        Example:
+            >>> LenguajeLongitudFija.distancia_hamming("000", "111")
+            3
+            >>> LenguajeLongitudFija.distancia_hamming("1010", "1011")
+            1
+            >>> LenguajeLongitudFija.distancia_hamming("abc", "abc")
+            0
+        """
+        if len(palabra1) != len(palabra2):
+            raise ValueError(
+                f"Las palabras deben tener la misma longitud: "
+                f"len('{palabra1}')={len(palabra1)} != "
+                f"len('{palabra2}')={len(palabra2)}"
+            )
+        
+        return sum(c1 != c2 for c1, c2 in zip(palabra1, palabra2))
+    
+    def distancia_minima(self) -> Optional[int]:
+        """
+        Calcula la distancia de Hamming mínima entre cualquier par de palabras.
+        
+        La distancia mínima d_min es importante en teoría de códigos:
+        - d_min = 1: no hay capacidad de detección de errores
+        - d_min ≥ 2: puede detectar 1 error
+        - d_min ≥ 3: puede detectar 2 errores o corregir 1 error
+        - d_min ≥ 2t+1: puede corregir t errores
+        
+        Returns:
+            Distancia mínima, o None si el lenguaje tiene < 2 palabras
+            
+        Example:
+            >>> alf = AlfabetosPredefinidos.binario()
+            >>> L = LenguajeExplicito(alf, ["000", "111"], longitud=3)
+            >>> L.distancia_minima()
+            3
+        """
+        palabras = self.enumerar()
+        n = len(palabras)
+        
+        if n < 2:
+            return None
+        
+        d_min = float('inf')
+        
+        for i in range(n):
+            for j in range(i + 1, n):
+                d = self.distancia_hamming(palabras[i], palabras[j])
+                if d < d_min:
+                    d_min = d
+                    if d_min == 1:  # No puede ser menor
+                        return 1
+        
+        return int(d_min)
+    
+    def peso_hamming(self, palabra: str) -> int:
+        """
+        Calcula el peso de Hamming de una palabra.
+        
+        El peso de Hamming w_H(w) es el número de símbolos no nulos
+        (diferentes del primer símbolo del alfabeto).
+        
+        Args:
+            palabra: Palabra del lenguaje
+            
+        Returns:
+            Número de símbolos no nulos
+            
+        Example:
+            >>> alf = AlfabetosPredefinidos.binario()
+            >>> L = LenguajeUniverso(alf, longitud=4)
+            >>> L.peso_hamming("0000")
+            0
+            >>> L.peso_hamming("0101")
+            2
+            >>> L.peso_hamming("1111")
+            4
+        """
+        if not self.pertenece(palabra):
+            raise ValueError(f"La palabra '{palabra}' no pertenece al lenguaje")
+        
+        simbolo_cero = self._alfabeto.simbolos[0]
+        return sum(c != simbolo_cero for c in palabra)
+
+
+# ============================================================================
 # LENGUAJE VACÍO
 # ============================================================================
 
@@ -232,16 +378,14 @@ class LenguajeVacio(Lenguaje):
 # LENGUAJE UNIVERSO - Σ^l
 # ============================================================================
 
-class LenguajeUniverso(Lenguaje):
+class LenguajeUniverso(LenguajeLongitudFija):
     """
     Lenguaje universo Σ^l: todas las palabras de longitud l.
     Cardinal: n^l donde n = |Σ|
     """
     
     def __init__(self, alfabeto: Alfabeto, longitud: int):
-        if longitud < 0:
-            raise ValueError("La longitud debe ser >= 0")
-        super().__init__(alfabeto, longitud_fija=True, longitud=longitud)
+        super().__init__(alfabeto, longitud)
         self._palabras: Optional[List[str]] = None
     
     def pertenece(self, palabra: str) -> bool:
@@ -367,7 +511,26 @@ class LenguajeAutomata(Lenguaje):
 class LenguajeExplicito(Lenguaje):
     """
     Lenguaje definido por lista explícita de palabras.
+    
+    Puede tener longitud fija o variable según las palabras proporcionadas.
+    Si todas las palabras tienen la misma longitud, se convierte en
+    LenguajeExplicitoLongitudFija automáticamente.
+    
+    Factory method: usa esta clase y se convierte automáticamente
+    en la variante correcta según las palabras.
     """
+    
+    def __new__(cls, alfabeto: Alfabeto, palabras: Set[str], nombre: str = ""):
+        """Factory: retorna la subclase apropiada según longitud."""
+        longitudes = {len(p) for p in palabras}
+        
+        if len(longitudes) == 1:
+            # Todas las palabras tienen la misma longitud
+            return LenguajeExplicitoLongitudFija(alfabeto, palabras, nombre)
+        else:
+            # Longitudes variables
+            instancia = super().__new__(cls)
+            return instancia
     
     def __init__(self, alfabeto: Alfabeto, palabras: Set[str], nombre: str = ""):
         longitudes = {len(p) for p in palabras}
@@ -392,6 +555,62 @@ class LenguajeExplicito(Lenguaje):
     def enumerar(self, limite: Optional[int] = None) -> List[str]:
         palabras = sorted(list(self._palabras))
         return palabras[:limite] if limite else palabras
+
+
+class LenguajeExplicitoLongitudFija(LenguajeLongitudFija):
+    """
+    Lenguaje definido por lista explícita de palabras de longitud fija.
+    
+    Todas las palabras tienen la misma longitud l.
+    Hereda capacidades de distancia de Hamming.
+    
+    Example:
+        >>> alf = AlfabetosPredefinidos.binario()
+        >>> L = LenguajeExplicitoLongitudFija(alf, {"000", "111"}, "Paridad")
+        >>> L.distancia_hamming("000", "111")
+        3
+        >>> L.distancia_minima()
+        3
+    """
+    
+    def __init__(self, alfabeto: Alfabeto, palabras: Set[str], nombre: str = ""):
+        # Verificar que todas tengan la misma longitud
+        longitudes = {len(p) for p in palabras}
+        
+        if len(longitudes) == 0:
+            raise ValueError("Debe proporcionar al menos una palabra")
+        
+        if len(longitudes) > 1:
+            raise ValueError(
+                f"Todas las palabras deben tener la misma longitud. "
+                f"Longitudes encontradas: {sorted(longitudes)}"
+            )
+        
+        longitud = longitudes.pop()
+        super().__init__(alfabeto, longitud)
+        
+        # Validar palabras
+        for palabra in palabras:
+            if not alfabeto.validar_palabra(palabra):
+                raise ValueError(f"Palabra '{palabra}' no válida para el alfabeto")
+        
+        self._palabras = set(palabras)
+        self._nombre = nombre
+    
+    def pertenece(self, palabra: str) -> bool:
+        return palabra in self._palabras
+    
+    def cardinal(self) -> int:
+        return len(self._palabras)
+    
+    def enumerar(self, limite: Optional[int] = None) -> List[str]:
+        palabras = sorted(list(self._palabras))
+        return palabras[:limite] if limite else palabras
+    
+    def __str__(self) -> str:
+        if self._nombre:
+            return f"L({self._nombre}) = {{{', '.join(sorted(self._palabras))}}}"
+        return f"L = {{{', '.join(sorted(self._palabras))}}}"
 
 
 # ============================================================================

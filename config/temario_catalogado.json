@@ -890,35 +890,35 @@
             "module": "alfabetos.AlfabetosPredefinidos",
             "function": "binario",
             "description": "Alfabeto binario predefinido {0, 1}",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.AlfabetosPredefinidos",
             "function": "octal",
             "description": "Alfabeto octal predefinido {0-7}",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.AlfabetosPredefinidos",
             "function": "decimal",
             "description": "Alfabeto decimal predefinido {0-9}",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.AlfabetosPredefinidos",
             "function": "hexadecimal",
             "description": "Alfabeto hexadecimal predefinido {0-9, A-F}",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.AlfabetosPredefinidos",
             "function": "bcd",
             "description": "Alfabeto BCD (Binary Coded Decimal) con códigos de 4 bits",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
@@ -939,35 +939,35 @@
             "module": "alfabetos.Alfabeto",
             "function": "comparar_simbolos",
             "description": "Compara dos símbolos según su orden en el alfabeto",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.Alfabeto",
             "function": "es_menor",
             "description": "Verifica si simbolo1 < simbolo2 (operador <)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.Alfabeto",
             "function": "es_igual",
             "description": "Verifica si simbolo1 = simbolo2 (operador =)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.Alfabeto",
             "function": "es_mayor",
             "description": "Verifica si simbolo1 > simbolo2 (operador >)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "alfabetos.Alfabeto",
             "function": "comparar_palabras_lexicografico",
             "description": "Compara dos palabras lexicográficamente según el alfabeto",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
@@ -1002,7 +1002,7 @@
             "module": "lenguajes.LenguajeAutomata",
             "function": "combinar_con",
             "description": "Combina autómatas para reducir casos INDETERMINADO",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
@@ -1030,28 +1030,28 @@
             "module": "lenguajes.Lenguaje",
             "function": "es_sublenguaje_de",
             "description": "Verifica si L1 ⊆ L2 (todas las palabras de L1 están en L2)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "lenguajes.Lenguaje",
             "function": "es_superlenguaje_de",
             "description": "Verifica si L1 ⊇ L2 (L1 contiene a L2)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "lenguajes.Lenguaje",
             "function": "es_igual_a",
             "description": "Verifica si L1 = L2 (mismo conjunto de palabras)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
             "module": "lenguajes.Lenguaje",
             "function": "es_vacio",
             "description": "Verifica si el lenguaje es vacío (L = ∅)",
-            "implemented": false,
+            "implemented": true,
             "source_file": "temario/fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/teoria_de_codigos_alfabeto_lenguaje_y_semantica.md"
           },
           {
