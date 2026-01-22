@@ -389,6 +389,9 @@ class TestAlfabetoDesdeLenguaje:
         from core.lenguajes import LenguajeInfinito
         
         class LenguajeInfinitoTest(LenguajeInfinito):
+            def pertenece(self, palabra):
+                return True  # Acepta cualquier palabra para el test
+            
             def generar_hasta(self, n):
                 return [str(i) for i in range(n)]
         

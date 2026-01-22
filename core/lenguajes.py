@@ -755,12 +755,14 @@ def producto_cartesiano(L1: Lenguaje, L2: Lenguaje,
                          for w1 in L1.enumerar() 
                          for w2 in L2.enumerar()}
     
-    # Crear alfabeto extendido que incluye el separador
-    simbolos_L1 = set(''.join(L1.enumerar()))
-    simbolos_L2 = set(''.join(L2.enumerar()))
-    # Nota: esto es una simplificación, en teoría necesitaríamos un alfabeto más complejo
+    # Crear alfabeto extendido que incluye símbolos de ambos alfabetos más el separador
+    from core.alfabetos import AlfabetoExplicito
+    simbolos_L1 = set(L1.alfabeto.simbolos)
+    simbolos_L2 = set(L2.alfabeto.simbolos)
+    simbolos_combinados = list(simbolos_L1 | simbolos_L2 | {separador})
+    alfabeto_extendido = AlfabetoExplicito(*simbolos_combinados)
     
-    return LenguajeExplicito(L1.alfabeto, palabras_producto, "L1×L2")
+    return LenguajeExplicito(alfabeto_extendido, palabras_producto, "L1×L2")
 
 
 # ============================================================================
