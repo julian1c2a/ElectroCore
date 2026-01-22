@@ -42,17 +42,19 @@ def parse_markdown_to_tree(source_file):
     parent_stack = [root]
     level_stack = [{'type': 'root', 'level': -1}]
 
+    last_header_level = 0
     for line in lines:
         stripped_line = line.strip()
-        if not stripped_line: continue
+        if not stripped_line or stripped_line.startswith('---'): continue
 
         level_info = {}
         if stripped_line.startswith('#'):
             level_info['type'] = 'header'
             level_info['level'] = stripped_line.count('#')
+            last_header_level = level_info['level']
         elif stripped_line.startswith('-'):
             level_info['type'] = 'list'
-            level_info['level'] = len(line) - len(line.lstrip(' ')) # Assuming 4 spaces for indentation level
+            level_info['level'] = last_header_level + 1
         else:
             continue
 
@@ -60,9 +62,6 @@ def parse_markdown_to_tree(source_file):
         
         # Find correct parent in stack
         while level_info['level'] <= level_stack[-1]['level']:
-            # Exception for list items under headers
-            if level_stack[-1]['type'] == 'header':
-                 break
             parent_stack.pop()
             level_stack.pop()
 
