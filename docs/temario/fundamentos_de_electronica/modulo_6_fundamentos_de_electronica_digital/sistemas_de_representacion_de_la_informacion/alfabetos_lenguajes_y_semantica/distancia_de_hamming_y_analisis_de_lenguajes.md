@@ -48,7 +48,7 @@ d_H(x, y) = 2 (difieren en las posiciones 2 y 4)
 
 **Lema 1**: Aditividad de la distancia de Hamming en subpalabras de ancho fijho de $n$ dígitos, con subdivisiones de longitud $n-1$ dígitos y $1$ dígitos.
 
-```Lema
+```Lemma
 Sea $\Sigma$ un alfabeto finito.
 Sea $k \in \SetNat$
 Sea ${\Sigma}^k$ el conjunto de todas las palabras de longitud $k$ sobre el alfabeto $\Sigma$.
@@ -60,40 +60,42 @@ $∀ x y ∈ {\Sigma}^k$, sean $x = x_{0} · x_{[1:k-1]}$ y $y = y_{0} · y_{[1:
 
 ```Proof
 Sean $x ∈ {\Sigma}^k$ y $y ∈ {\Sigma}^k$ dos palabras de longitud $k$.
-Caso base: k = 0
-    Si k = 0, entonces x = ε y y = ε (palabra vacía).
+Caso base: $k = 0$
+    Si $k = 0$, entonces $x = ε$ y $y = ε$ (palabra vacía).
     Luego:
-        d_H(x, y) = d_H(ε, ε) = 0
-        d_H(x_{0}, y_{0}) + d_H(x_{[1:k-1]}, y_{[1:k-1]}) = d_H(ε, ε) + d_H(ε, ε) = 0 + 0 = 0 ✓
+       $d_H(x, y) = d_H(ε, ε) = 0$
+       $d_H(x_{0}, y_{0}) + d_H(x_{[1:k-1]}, y_{[1:k-1]}) = d_H(ε, ε) + d_H(ε, ε) 
+                                                          = 0 + 0 
+                                                          = 0$ ✓
     
-    Por tanto, el caso base k=0 se cumple.
-Caso base: k = 1
-    Si k = 1, entonces x = x_{0} y y = y_{0}.
+    Por tanto, el caso base $k=0$ se cumple.
+Caso base: $k = 1$
+    Si $k = 1$, entonces $x = x_{0}$ y $y = y_{0}$.
     Luego:
-        d_H(x, y) = d_H(x_{0}, y_{0}) + d_H(x_{[1:0]}, y_{[1:0]}) 
-                  = d_H(x_{0}, y_{0}) + d_H(ε, ε) 
-                  = d_H(x_{0}, y_{0}) + 0 
-                  = d_H(x, y)  ✓
+        $d_H(x, y) = d_H(x_{0}, y_{0}) + d_H(x_{[1:0]}, y_{[1:0]})$ 
+                  $= d_H(x_{0}, y_{0}) + d_H(ε, ε)$ 
+                  $= d_H(x_{0}, y_{0}) + 0$ 
+                  $= d_H(x, y)$  ✓
     
-    Por tanto, el caso base k=1 se cumple.
+    Por tanto, el caso base $k=1$ se cumple.
 Hipótesis de inducción:
-    Supongamos que para k = t > 1 se cumple que:
+    Supongamos que para $k = t > 1$ se cumple que:
         $∀ x y ∈ {\Sigma}^t$, sean $x = x[0] · x[1:t-1]$ y $y = y[0] · y[1:t-1]$ se cumple que:
             $d_H(x, y) = d_H(x[0], y[0]) + d_H(x[1:t-1], y[1:t-1])$
 Paso inductivo:
-    Debemos demostrar que para k = t + 1 se cumple la propiedad.
+    Debemos demostrar que para $k = t + 1$ se cumple la propiedad.
     
     Sean $x ∈ {\Sigma}^{t+1}$ y $y ∈ {\Sigma}^{t+1}$ dos palabras de longitud $t + 1$.
     Entonces $x = x[0] · x[1:t]$ y $y = y[0] · y[1:t]$.
     
     Por definición de distancia de Hamming sobre palabras concatenadas:
     Las posiciones de x e y son:
-      - Posición 0: x[0] vs y[0]
-      - Posiciones 1 a t: x[1:t] vs y[1:t]
+      - Posición 0: $x[0]$ vs $y[0]$
+      - Posiciones 1 a t: $x[1:t]$ vs $y[1:t]$
     
     Luego:
-        d_H(x, y) = d_H(x[0] · x[1:t], y[0] · y[1:t]) # Definición de la concatenación
-                  = |{i : 0 ≤ i ≤ t, (x[0]·x[1:t])ᵢ ≠ (y[0]·y[1:t])ᵢ}| # Definición de d_H
+        $d_H(x, y) = d_H(x[0] · x[1:t], y[0] · y[1:t])$ # Definición de la concatenación
+                  $= |{i : 0 ≤ i ≤ t, (x[0]·x[1:t])ᵢ ≠ (y[0]·y[1:t])ᵢ}|$ # Definición de d_H
     
     Particionamos el conjunto de índices {0, 1, ..., t} = {0} ∪ {1, 2, ..., t} (disjuntos).
     Por propiedades de indexación de concatenación:
@@ -101,15 +103,15 @@ Paso inductivo:
       - Para i ≥ 1: (x[0]·x[1:t])ᵢ = x[1:t]ᵢ₋₁  y  (y[0]·y[1:t])ᵢ = y[1:t]ᵢ₋₁
     
     Por tanto:
-                  = |{0 : x[0] ≠ y[0]}| + |{i : 1 ≤ i ≤ t, x[1:t]ᵢ₋₁ ≠ y[1:t]ᵢ₋₁}| # Partición disjunta
+                  $= |{0 : x[0] ≠ y[0]}| + |{i : 1 ≤ i ≤ t, x[1:t]ᵢ₋₁ ≠ y[1:t]ᵢ₋₁}|$ # Partición disjunta
     
-    Aplicamos la propiedad fundamental: |A ∪ B| = |A| + |B| para conjuntos disjuntos.
+    Aplicamos la propiedad fundamental: $|A ∪ B| = |A| + |B| + |A ∩ B|$ para conjuntos disjuntos.
     Observamos que:
-      - |{0 : x[0] ≠ y[0]}| = d_H(x[0], y[0])  [x[0], y[0] son símbolos únicos]
-      - |{i : 1 ≤ i ≤ t, x[1:t]ᵢ₋₁ ≠ y[1:t]ᵢ₋₁}| = d_H(x[1:t], y[1:t])  [por def. de d_H sobre palabras]
+      - $|{0 : x[0] ≠ y[0]}| = d_H(x[0], y[0])$  [$x[0]$, $y[0]$ son símbolos únicos]
+      - $|{i : 1 ≤ i ≤ t, x[1:t]ᵢ₋₁ ≠ y[1:t]ᵢ₋₁}| = d_H(x[1:t], y[1:t])$  [por def. de d_H sobre palabras]
     
     Por tanto:
-                  = d_H(x[0], y[0]) + d_H(x[1:t], y[1:t])  ✓
+                  $= d_H(x[0], y[0]) + d_H(x[1:t], y[1:t])$  ✓
     
     **Observación**: Este resultado muestra que la concatenación de palabras es un homomorfismo 
     respecto a la descomposición aditiva de la distancia de Hamming:
@@ -120,7 +122,7 @@ Paso inductivo:
 
 **Teorema 1**: La distancia Hamming de las subpalabras de ancho fijo menor que $n$ es estrictamente aditiva.
 
-```Teorema
+```Theorem
 ${\Sigma}^k$ es el conjunto de todas las palabras de longitud $k ∈ \SetNat$ sobre el alfabeto $\Sigma$.
 Sean $n, m ∈ \SetNat$ con $n+m=k$
 Sean $x, y ∈ {\Sigma}^k$ dos palabras de longitud $k$.
@@ -131,143 +133,52 @@ Entonces: d_H(x, y) = d_H(x[0:n-1], y[0:n-1]) + d_H(x[n:k-1], y[n:k-1])
 **Demostración**:
 
 ```Proof
-Lo demostraremos por inducción sobre $k$.
+Por el Lema 1, sabemos que para cualquier palabra w de longitud k:
+    d_H(w[0]·w[1:k-1], z[0]·z[1:k-1]) = d_H(w[0], z[0]) + d_H(w[1:k-1], z[1:k-1])
 
-Caso base: k = 1
-  Si k = 1, entonces n = 0 y m = 1, o bien n = 1 y m = 0.
-  
-  • Subcaso n = 0, m = 1:
-      Entonces x = ε · x[0] = x[0] y y = ε · y[0] = y[0]
-      Luego:
-        d_H(x, y) = d_H(ε, ε) + d_H(x[0], y[0])
-                  = 0 + d_H(x[0], y[0])
-                  = d_H(x, y)  ✓
-  
-  • Subcaso n = 1, m = 0:
-      Entonces x = x[0] · ε = x[0] y y = y[0] · ε = y[0]
-      Luego:
-        d_H(x, y) = d_H(x[0], y[0]) + d_H(ε, ε)
-                  = d_H(x, y) + 0
-                  = d_H(x, y)  ✓
-  
-  Por tanto, el caso base k=1 se cumple.
-Caso base: k = 2
-  Si k = 2, entonces n + m = 2, lo que implica (n=0, m=2), (n=1, m=1) o (n=2, m=0).
-  Los casos n=0 y n=2 son triviales (ya cubiertos por k=1).
-  
-  • Subcaso no trivial: n = 1, m = 1:
-      Sean x = x₀x₁ y y = y₀y₁ dos palabras de longitud 2.
-      La descomposición es: x = x₀ · x₁ y y = y₀ · y₁
-      
-      Por definición de d_H:
-        d_H(x, y) = |{i ∈ {0,1} : xᵢ ≠ yᵢ}|
-      
-      Analizamos por casos:
-        - Si x₀ = y₀ y x₁ = y₁: entonces d_H(x,y) = 0
-          d_H(x₀, y₀) + d_H(x₁, y₁) = 0 + 0 = 0 ✓
-        
-        - Si x₀ ≠ y₀ y x₁ = y₁: entonces d_H(x,y) = 1
-          d_H(x₀, y₀) + d_H(x₁, y₁) = 1 + 0 = 1 ✓
-        
-        - Si x₀ = y₀ y x₁ ≠ y₁: entonces d_H(x,y) = 1
-          d_H(x₀, y₀) + d_H(x₁, y₁) = 0 + 1 = 1 ✓
-        
-        - Si x₀ ≠ y₀ y x₁ ≠ y₁: entonces d_H(x,y) = 2
-          d_H(x₀, y₀) + d_H(x₁, y₁) = 1 + 1 = 2 ✓
-      
-      En todos los casos: d_H(x, y) = d_H(x₀, y₀) + d_H(x₁, y₁)
-  
-  Por tanto, el caso base k=2 se cumple para todas las descomposiciones.
+Demostraremos el teorema por inducción sobre n (longitud del prefijo).
+
+Caso base (n = 0):
+    Si n = 0, entonces x[0:n-1] = ε (palabra vacía) y x[n:k-1] = x (palabra completa).
+    Luego:
+        d_H(x, y) = d_H(ε·x, ε·y) = d_H(ε, ε) + d_H(x, y) = 0 + d_H(x, y)  ✓
+
+Caso base (n = 1):
+    Si n = 1, entonces x = x[0]·x[1:k-1] y y = y[0]·y[1:k-1].
+    Por Lema 1:
+        d_H(x, y) = d_H(x[0], y[0]) + d_H(x[1:k-1], y[1:k-1])  ✓
 
 Hipótesis de inducción:
-  Supongamos que para k = t ≥ 2 se cumple que la distancia de Hamming 
-  es exactamente aditiva para toda descomposición n + m = t.
+    Supongamos que para n = t se cumple:
+        d_H(x, y) = d_H(x[0:t-1], y[0:t-1]) + d_H(x[t:k-1], y[t:k-1])
 
-Paso inductivo (inducción sobre t):
-  Debemos demostrar que para k = t + 1, con n + m = t + 1, se cumple la propiedad.
-  
-  Demostraremos esto por inducción sobre n (longitud del prefijo):
-  
-    Caso base (n = 0):
-      Si n = 0, entonces m = t + 1, y las palabras x, y tienen longitud k = t + 1.
-      
-      La partición es:
-        x = x[0:n-1] · x[n:k-1] = x[0:-1] · x[0:t] = ε · x[0:t]
-        y = y[0:n-1] · y[n:k-1] = y[0:-1] · y[0:t] = ε · y[0:t]
-      
-      Nota: x[0:t] representa x[0], x[1], ..., x[t], que tiene longitud t+1.
-            Como k = t+1, entonces x[0:t] = x (la palabra completa).
-            Análogamente, y[0:t] = y.
-      
-      Por tanto:
-        d_H(x, y) = d_H(ε · x[0:t], ε · y[0:t])
-                  = d_H(ε, ε) + d_H(x[0:t], y[0:t])    [por aditividad]
-                  = 0 + d_H(x, y)                       [pues x[0:t] = x, y[0:t] = y]
-                  = d_H(x, y)  ✓
+Paso inductivo (n = t + 1):
+    Sean x, y palabras de longitud k, con descomposición x[0:t]·x[t+1:k-1].
     
-    Caso base (n = 1):
-      Si n = 1, entonces m = t, y las palabras x, y tienen longitud k = t + 1.
-      
-      La partición es:
-        x = x[0:n-1] · x[n:k-1] = x[0:0] · x[1:t] = x[0] · x[1:t]
-        y = y[0:n-1] · y[n:k-1] = y[0:0] · y[1:t] = y[0] · y[1:t]
-      
-      Nota: x[0:t] representa x[0], x[1], ..., x[t], que tiene longitud t+1.
-            Como k = t+1, entonces x[0:t] = x (la palabra completa).
-            Análogamente, y[0:t] = y.
-      
-      Por tanto:
-        d_H(x, y) = d_H(x[0] · x[1:t], y[0] · y[1:t])
-                  = d_H(x[0], y[0]) + d_H(x[1:t], y[1:t])    [por aditividad]
-                  = d_H(x[0], y[0]) + d_H(x[1:t], y[1:t])    [pues x[0:t] = x, y[0:t] = y]
-                  = d_H(x[0], y[0]) + d_H(x[1:s-1], y[1:s-1]) + d_H(x[s:t], y[s:t])  [por HI sobre k]
-                  = d_H(x[0:s-1], y[0:s-1]) + d_H(x[s:t], y[s:t])  [por HI sobre k]
-                  = d_H(x, y)  ✓
-
-    Caso base (n = t):
-      Si n = t entonces m = 1, y las palabras x, y tienen longitud k = t + 1.
-      
-      La partición es:
-        x = x[0:n-1] · x[n:k-1] = x[0:t-1] · x[t:t] = x[0:t-1] · x[t]
-        y = y[0:n-1] · y[n:k-1] = y[0:t-1] · y[t:t] = y[0:t-1] · y[t]
-      
-      Nota: x[0:t] representa x[0], x[1], ..., x[t], que tiene longitud t+1.
-            Como k = t+1, entonces x[0:t-1] · x[t] = x (la palabra completa).
-            Análogamente, y[0:t-1] · y[t] = y.
-      
-      Por tanto:
-        d_H(x, y) = d_H(x[0:t-1] · x[t], y[0:t-1] · y[t])
-                  = d_H(x[0:t-1], y[0:t-1]) + d_H(x[t], y[t])    [por aditividad]
-                  = d_H(x[0:s-1], y[0:s-1]) + d_H(x[s:t-1], y[s:t-1]) + d_H(x[t], y[t]) [por HI sobre k]
-                  = d_H(x[0:s-1], y[0:s-1]) + d_H(x[s:t], y[s:t])  [por HI sobre k]
-                  = d_H(x, y)  ✓
-
-    Hipótesis inductiva (sobre n):
-      Supongamos que para n = s se cumple la propiedad cuando s + m = t + 1
+    Aplicamos Lema 1 con prefijo de longitud 1:
+        d_H(x, y) = d_H(x[0]·x[1:k-1], y[0]·y[1:k-1])
+                  = d_H(x[0], y[0]) + d_H(x[1:k-1], y[1:k-1])
     
-    Paso inductivo (n = s + 1):
-      Sea n = s + 1 y m tal que (s + 1) + m = t + 1, es decir, m = t - s
-      
-      Entonces:
-        x = x[0:s-1] · x[s] · x[s+1:t]
-        y = y[0:s-1] · y[s] · y[s+1:t]
-      
-      Por la hipótesis inductiva sobre k (aplicada a k = t):
-        d_H(x[0:s-1] · x[s:t], y[0:s-1] · y[s:t]) = d_H(x[0:s-1], y[0:s-1]) + d_H(x[s:t], y[s:t])
-      
-      Y también por HI sobre k:
-        d_H(x, y) = d_H(x[0:s-1] · x[s], y[0:s-1] · y[s]) + d_H(x[s+1:t], y[s+1:t])
-      
-      Sustituyendo:
-        d_H(x, y) = d_H(x[0:s-1], y[0:s-1]) + d_H(x[s], y[s]) + d_H(x[s+1:t], y[s+1:t])
-                  = d_H(x[0:s], y[0:s]) + d_H(x[s+1:t], y[s+1:t])
-      
-      Lo cual es exactamente la forma deseada con n = s + 1.  ✓
-  
-  Por inducción sobre n, la propiedad se cumple para todo n con n + m = t + 1.
+    Ahora, sobre x[1:k-1] (que tiene longitud k-1), aplicamos la HI con n' = t:
+        d_H(x[1:k-1], y[1:k-1]) = d_H(x[1:t], y[1:t]) + d_H(x[t+1:k-1], y[t+1:k-1])
+    
+    Sustituyendo:
+        d_H(x, y) = d_H(x[0], y[0]) + d_H(x[1:t], y[1:t]) + d_H(x[t+1:k-1], y[t+1:k-1])
+                  = d_H(x[0:t], y[0:t]) + d_H(x[t+1:k-1], y[t+1:k-1])  ✓
+    
+    Por tanto, el resultado se cumple para n = t + 1.
 
-Por inducción sobre k, la propiedad de aditividad se cumple para todo k ∈ ℕ.  □
+Por inducción matemática, el teorema se cumple para todo n ∈ ℕ con 0 ≤ n ≤ k.
 ```
+
+**Observación**: Este teorema muestra que la distancia de Hamming se comporta aditivamente
+sobre cualquier partición de las palabras en subpalabras contiguas. Es decir, para cualquier
+descomposición x = x₁·x₂·...·xₘ con |xᵢ| = nᵢ y Σnᵢ = k:
+    d_H(x, y) = Σᵢ d_H(xᵢ, yᵢ)
+
+Esta propiedad es fundamental para el análisis de códigos de bloque.
+
+#### 2.2 La Distancia de Hamming es una Métrica
 
 **Teorema 2**: La distancia de Hamming d_H define una métrica sobre Σⁿ.
 
@@ -276,8 +187,10 @@ Para demostrar que d_H es una métrica, debemos probar que satisface las tres pr
 ##### Propiedad M1: No Negatividad e Identidad
 
 ```
+
 ∀x, y ∈ Σⁿ: d_H(x, y) ≥ 0
 ∀x, y ∈ Σⁿ: d_H(x, y) = 0 ⟺ x = y
+
 ```
 
 **Demostración**:
@@ -298,15 +211,19 @@ Para demostrar que d_H es una métrica, debemos probar que satisface las tres pr
 ##### Propiedad M2: Simetría
 
 ```
+
 ∀x, y ∈ Σⁿ: d_H(x, y) = d_H(y, x)
+
 ```
 
 **Demostración**:
 
 ```
+
 d_H(x, y) = |{i : x_i ≠ y_i}|
           = |{i : y_i ≠ x_i}|    (la desigualdad es simétrica)
           = d_H(y, x)
+
 ```
 
 □
@@ -314,7 +231,9 @@ d_H(x, y) = |{i : x_i ≠ y_i}|
 ##### Propiedad M3: Desigualdad Triangular
 
 ```
+
 ∀x, y, z ∈ Σⁿ: d_H(x, z) ≤ d_H(x, y) + d_H(y, z)
+
 ```
 
 **Demostración**:
@@ -341,6 +260,264 @@ Es decir: d_H(x, z) ≤ d_H(x, y) + d_H(y, z)
 
 **Conclusión**: Hemos demostrado que la distancia de Hamming es una métrica formal. Esta demostración está implementada como prueba formal en el sistema de lógica matemática del proyecto (ver sección de demostraciones formales).
 
+#### 2.3 Peso de Hamming
+
+**Definición**: El **peso de Hamming** de una palabra x ∈ Σⁿ, denotado w_H(x), es el número de posiciones no nulas (diferentes del símbolo cero del alfabeto):
+
+```
+w_H(x) = |{i : x_i ≠ 0}|
+```
+
+Para alfabetos binarios Σ = {0, 1}: w_H(x) = número de unos en x
+
+**Ejemplos**:
+
+- w_H(0000) = 0
+- w_H(1010) = 2
+- w_H(1111) = 4
+- w_H(10110101) = 5
+
+**Proposición 1**: El peso de Hamming es la distancia al origen
+
+```
+∀x ∈ Σⁿ: w_H(x) = d_H(x, 0ⁿ)
+```
+
+**Demostración**:
+
+```Proof
+Sea 0ⁿ = 00...0 (n ceros) la palabra nula.
+
+Por definición de distancia de Hamming:
+    d_H(x, 0ⁿ) = |{i : x_i ≠ 0}|
+
+Por definición de peso de Hamming:
+    w_H(x) = |{i : x_i ≠ 0}|
+
+Por tanto: w_H(x) = d_H(x, 0ⁿ)  ✓
+```
+
+**Teorema 3** (Relación peso-distancia en alfabetos con estructura de grupo):
+
+Para alfabetos con operación de grupo (Σ, ⊕), en particular para F₂ = {0,1} con XOR:
+
+```
+∀x, y ∈ Σⁿ: d_H(x, y) = w_H(x ⊕ y)
+```
+
+donde (x ⊕ y)ᵢ = xᵢ ⊕ yᵢ (operación componente a componente)
+
+**Demostración**:
+
+```Proof
+Sea z = x ⊕ y, donde zᵢ = xᵢ ⊕ yᵢ para cada posición i.
+
+Por definición de distancia de Hamming:
+    d_H(x, y) = |{i : x_i ≠ y_i}|
+
+Por propiedades de la operación XOR en F₂:
+    x_i ≠ y_i ⟺ x_i ⊕ y_i = 1
+    x_i = y_i ⟺ x_i ⊕ y_i = 0
+
+Por tanto:
+    {i : x_i ≠ y_i} = {i : (x ⊕ y)ᵢ ≠ 0} = {i : z_i ≠ 0}
+
+Luego:
+    d_H(x, y) = |{i : x_i ≠ y_i}|
+              = |{i : z_i ≠ 0}|
+              = w_H(z)
+              = w_H(x ⊕ y)  ✓
+```
+
+**Aplicación práctica**: En circuitos digitales, d_H(x, y) se puede calcular como:
+
+1. Aplicar XOR bit a bit: z = x ⊕ y
+2. Contar los unos en z (circuito contador de población/"popcount")
+
+**Propiedades del peso de Hamming**:
+
+1. **No negatividad**: w_H(x) ≥ 0 para todo x
+2. **Nulidad**: w_H(x) = 0 ⟺ x = 0ⁿ
+3. **Aditividad** (en F₂): w_H(x ⊕ y) ≤ w_H(x) + w_H(y) (desigualdad triangular trasladada)
+4. **Invariancia por permutación**: w_H(π(x)) = w_H(x) para cualquier permutación π
+
+#### 2.4 Esferas de Hamming y Volumen
+
+**Definición**: La **esfera de Hamming** de radio r centrada en x es:
+
+```
+B(x, r) = {y ∈ Σⁿ : d_H(x, y) ≤ r}
+```
+
+Es el conjunto de todas las palabras a distancia ≤ r de x.
+
+**Teorema 4** (Volumen de esferas de Hamming):
+
+El número de palabras en una esfera de radio r es:
+
+```
+V(n, r) = |B(x, r)| = Σᵢ₌₀ʳ C(n, i) · (|Σ| - 1)ⁱ
+```
+
+donde C(n, i) = (n choose i) = n!/(i!(n-i)!)
+
+**Demostración**:
+
+```Proof
+El volumen V(n, r) es independiente del centro x (por invariancia translacional de la métrica).
+Tomemos x = 0ⁿ sin pérdida de generalidad.
+
+Una palabra y está en B(0ⁿ, r) si y solo si w_H(y) ≤ r.
+
+Para cada distancia exacta i (con 0 ≤ i ≤ r), contamos cuántas palabras tienen exactamente i símbolos no nulos:
+
+1. **Elegir posiciones**: Hay C(n, i) formas de elegir i posiciones de n
+2. **Elegir símbolos no nulos**: Para cada posición elegida, hay (|Σ| - 1) opciones 
+   (cualquier símbolo excepto 0)
+3. **Posiciones restantes**: Las n - i posiciones restantes deben ser 0
+
+Por tanto, hay C(n, i) · (|Σ| - 1)ⁱ palabras a distancia exactamente i.
+
+Sumando sobre todas las distancias de 0 a r:
+    V(n, r) = Σᵢ₌₀ʳ C(n, i) · (|Σ| - 1)ⁱ  ✓
+```
+
+**Caso particular** (alfabeto binario Σ = {0, 1}):
+
+```
+V(n, r) = Σᵢ₌₀ʳ C(n, i)
+```
+
+**Ejemplos**:
+
+Para n = 5, Σ = {0, 1}:
+
+- V(5, 0) = C(5,0) = 1 (solo la palabra central)
+- V(5, 1) = C(5,0) + C(5,1) = 1 + 5 = 6
+- V(5, 2) = 1 + 5 + 10 = 16
+- V(5, 5) = 2⁵ = 32 (todo el espacio)
+
+**Teorema 5** (Hamming Bound o Sphere-Packing Bound):
+
+Sea C ⊆ Σⁿ un código con distancia mínima $d_{min} = 2t + 1$ (corrige hasta t errores).
+Entonces:
+
+```
+|C| ≤ |Σ|ⁿ / V(n, t)
+```
+
+**Demostración**:
+
+```Proof
+Si C corrige hasta t errores, entonces las esferas B(c, t) centradas en cada palabra-código c ∈ C 
+deben ser disjuntas (no solapadas).
+
+**Justificación**: Supongamos que B(c₁, t) ∩ B(c₂, t) ≠ ∅ para c₁ ≠ c₂.
+Entonces existe y tal que d_H(y, c₁) ≤ t y d_H(y, c₂) ≤ t.
+Por desigualdad triangular:
+    d_H(c₁, c₂) ≤ d_H(c₁, y) + d_H(y, c₂) ≤ t + t = 2t
+
+Pero $d_{min} = 2t + 1$, contradicción. Por tanto, las esferas son disjuntas.
+
+Como hay |C| palabras-código y cada esfera tiene volumen V(n, t):
+    |C| · V(n, t) ≤ |Σⁿ| = |Σ|ⁿ
+
+Dividiendo por V(n, t):
+    |C| ≤ |Σ|ⁿ / V(n, t)  ✓
+```
+
+**Interpretación**: Este teorema establece un **límite superior** para el número de palabras-código que puede tener un código con capacidad de corrección t. Es una restricción fundamental en teoría de códigos.
+
+**Definición**: Un código que alcanza la igualdad |C| = |Σ|ⁿ / V(n, t) se llama **código perfecto**, porque las esferas de radio t "empacan" completamente el espacio Σⁿ sin huecos ni solapamientos.
+
+**Ejemplos de códigos perfectos**:
+
+- Códigos de Hamming ($d_{min} = 3$, t = 1)
+- Código de Golay binario [23, 12, 7]
+- Código de repetición [n, 1, n] con n impar
+
+#### 2.5 Distancia Promedio
+
+**Definición**: La **distancia promedio** entre dos palabras aleatorias uniformemente distribuidas en Σⁿ es:
+
+```
+E[d_H(X, Y)] = Valor esperado de d_H cuando X, Y ~ Uniforme(Σⁿ)
+```
+
+**Teorema 6** (Distancia promedio):
+
+Para X, Y palabras aleatorias independientes uniformemente distribuidas en Σⁿ:
+
+```
+E[d_H(X, Y)] = n · (|Σ| - 1) / |Σ| = n · (1 - 1/|Σ|)
+```
+
+**Demostración**:
+
+```Proof
+Por linealidad de la esperanza y la definición de d_H:
+    E[d_H(X, Y)] = E[Σᵢ₌₀ⁿ⁻¹ 𝟙{Xᵢ ≠ Yᵢ}]
+                  = Σᵢ₌₀ⁿ⁻¹ E[𝟙{Xᵢ ≠ Yᵢ}]
+                  = Σᵢ₌₀ⁿ⁻¹ P(Xᵢ ≠ Yᵢ)
+
+Para cada posición i:
+    P(Xᵢ = Yᵢ) = Σₛ∈Σ P(Xᵢ = s) · P(Yᵢ = s)
+                = Σₛ∈Σ (1/|Σ|) · (1/|Σ|)    [por independencia y uniformidad]
+                = |Σ| · (1/|Σ|²)
+                = 1/|Σ|
+
+Por tanto:
+    P(Xᵢ ≠ Yᵢ) = 1 - P(Xᵢ = Yᵢ) = 1 - 1/|Σ| = (|Σ| - 1)/|Σ|
+
+Sustituyendo:
+    E[d_H(X, Y)] = Σᵢ₌₀ⁿ⁻¹ (|Σ| - 1)/|Σ|
+                  = n · (|Σ| - 1)/|Σ|  ✓
+```
+
+**Casos particulares**:
+
+1. **Alfabeto binario** (Σ = {0, 1}, |Σ| = 2):
+
+   ```
+   E[d_H(X, Y)] = n · 1/2 = n/2
+   ```
+
+   Interpretación: En promedio, dos palabras binarias aleatorias difieren en la mitad de sus bits.
+
+2. **Alfabeto cuaternario** (Σ = {0, 1, 2, 3}, |Σ| = 4):
+
+   ```
+   E[d_H(X, Y)] = n · 3/4 = 3n/4
+   ```
+
+3. **Alfabeto general de tamaño q**:
+
+   ```
+   E[d_H(X, Y)] = n(q-1)/q
+   ```
+
+**Varianza de la distancia de Hamming**:
+
+```Proposition
+Var[d_H(X, Y)] = n · P(Xᵢ ≠ Yᵢ) · P(Xᵢ = Yᵢ)
+                = n · (|Σ| - 1)/|Σ| · 1/|Σ|
+                = n(|Σ| - 1)/|Σ|²
+```
+
+Para alfabeto binario: Var[d_H(X, Y)] = n/4
+
+**Aplicación práctica**:
+
+La distancia promedio proporciona una **línea base** para evaluar códigos:
+
+- Si $d_{min}$ de un código es mucho mayor que E[d_H], el código tiene buena separación
+- Para códigos binarios de longitud n, queremos $d_{min} >> n/2$ para robustez
+
+**Ejemplo**:
+
+- Código con n = 16, $d_{min} = 8$: Está en E[d_H] = 8 (apenas adecuado)
+- Código con n = 16, $d_{min} = 12$: Está bien por encima del promedio (excelente)
+
 ### 3. Distancia Mínima de un Lenguaje
 
 #### Definición
@@ -348,21 +525,22 @@ Es decir: d_H(x, z) ≤ d_H(x, y) + d_H(y, z)
 Sea L ⊆ Σⁿ un lenguaje (conjunto de palabras de longitud n). La **distancia mínima** de L es:
 
 ```
-d_min(L) = min{d_H(x, y) : x, y ∈ L, x ≠ y}
+
+$d_{min}(L) = min\{d_H(x, y) : x, y \in L, x \neq y\}$
+
 ```
 
 #### Importancia
 
 La distancia mínima determina la **capacidad de detección y corrección de errores**:
 
-| d_min | Capacidad |
+| $d_{min}$ | Capacidad |
 |-------|-----------|
-| d_min = 1 | No detecta errores (palabras adyacentes) |
-| d_min = 2 | Detecta 1 error |
-| d_min = 3 | Detecta 2 errores, corrige 1 error |
-| d_min = 4 | Detecta 3 errores, corrige 1 error |
-| d_min = 2t+1 | Corrige hasta t errores |
-
+| $d_{min} = 1$ | No detecta errores (palabras adyacentes) |
+| $d_{min} = 2$ | Detecta 1 error |
+| $d_{min} = 3$ | Detecta 2 errores, corrige 1 error |
+| $d_{min} = 4$ | Detecta 3 errores, corrige 1 error |
+| $d_{min} = 2t+1$ | Corrige hasta t errores |
 **Teorema 2**: Un código con distancia mínima d puede:
 
 - **Detectar** hasta d-1 errores
@@ -372,7 +550,7 @@ La distancia mínima determina la **capacidad de detección y corrección de err
 
 ```python
 L = {000, 111}  # Alfabeto Σ = {0, 1}
-d_min(L) = d_H(000, 111) = 3
+$d_{min}(L) = d_H(000, 111) = 3$
 ```
 
 Este código puede:
@@ -446,7 +624,7 @@ Para un código C ⊆ {0,1}ⁿ con distancia mínima d = 2t+1:
 
 La distancia de Hamming se usa en:
 
-- **Códigos de paridad**: d_min = 2 (detecta 1 error)
+- **Códigos de paridad**: $d_{min} = 2$ (detecta 1 error)
 - **CRC (Cyclic Redundancy Check)**: detecta ráfagas de errores
 - **Checksums**: verificación de integridad
 
@@ -506,7 +684,7 @@ Un **código de bloque (n, k)** codifica k bits de información en n bits (n > k
 
 **Redundancia**: n - k bits
 
-**Objetivo**: Maximizar R manteniendo d_min grande.
+**Objetivo**: Maximizar R manteniendo $d_{min}$ grande.
 
 #### Ejemplo: Hamming (7,4)
 
@@ -515,7 +693,7 @@ n = 7 bits totales
 k = 4 bits de datos
 Redundancia = 3 bits de paridad
 R = 4/7 ≈ 0.57
-d_min = 3 (corrige 1 error)
+$d_{min} = 3$ (corrige 1 error)
 ```
 
 ### 9. Algoritmos de Cálculo
@@ -588,7 +766,29 @@ Para códigos binarios con d > n/2:
 
 #### Teorema 6 (Cota de Elias-Bassalygo)
 
-Mejora la cota de Hamming para códigos grandes.
+Para un código binario C de longitud n con distancia mínima d:
+
+```
+|C| ≤ 2^n / (V(n, ⌊(d-1)/2⌋) · (1 - R(δ)))
+```
+
+donde:
+
+- δ = d/n es la **distancia relativa**
+- R(δ) es una función relacionada con la entropía binaria
+- V(n, r) es el volumen de una esfera de Hamming de radio r
+
+**Forma alternativa** usando la función de entropía binaria H(p) = -p log₂(p) - (1-p) log₂(1-p):
+
+Para δ ≤ 1/2 y códigos suficientemente largos:
+
+```
+|C| ≤ 2^(n(1 - H(δ/2) + o(1)))
+```
+
+**Interpretación**: Esta cota mejora la cota de Hamming para códigos con distancia relativa moderada, proporcionando un límite más ajustado sobre el tamaño máximo del código.
+
+**Aplicación**: Es especialmente útil para analizar códigos asintóticamente buenos y establecer límites en la teoría de códigos algebraicos.
 
 ### 11. Espacio Métrico de Hamming
 
@@ -597,7 +797,7 @@ El par (Σⁿ, d_H) forma un **espacio métrico**:
 **Propiedades topológicas**:
 
 - Espacio discreto (todas las distancias son enteras)
-- Métrica ultramétrica si d(x,y) = 1 solo cuando x ≠ y
+- **No es ultramétrica**: La distancia de Hamming no satisface la desigualdad triangular fuerte d(x,z) ≤ max(d(x,y), d(y,z)). Contraejemplo: x=000, y=111, z=100 da d(x,y)=3 > max(d(x,z), d(y,z))=max(1,2)=2
 - Esferas son conjuntos finitos
 - No es un espacio normado (no hay noción de "longitud")
 
