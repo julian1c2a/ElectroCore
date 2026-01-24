@@ -1,10 +1,13 @@
 {
   "temario_fe": {
     "titulo": "Fundamentos de Electrónica - Catálogo de Temas",
-    "version": "3.1",
-    "fecha_actualización": "2026-01-21",
+    "version": "3.2",
+    "fecha_actualización": "2026-01-24",
     "estadísticas": {
-      "total_items": 152
+      "total_items": 152,
+      "items_completed": 1,
+      "items_with_python": 1,
+      "total_python_functions": 6
     },
     "items": [
       {
@@ -1128,8 +1131,49 @@
         "nivel": 5,
         "parent_id": "1.6.1.1",
         "md_path": "fundamentos_de_electronica/modulo_6_fundamentos_de_electronica_digital/sistemas_de_representacion_de_la_informacion/alfabetos_lenguajes_y_semantica/distancia_de_hamming_y_analisis_de_lenguajes.md",
-        "python_refs": [],
-        "status": "pending"
+        "python_refs": [
+          {
+            "module": "core.formal_languages",
+            "function": "hamming_distance",
+            "description": "Calcula la distancia de Hamming entre dos palabras de igual longitud",
+            "implemented": true
+          },
+          {
+            "module": "core.formal_languages",
+            "function": "hamming_weight",
+            "description": "Calcula el peso de Hamming (número de símbolos no-cero)",
+            "implemented": true
+          },
+          {
+            "module": "core.formal_languages",
+            "function": "min_distance_of_language",
+            "description": "Calcula la distancia mínima de un código",
+            "implemented": true
+          },
+          {
+            "module": "core.formal_languages",
+            "function": "hamming_sphere",
+            "description": "Genera la esfera de Hamming de radio r centrada en una palabra",
+            "implemented": true
+          },
+          {
+            "module": "core.formal_languages",
+            "function": "binomial_coefficient",
+            "description": "Calcula el coeficiente binomial C(n, k)",
+            "implemented": true
+          },
+          {
+            "module": "core.formal_languages",
+            "function": "sphere_volume",
+            "description": "Calcula el volumen de una esfera de Hamming",
+            "implemented": true
+          }
+        ],
+        "status": "completed",
+        "has_theory": true,
+        "has_examples": true,
+        "has_tests": true,
+        "test_coverage": "46/46 tests passing"
       },
       {
         "id": "1.6.1.2",
