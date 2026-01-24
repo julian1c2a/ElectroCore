@@ -11,6 +11,16 @@ from core.sistemas_numeracion_basicos import (
 )
 # En core/catalog.py
 from modules.formal_languages.generators import FormalLanguageGenerator
+
+# Importar funciones de análisis de distancia de Hamming
+from core.formal_languages import (
+    hamming_distance,
+    hamming_weight,
+    min_distance_of_language,
+    hamming_sphere,
+    binomial_coefficient,
+    sphere_volume,
+)
 # ============================================================================
 # Registro central de ejercicios
 EXERCISE_CATALOG = {
@@ -82,9 +92,20 @@ CODIGO_SYSTEMS_CATALOG = {
         "biquinario_5bit": crear_lenguaje_biquinario(),
     },
     
-    # Funciones de análisis (Completado)
+    # Funciones de análisis (Completado - FASE 4 Extendida)
     "funciones": {
-        "distancia_hamming": distancia_hamming,
+        # Funciones básicas
+        "distancia_hamming": distancia_hamming,  # Alias para compatibilidad
+        "hamming_distance": hamming_distance,
+        
+        # Funciones de peso y esferas (NUEVO - migradas desde tests)
+        "hamming_weight": hamming_weight,
+        "min_distance_of_language": min_distance_of_language,
+        "hamming_sphere": hamming_sphere,
+        
+        # Funciones matemáticas auxiliares (NUEVO)
+        "binomial_coefficient": binomial_coefficient,
+        "sphere_volume": sphere_volume,
     },
     
     # FASE 5: Códigos Correctores (Planned)

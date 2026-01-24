@@ -233,3 +233,227 @@ class CustomMappingSemantics(Semantics[Any]):
 
     def describe(self) -> str:
         return self.desc
+
+
+# ==============================================================================
+# 4. FUNCIONES DE ANÁLISIS DE DISTANCIA DE HAMMING
+# ==============================================================================
+
+def hamming_distance(x: str, y: str) -> int:
+    """
+    Calcula la distancia de Hamming entre dos palabras de igual longitud.
+    
+    La distancia de Hamming es el número de posiciones en las que los símbolos
+    de dos palabras de igual longitud son diferentes.
+    
+    Args:
+        x: Primera palabra (cadena de caracteres)
+        y: Segunda palabra (cadena de caracteres)
+        
+    Returns:
+        int: Número de posiciones diferentes
+        
+    Raises:
+        ValueError: Si las palabras tienen longitudes diferentes
+        
+    Ejemplo:
+        >>> hamming_distance('1011', '1001')
+        1
+        >>> hamming_distance('0000', '1111')
+        4
+        >>> hamming_distance('1010', '1010')
+        0
+    """
+    if len(x) != len(y):
+        raise ValueError(
+            f"Las palabras deben tener igual longitud. "
+            f"Recibidas: {len(x)} vs {len(y)}"
+        )
+    
+    return sum(c1 != c2 for c1, c2 in zip(x, y))
+
+
+def hamming_weight(x: str, zero_symbol: str = '0') -> int:
+    """
+    Calcula el peso de Hamming de una palabra.
+    
+    El peso de Hamming es el número de posiciones no nulas (diferentes del
+    símbolo cero del alfabeto). Para alfabetos binarios, es el número de unos.
+    
+    Args:
+        x: Palabra (cadena de caracteres)
+        zero_symbol: Símbolo que representa el cero (por defecto '0')
+        
+    Returns:
+        int: Número de símbolos no-cero
+        
+    Ejemplo:
+        >>> hamming_weight('0000')
+        0
+        >>> hamming_weight('1010')
+        2
+        >>> hamming_weight('1111')
+        4
+        >>> hamming_weight('10110101')
+        5
+    
+    Nota:
+        Para alfabetos binarios: hamming_weight(x) == hamming_distance(x, '0'*len(x))
+    """
+    return sum(c != zero_symbol for c in x)
+
+
+def min_distance_of_language(code: List[str]) -> float:
+    """
+    Calcula la distancia mínima de un código (lenguaje).
+    
+    La distancia mínima es la menor distancia de Hamming entre cualquier par
+    de palabras distintas del código. Determina la capacidad de detección y
+    corrección de errores.
+    
+    Args:
+        code: Lista de palabras-código (todas deben tener la misma longitud)
+        
+    Returns:
+        float: Distancia mínima del código (inf si tiene menos de 2 palabras)
+        
+    Ejemplo:
+        >>> min_distance_of_language(['000', '111'])
+        3
+        >>> min_distance_of_language(['000', '111', '101', '010'])
+        2
+    
+    Nota:
+        Un código con d_min puede:
+        - Detectar hasta d_min - 1 errores
+        - Corregir hasta ⌊(d_min - 1) / 2⌋ errores
+    """
+    if len(code) < 2:
+        return float('inf')
+    
+    min_dist = float('inf')
+    for i in range(len(code)):
+        for j in range(i + 1, len(code)):
+            dist = hamming_distance(code[i], code[j])
+            min_dist = min(min_dist, dist)
+    
+    return min_dist
+
+
+def hamming_sphere(center: str, radius: int, alphabet: str = '01') -> set:
+    """
+    Genera la esfera de Hamming de radio r centrada en una palabra.
+    
+    La esfera de Hamming B(x, r) es el conjunto de todas las palabras a
+    distancia como máximo r de x.
+    
+    Args:
+        center: Palabra central
+        radius: Radio de la esfera (número máximo de diferencias)
+        alphabet: Alfabeto a usar (por defecto binario '01')
+        
+    Returns:
+        set: Conjunto de palabras en la esfera
+        
+    Ejemplo:
+        >>> sorted(hamming_sphere('101', 1))
+        ['001', '100', '101', '111']
+        >>> len(hamming_sphere('000', 2))
+        7  # C(3,0) + C(3,1) + C(3,2) = 1 + 3 + 3
+    
+    Nota:
+        El volumen de la esfera es V(n, r) = Σᵢ₌₀ʳ C(n, i) · (|Σ| - 1)ⁱ
+    """
+    n = len(center)
+    sphere = set()
+    
+    # Para cada número de posiciones a cambiar (de 0 a radius)
+    for r in range(radius + 1):
+        # Elegir qué posiciones cambiar
+        for positions in itertools.combinations(range(n), r):
+            # Para cada combinación de símbolos en esas posiciones
+            for symbols in itertools.product(alphabet, repeat=r):
+                word = list(center)
+                for pos, sym in zip(positions, symbols):
+                    if sym != center[pos]:  # Solo si realmente cambia
+                        word[pos] = sym
+                sphere.add(''.join(word))
+    
+    return sphere
+
+
+def binomial_coefficient(n: int, k: int) -> int:
+    """
+    Calcula el coeficiente binomial C(n, k) = n! / (k! · (n-k)!).
+    
+    También conocido como "n choose k", representa el número de formas de
+    elegir k elementos de un conjunto de n elementos sin importar el orden.
+    
+    Args:
+        n: Tamaño del conjunto total
+        k: Número de elementos a elegir
+        
+    Returns:
+        int: Coeficiente binomial C(n, k)
+        
+    Ejemplo:
+        >>> binomial_coefficient(5, 2)
+        10
+        >>> binomial_coefficient(7, 3)
+        35
+        >>> binomial_coefficient(5, 0)
+        1
+    
+    Propiedades:
+        - C(n, 0) = C(n, n) = 1
+        - C(n, k) = C(n, n-k) (simetría)
+        - C(n, k) = 0 si k < 0 o k > n
+    """
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    
+    # Optimización: C(n, k) = C(n, n-k)
+    k = min(k, n - k)
+    
+    result = 1
+    for i in range(k):
+        result = result * (n - i) // (i + 1)
+    
+    return result
+
+
+def sphere_volume(n: int, r: int, alphabet_size: int = 2) -> int:
+    """
+    Calcula el volumen de una esfera de Hamming.
+    
+    El volumen V(n, r) es el número de palabras en la esfera B(x, r) de
+    radio r en un espacio de palabras de longitud n sobre un alfabeto de
+    tamaño dado.
+    
+    Args:
+        n: Longitud de las palabras
+        r: Radio de la esfera
+        alphabet_size: Tamaño del alfabeto (por defecto 2 para binario)
+        
+    Returns:
+        int: Volumen de la esfera V(n, r)
+        
+    Ejemplo:
+        >>> sphere_volume(7, 1)
+        8  # C(7,0) + C(7,1) = 1 + 7
+        >>> sphere_volume(5, 2)
+        16  # C(5,0) + C(5,1) + C(5,2) = 1 + 5 + 10
+    
+    Fórmula:
+        V(n, r) = Σᵢ₌₀ʳ C(n, i) · (|Σ| - 1)ⁱ
+    
+    Aplicación:
+        Usado en la Cota de Hamming: |C| ≤ |Σ|ⁿ / V(n, t) donde t es la
+        capacidad de corrección del código.
+    """
+    volume = 0
+    for i in range(r + 1):
+        volume += binomial_coefficient(n, i) * ((alphabet_size - 1) ** i)
+    return volume

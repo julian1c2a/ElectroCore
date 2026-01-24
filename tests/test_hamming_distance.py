@@ -8,11 +8,25 @@ Este módulo contiene tests exhaustivos para:
 - Esferas de Hamming
 - Códigos correctores
 - Volumen de esferas
+
+NOTA: Las funciones de análisis han sido migradas a core.formal_languages
 """
 
 import pytest
 from typing import List, Set
 import itertools
+
+# ============================================================================
+# IMPORTAR FUNCIONES DESDE EL CORE DEL PROYECTO
+# ============================================================================
+from core.formal_languages import (
+    hamming_distance,
+    hamming_weight,
+    min_distance_of_language,
+    hamming_sphere,
+    binomial_coefficient,
+    sphere_volume,
+)
 
 
 # ============================================================================
@@ -43,79 +57,6 @@ def hamming_7_4_code():
 def repetition_code():
     """Código de repetición triple."""
     return ["000", "111"]
-
-
-# ============================================================================
-# Funciones auxiliares (implementación mínima para tests)
-# ============================================================================
-
-def hamming_distance(x: str, y: str) -> int:
-    """Calcula la distancia de Hamming entre dos palabras."""
-    if len(x) != len(y):
-        raise ValueError("Las palabras deben tener la misma longitud")
-    return sum(c1 != c2 for c1, c2 in zip(x, y))
-
-
-def hamming_weight(x: str) -> int:
-    """Calcula el peso de Hamming (número de símbolos no-cero)."""
-    return sum(c != '0' for c in x)
-
-
-def min_distance_of_language(code: List[str]) -> int:
-    """Calcula la distancia mínima de un código."""
-    if len(code) < 2:
-        return float('inf')
-    
-    min_dist = float('inf')
-    for i in range(len(code)):
-        for j in range(i + 1, len(code)):
-            dist = hamming_distance(code[i], code[j])
-            min_dist = min(min_dist, dist)
-    
-    return min_dist
-
-
-def hamming_sphere(center: str, radius: int) -> Set[str]:
-    """Genera la esfera de Hamming de radio r centrada en center."""
-    n = len(center)
-    sphere = set()
-    
-    # Para cada número de posiciones a cambiar (de 0 a radius)
-    for r in range(radius + 1):
-        # Elegir qué posiciones cambiar
-        for positions in itertools.combinations(range(n), r):
-            # Para cada posición, probar cambiar 0→1 o 1→0
-            word = list(center)
-            for pos in positions:
-                word[pos] = '1' if center[pos] == '0' else '0'
-            sphere.add(''.join(word))
-    
-    return sphere
-
-
-def binomial_coefficient(n: int, k: int) -> int:
-    """Calcula el coeficiente binomial C(n, k)."""
-    if k < 0 or k > n:
-        return 0
-    if k == 0 or k == n:
-        return 1
-    
-    # Optimización: C(n, k) = C(n, n-k)
-    k = min(k, n - k)
-    
-    result = 1
-    for i in range(k):
-        result = result * (n - i) // (i + 1)
-    
-    return result
-
-
-def sphere_volume(n: int, r: int, alphabet_size: int = 2) -> int:
-    """Calcula el volumen de una esfera de Hamming."""
-    volume = 0
-    for i in range(r + 1):
-        volume += binomial_coefficient(n, i) * ((alphabet_size - 1) ** i)
-    return volume
 
 
 # ============================================================================
@@ -151,7 +92,7 @@ class TestHammingDistance:
     
     def test_length_mismatch(self):
         """Debe lanzar error si las longitudes no coinciden."""
-        with pytest.raises(ValueError, match="misma longitud"):
+        with pytest.raises(ValueError, match="igual longitud"):
             hamming_distance("00", "000")
         with pytest.raises(ValueError):
             hamming_distance("1010", "10")
