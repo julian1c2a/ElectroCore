@@ -850,22 +850,67 @@ Su caracterización como métrica formal garantiza propiedades matemáticas sól
 
 ### Módulos Implementados
 
-#### 1. `core/formal_languages.py`
+#### 1. `core/formal_languages.py` ✨ **ACTUALIZADO**
 
-Funciones básicas para trabajar con lenguajes formales y distancia de Hamming:
+**Funciones de análisis de distancia de Hamming (migradas desde tests):**
 
 ```python
-from core.formal_languages import hamming_distance, min_distance_of_language
+from core.formal_languages import (
+    hamming_distance,
+    hamming_weight,
+    min_distance_of_language,
+    hamming_sphere,
+    binomial_coefficient,
+    sphere_volume,
+)
 
 # Calcular distancia entre dos palabras
 d = hamming_distance("10110", "10010")  # 1
 
+# Peso de Hamming (número de símbolos no-cero)
+w = hamming_weight("1010")  # 2
+
 # Distancia mínima de un código
 code = ["000", "111", "101", "010"]
 d_min = min_distance_of_language(code)  # 2
+
+# Esfera de Hamming de radio 1
+sphere = hamming_sphere("101", radius=1)  # {'001', '100', '101', '111'}
+
+# Coeficiente binomial
+c = binomial_coefficient(7, 3)  # 35
+
+# Volumen de esfera
+v = sphere_volume(n=7, r=1, alphabet_size=2)  # 8
 ```
 
-#### 2. `demos/demo_hamming_metrica.py`
+**Disponible en el catálogo del proyecto:**
+
+```python
+from core.catalog import CODIGO_SYSTEMS_CATALOG
+
+funciones = CODIGO_SYSTEMS_CATALOG["funciones"]
+# Acceder a: hamming_distance, hamming_weight, min_distance_of_language,
+#            hamming_sphere, binomial_coefficient, sphere_volume
+```
+
+#### 2. `demos/demo_hamming_functions.py` ✨ **NUEVO**
+
+Demo completo que muestra el uso de todas las funciones:
+
+```bash
+python -m demos.demo_hamming_functions
+```
+
+Incluye ejemplos de:
+
+- Operaciones básicas (distancia, peso)
+- Códigos correctores de errores
+- Esferas de Hamming
+- Cota de Hamming (sphere-packing bound)
+- Coeficientes binomiales
+
+#### 3. `demos/demo_hamming_metrica.py`
 
 Demostración formal completa que prueba que la distancia de Hamming es una métrica:
 
