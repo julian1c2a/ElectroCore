@@ -21,7 +21,12 @@ Fecha: Enero 2026
 
 from .expressions import (
     Expression, Variable, Constant, BinaryOp, UnaryOp,
-    Function, Quantifier, Predicate
+    Function, Quantifier, Predicate,
+    # Helper functions
+    Var, Const, Func, Pred,
+    And, Or, Not, Implies, Iff, Equals, NotEquals,
+    Forall, Exists,
+    Add, Mul, BinOp, UnOp, LessEq, GreaterEq
 )
 
 from .axioms import (
@@ -31,11 +36,12 @@ from .axioms import (
 from .inference_rules import (
     InferenceRule, ModusPonens, ModusTollens, Substitution,
     UniversalInstantiation, ExistentialGeneralization,
-    Conjunction, Disjunction, Hypothetical
+    Conjunction, Disjunction, Hypothetical,
+    MathematicalInduction, StrongInduction, StructuralInduction
 )
 
 from .proof_system import (
-    ProofStep, Proof, Theorem, Lemma, Corollary
+    ProofStep, Proof, Theorem, Lemma, Corollary, JustificationType
 )
 
 from .verification import (
@@ -47,10 +53,18 @@ from .boolean_algebra import (
     derive_boolean_theorems
 )
 
+from .natural_numbers import (
+    PeanoArithmetic, create_peano_axioms
+)
+
 __all__ = [
     # Expresiones
     'Expression', 'Variable', 'Constant', 'BinaryOp', 'UnaryOp',
     'Function', 'Quantifier', 'Predicate',
+    # Helper functions para expresiones
+    'Var', 'Const', 'Func', 'Pred',
+    'And', 'Or', 'Not', 'Implies', 'Iff', 'Equals', 'NotEquals',
+    'Forall', 'Exists', 'Add', 'Mul', 'BinOp', 'UnOp', 'LessEq', 'GreaterEq',
     
     # Axiomas
     'Axiom', 'AxiomSystem', 'Postulate', 'Definition',
@@ -59,15 +73,19 @@ __all__ = [
     'InferenceRule', 'ModusPonens', 'ModusTollens', 'Substitution',
     'UniversalInstantiation', 'ExistentialGeneralization',
     'Conjunction', 'Disjunction', 'Hypothetical',
+    'MathematicalInduction', 'StrongInduction', 'StructuralInduction',
     
     # Sistema de pruebas
-    'ProofStep', 'Proof', 'Theorem', 'Lemma', 'Corollary',
+    'ProofStep', 'Proof', 'Theorem', 'Lemma', 'Corollary', 'JustificationType',
     
     # Verificación
     'ProofVerifier', 'ExpressionMatcher', 'Unifier',
     
     # Álgebra de Boole
-    'BooleanAlgebra', 'HuntingtonPostulates', 'derive_boolean_theorems'
+    'BooleanAlgebra', 'HuntingtonPostulates', 'derive_boolean_theorems',
+    
+    # Números Naturales
+    'PeanoArithmetic', 'create_peano_axioms'
 ]
 
 __version__ = '1.0.0'

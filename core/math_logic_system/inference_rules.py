@@ -305,3 +305,142 @@ class DoubleNegation(InferenceRule):
         if self.eliminate:
             return "De ¬¬P, derivar P"
         return "De P, derivar ¬¬P"
+
+
+class MathematicalInduction(InferenceRule):
+    """
+    Inducción Matemática sobre ℕ:
+    De P(0) y ∀n: P(n) ⟹ P(S(n)), derivar ∀n: P(n)
+    
+    Donde S(n) es el sucesor de n.
+    """
+    
+    def __init__(self, variable: str = "n", predicate_name: str = "P"):
+        self.variable = variable
+        self.predicate_name = predicate_name
+    
+    def apply(self, *premises: Expression) -> Optional[Expression]:
+        """
+        Espera dos premisas:
+        1. P(0) - Caso base
+        2. ∀n: P(n) ⟹ P(S(n)) - Paso inductivo
+        
+        Retorna: ∀n: P(n)
+        """
+        if len(premises) != 2:
+            return None
+        
+        base_case = premises[0]
+        inductive_step = premises[1]
+        
+        # Verificar que el paso inductivo es un cuantificador universal
+        if not isinstance(inductive_step, Quantifier) or inductive_step.type != "∀":
+            return None
+        
+        # Verificar que el cuerpo del paso inductivo es una implicación
+        if not isinstance(inductive_step.body, BinaryOp) or inductive_step.body.operator != "⟹":
+            return None
+        
+        # El resultado es ∀n: P(n)
+        # Extraemos P(n) del antecedente del paso inductivo
+        p_n = inductive_step.body.left
+        
+        return Quantifier("∀", self.variable, None, p_n)
+    
+    def name(self) -> str:
+        return "Mathematical Induction"
+    
+    def description(self) -> str:
+        return f"De P(0) y ∀{self.variable}: P({self.variable}) ⟹ P(S({self.variable})), derivar ∀{self.variable}: P({self.variable})"
+
+
+class StrongInduction(InferenceRule):
+    """
+    Inducción Fuerte (Completa) sobre ℕ:
+    De ∀n: (∀k<n: P(k)) ⟹ P(n), derivar ∀n: P(n)
+    
+    Esta es una forma más fuerte de inducción donde asumimos que
+    P(k) es verdadera para todos los k < n, no solo para n-1.
+    """
+    
+    def __init__(self, variable: str = "n", predicate_name: str = "P"):
+        self.variable = variable
+        self.predicate_name = predicate_name
+    
+    def apply(self, *premises: Expression) -> Optional[Expression]:
+        """
+        Espera una premisa:
+        ∀n: (∀k<n: P(k)) ⟹ P(n)
+        
+        Retorna: ∀n: P(n)
+        """
+        if len(premises) != 1:
+            return None
+        
+        premise = premises[0]
+        
+        # Verificar que es un cuantificador universal
+        if not isinstance(premise, Quantifier) or premise.type != "∀":
+            return None
+        
+        # Verificar que el cuerpo es una implicación
+        if not isinstance(premise.body, BinaryOp) or premise.body.operator != "⟹":
+            return None
+        
+        # El consecuente es P(n)
+        p_n = premise.body.right
+        
+        return Quantifier("∀", self.variable, None, p_n)
+    
+    def name(self) -> str:
+        return "Strong Induction"
+    
+    def description(self) -> str:
+        return f"De ∀{self.variable}: (∀k<{self.variable}: P(k)) ⟹ P({self.variable}), derivar ∀{self.variable}: P({self.variable})"
+
+
+class StructuralInduction(InferenceRule):
+    """
+    Inducción Estructural:
+    Generalización de la inducción para estructuras recursivas
+    (listas, árboles, expresiones, etc.)
+    
+    De P(base) y ∀x: P(x) ⟹ P(constructor(x)), derivar ∀x: P(x)
+    """
+    
+    def __init__(self, variable: str = "x", predicate_name: str = "P"):
+        self.variable = variable
+        self.predicate_name = predicate_name
+    
+    def apply(self, *premises: Expression) -> Optional[Expression]:
+        """
+        Espera al menos dos premisas:
+        1. P(base_1), P(base_2), ... - Casos base
+        n. ∀x: P(x) ⟹ P(constructor(x)) - Casos recursivos
+        
+        Retorna: ∀x: P(x)
+        """
+        if len(premises) < 2:
+            return None
+        
+        # La última premisa debería ser el caso inductivo
+        inductive_case = premises[-1]
+        
+        # Verificar que es un cuantificador universal con implicación
+        if not isinstance(inductive_case, Quantifier) or inductive_case.type != "∀":
+            return None
+        
+        if not isinstance(inductive_case.body, BinaryOp) or inductive_case.body.operator != "⟹":
+            return None
+        
+        # El consecuente es P(constructor(x))
+        # Extraemos P(x) del antecedente
+        p_x = inductive_case.body.left
+        
+        return Quantifier("∀", self.variable, None, p_x)
+    
+    def name(self) -> str:
+        return "Structural Induction"
+    
+    def description(self) -> str:
+        return f"De casos base y ∀{self.variable}: P({self.variable}) ⟹ P(constructor({self.variable})), derivar ∀{self.variable}: P({self.variable})"

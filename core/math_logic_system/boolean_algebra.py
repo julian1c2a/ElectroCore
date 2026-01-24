@@ -13,10 +13,10 @@ Autor: ElectroCore Project
 """
 
 from typing import List
-from ..axioms import AxiomSystem, Postulate, Definition
-from ..expressions import *
-from ..proof_system import Proof, Theorem, Lemma, ProofLibrary, JustificationType
-from ..inference_rules import Substitution, Conjunction
+from .axioms import AxiomSystem, Postulate, Definition
+from .expressions import *
+from .proof_system import Proof, Theorem, Lemma, ProofLibrary, JustificationType
+from .inference_rules import Substitution, Conjunction
 
 
 def create_huntington_system() -> AxiomSystem:
