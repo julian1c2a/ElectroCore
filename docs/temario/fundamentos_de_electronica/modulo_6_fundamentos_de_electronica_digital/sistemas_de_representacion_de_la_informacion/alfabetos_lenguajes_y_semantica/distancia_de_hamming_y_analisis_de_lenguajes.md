@@ -1083,11 +1083,11 @@ python -c "from core.math_logic_system import PeanoArithmetic; p = PeanoArithmet
   - [x] Verificador automático de pruebas
   - [x] Biblioteca de teoremas reutilizables
   
-- [ ] Tests unitarios creados
-  - [ ] Tests para `hamming_distance()`
-  - [ ] Tests para propiedades métricas
-  - [ ] Tests para códigos correctores
-  - [ ] Tests de integración
+- [x] Tests unitarios creados
+  - [x] Tests para `hamming_distance()`
+  - [x] Tests para propiedades métricas
+  - [x] Tests para códigos correctores
+  - [x] Tests de integración
 
 ### Próximas Mejoras
 
